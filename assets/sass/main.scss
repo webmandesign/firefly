@@ -1,0 +1,26 @@
+/* FILE: main.scss */
+
+//
+// Main theme styles
+//
+// Mobile first approach used.
+// Breakpoints: 420px, 680px, 960px
+//
+// @package    Firefly
+// @copyright  WebMan Design, Oliver Juhas
+//
+// @since    1.0
+// @version  1.0
+//
+
+
+
+
+
+// Imports
+
+	@import "setup";
+
+	@import "starter/starter";
+
+	@import "main/main";

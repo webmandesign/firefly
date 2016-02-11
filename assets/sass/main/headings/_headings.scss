@@ -1,0 +1,170 @@
+/* FILE: main/headings/_headings.scss */
+
+//
+// Headings
+//
+
+
+
+
+
+// Basic headings styles
+
+	#{$h_tags} {
+		@extend %font_headings;
+	}
+
+	@include h_tags( $golden_major + $golden_minor / 2, true ); // Heading default styles (on small devices)
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+
+		@include h_tags();
+
+	}
+
+
+
+// Entry title
+
+	.entry-header {
+		margin-bottom: power( $golden, 2 ) +rem;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			margin-bottom: power( 1 + $golden_minor, 4 ) +rem;
+		}
+
+		&.intro-container {
+			margin-bottom: 0;
+		}
+
+		.posts & {
+			padding-bottom: $golden * 1rem;
+			margin-bottom: 0;
+		}
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+
+			.single-post & {
+				display: flex;
+				flex-shrink: 1; // IE10 required on flex children
+				overflow: hidden;
+
+				h1 {
+					order: 2;
+					display: flex;
+					flex-shrink: 1; // IE10 required on flex children
+					flex-direction: column;
+					justify-content: center;
+					width: percentage( ( 100 - $single_post_left_padding ) / 100 );
+					margin: 0;
+					float: right; // Flexbox fallback
+				}
+
+			}
+
+		}
+
+	}
+
+	.entry-title,
+	.page-title {
+		@extend .weight-700;
+		padding: 0;
+		margin: 0 0 ( power( $golden, 2 ) +rem );
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+
+		.posts & {
+			@extend %font_size_golden_minor;
+		}
+
+	}
+
+
+
+// Widget title
+
+	.widget-title,
+	.sidebar .widgettitle {
+		@extend %font_size_smaller_rem;
+		@extend .weight-700;
+		margin: 0 0 ( $golden +rem );
+		text-transform: uppercase;
+	}
+
+	.hide-widget-title {
+
+		.widget-title,
+		.widgettitle {
+			display: none;
+		}
+
+		&-accessible {
+
+			.widget-title,
+			.widgettitle {
+				@extend %screen_reader_hiding;
+			}
+
+		}
+
+	}
+
+
+
+// Intro title
+
+	.intro {
+		@extend %font_size_golden_minor;
+		position: absolute;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		padding: 8% 0 4%;
+
+		&-container {
+			position: relative;
+			height: 90vh;
+			height: calc( 100vh - #{ map_get( $header_height, "normal" ) * 1rem } );
+			background-position: 50% 50%;
+			background-size: cover;
+			z-index: 1;
+		}
+
+		&-inner {
+			@extend %content_width;
+		}
+
+		&-title {
+			@extend %font_headings;
+			@extend %line_height_tight;
+			font-size: power( $golden, 3 ) +em;
+
+			a {
+				color: inherit;
+			}
+
+		}
+
+	}
+
+	.intro-title,
+	.page-summary {
+		max-width: percentage( $golden_major );
+	}
+
+	.page-summary {
+		@extend .weight-300;
+	}
+
+	// Hiding default titles when intro title used
+
+		.page-header {
+
+			.blog .site-content &,
+			.site-content .archives-listing &,
+			.site-content .search-results-listing & {
+				@extend %screen_reader_hiding;
+			}
+
+		}

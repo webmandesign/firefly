@@ -1,0 +1,90 @@
+/* FILE: main/header/__branding.scss */
+
+//
+// Branding: site title, logo image, tagline
+//
+
+
+
+
+
+// Site title and logo
+
+	%site_title {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.site-branding {
+		margin: 1em 0 0;
+		color: inherit;
+
+		img {
+			display: inline-block;
+			width: auto;
+			max-height: map_get( $header_height, "normal" ) * .8 * 1rem; // 80% of the header height
+			vertical-align: middle;
+
+			.has-scrolled & {
+				max-height: map_get( $header_height, "narrow" ) * .8 * 1rem; // 80% of the header height
+			}
+
+		}
+
+		a {
+
+			&,
+			&:hover,
+			&:active {
+				@extend %site_title;
+			}
+
+		}
+
+		@include responsive() {
+			float: left;
+			margin: 0;
+		}
+
+	}
+
+	.site-title {
+		@extend %site_title;
+		@extend %font_logo;
+		@extend %font_size_higher_rem;
+		@extend .weight-700;
+		display: inline-block;
+		position: relative;
+		top: -1em * $golden_minor / 4;
+		margin: 0;
+		vertical-align: middle;
+	}
+
+	.logo-font {
+		@extend %font_logo;
+	}
+
+	// Styled text logo
+
+		.type-text {
+
+			&.styled {
+				position: relative;
+				display: inline-block;
+				padding: ( $golden_major +rem ) 1rem;
+				line-height: 1;
+				text-transform: uppercase;
+				font-size: 1rem;
+				letter-spacing: $golden_minor / 4 +em;
+				border: 1px solid;
+			}
+
+		}
+
+
+
+// Site tagline
+
+	.site-description {
+		@extend %screen_reader_hiding;
+	}

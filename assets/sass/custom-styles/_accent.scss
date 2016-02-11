@@ -1,0 +1,140 @@
+/* FILE: custom-styles/_accent.scss */
+
+//
+// Accent color styles.
+//
+
+
+
+
+
+// Accent color
+
+	$accent_color_elements: (
+		// Post meta in posts list
+		'.posts .entry-meta',
+		// Marker
+		'mark',
+		'.highlight',
+		// Pagination
+		'.pagination .current',
+		// Comments
+		'.bypostauthor > .comment-body .comment-author::before',
+		'.comment-navigation a',
+		// Widgets
+		'.widget_calendar tbody a',
+		'.widget .tagcloud a:hover',
+		'.widget .tagcloud a:focus',
+		'.widget .tagcloud a:active',
+		// Jetpack
+		'body #infinite-handle span',
+		// Hover color special class
+		'.hover-color-accent.fl-col:hover .fl-col-content'
+	);
+
+
+
+// Background color
+
+	#{$accent_color_elements},
+	.#{$special_color_class_prefix}accent,
+	.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text),
+	.sidebar::before {
+		/*[*/
+		background-color: map_get( $colors, "accent" );
+		/*]*/
+		/*//
+		background-color: ___color_accent;
+		//*/
+	}
+
+		.infinite-loader .spinner > div > div {
+			/*[*/
+			background-color: map_get( $colors, "accent" ) !important;
+			/*]*/
+			/*//
+			background-color: ___color_accent !important;
+			//*/
+		}
+
+
+
+// Text color
+
+	a,
+	.accent-color,
+	.wm-iconbox-module .image {
+		/*[*/
+		color: map_get( $colors, "accent" );
+		/*]*/
+		/*//
+		color: ___color_accent;
+		//*/
+	}
+
+	#{$accent_color_elements},
+	.#{$special_color_class_prefix}accent {
+		/*[*/
+		color: map_get( $colors, "accent_text" );
+		/*]*/
+		/*//
+		color: ___color_accent_text;
+		//*/
+	}
+
+		.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
+			/*[*/
+			color: map_get( $colors, "accent_text" ) !important;
+			/*]*/
+			/*//
+			color: ___color_accent_text !important;
+			//*/
+		}
+
+
+
+// Borders
+
+	.widget .tagcloud a:hover,
+	.widget .tagcloud a:focus,
+	.widget .tagcloud a:active {
+		/*[*/
+		border-color: map_get( $colors, "accent" );
+		/*]*/
+		/*//
+		border-color: ___color_accent;
+		//*/
+	}
+
+
+
+// Others
+
+	mark,
+	.highlight {
+		/*[*/
+		box-shadow: .382em 0 0 map_get( $colors, "accent" ), -.382em 0 0 map_get( $colors, "accent" );
+		/*]*/
+		/*//
+		box-shadow: .382em 0 0 ___color_accent, -.382em 0 0 ___color_accent;
+		//*/
+	}
+
+	.pagination {
+
+		a {
+
+			@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+				/*[*/
+				background-color: map_get( $colors, "accent" );
+				color: map_get( $colors, "accent_text" );
+				/*]*/
+				/*//
+				background-color: ___color_accent;
+				color: ___color_accent_text;
+				//*/
+			}
+
+		}
+
+	}

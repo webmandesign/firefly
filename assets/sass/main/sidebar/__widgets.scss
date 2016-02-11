@@ -1,0 +1,451 @@
+/* FILE: main/sidebar/__widgets.scss */
+
+//
+// Widgets
+//
+
+
+
+
+
+// Basic global widget styles
+
+	.widget {
+
+		form {
+			margin-bottom: 0;
+		}
+
+		input,
+		select,
+		textarea {
+
+			.sidebar &,
+			.footer-widgets & {
+				width: 100%;
+			}
+
+		}
+
+	}
+
+
+
+// Archives
+// Categories
+// Pages
+// Recent Comments
+// Recent Posts
+// ZillaLikes
+
+	li::before {
+
+		.widget_archive &,
+		.widget_categories &,
+		.widget_pages &,
+		.widget_recent_comments &,
+		.widget_recent_entries &,
+		.widget_zilla_likes_widget & {
+			@extend %genericon;
+			content: '\f307';
+			margin-right: $golden_minor +em;
+			vertical-align: middle;
+		}
+
+		.widget_categories & {
+			content: '\f301';
+		}
+
+		.widget_pages & {
+			content: '\f443';
+		}
+
+		.widget_recent_comments &,
+		.widget_recent_entries &,
+		.widget_zilla_likes_widget & {
+			content: '\f300';
+			position: absolute;
+			left: 0;
+			top: $golden_minor +em;
+			margin: 0;
+		}
+
+		.widget_recent_entries & {
+			content: '\f411';
+		}
+
+		.widget_zilla_likes_widget & {
+			content: '\f461';
+		}
+
+	}
+
+
+
+// Calendar
+
+	.widget_calendar {
+
+		th,
+		td {
+			vertical-align: middle;
+		}
+
+		tfoot {
+
+			td {
+				text-align: left;
+
+				&:last-child {
+					text-align: right;
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Custom Menu
+// Subnav
+
+	.wm-subnav,
+	.widget_nav_menu {
+
+		.sidebar & {
+
+			li {
+				padding: 0;
+
+				&.button {
+					display: none;
+				}
+
+				ul {
+					bottom: 0;
+				}
+
+				li {
+					padding: 0;
+
+					a {
+
+						&::before {
+							content: '\21B3\2002';
+							@extend .weight-400;
+							opacity: .5;
+						}
+
+					}
+
+					li {
+
+						a {
+							padding-left: 2em;
+						}
+
+					}
+
+				}
+
+				a {
+					display: block;
+					padding: ( $golden_major +em ) 1em;
+					margin: 1px 0;
+
+					&:hover {
+						text-decoration: none;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	a {
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+			// Current item arrow
+
+				.sidebar .wm-subnav .current_page_item > &,
+				.sidebar .widget_nav_menu .current-menu-item > & {
+					position: relative;
+
+					&::after {
+						content: '';
+						position: absolute;
+						width: 1rem;
+						height: 1rem;
+						right: 100%;
+						top: 50%;
+						margin: -.5rem;
+						transform: rotate( 45deg );
+						background: inherit;
+
+						.fl-col:first-child & {
+							left: 100%;
+							right: auto;
+						}
+
+					}
+
+				}
+
+		}
+
+	}
+
+
+
+// Recent Posts
+
+	.widget-recent-entries-list {
+
+		p {
+			margin-bottom: 1em;
+		}
+
+		.hentry {
+			float: none; // Resetting singular post styles
+			width: 100%; // Resetting singular post styles
+			padding: 1em 0;
+			border-top: 1px solid;
+			border-bottom: 1px solid;
+			border-color: inherit;
+			overflow: hidden;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			+ .hentry {
+				margin-top: -1px;
+			}
+
+			.sidebar &,
+			.widget-area & {
+				padding: ( $golden_major +em ) 0;
+			}
+
+		}
+
+		.entry-date {
+			@extend %font_size_golden;
+			float: left;
+			width: power( $golden, 2 ) +em;
+			padding: ( $golden_minor +em ) 0;
+			line-height: 1;
+			text-align: center;
+			border: 1px solid;
+			border-color: inherit;
+
+			.sidebar &,
+			.widget-area & {
+				@extend %font_size_1em;
+			}
+
+		}
+
+		.day {
+			@extend .weight-700;
+		}
+
+		.month {
+			@extend %font_size_small;
+			text-transform: uppercase;
+		}
+
+		.entry-content {
+
+			.single & {
+				// Resetting singular post styles
+				float: none;
+				width: auto;
+				padding: 0;
+			}
+
+		}
+
+		.entry-title {
+			@extend %font_size_golden_minor;
+			margin-bottom: $golden_major +em;
+			line-height: 1 + $golden_minor;
+
+			a {
+				border: 0;
+			}
+
+			.entry-subtitle {
+				@extend %font_size_small;
+				@extend .weight-400;
+				display: block;
+				text-transform: uppercase;
+
+				&::before,
+				&::after {
+					display: none;
+				}
+
+				.sidebar &,
+				.widget-area & {
+					text-transform: none;
+				}
+
+			}
+
+			.sidebar &,
+			.widget-area & {
+				@extend %font_size_1em;
+			}
+
+		}
+
+		.entry-summary {
+
+			.sidebar &,
+			.widget-area & {
+				display: none;
+			}
+
+		}
+
+		.link-more {
+			margin: 0;
+
+			.sidebar &,
+			.widget-area & {
+				@extend %font_size_small;
+				@extend .weight-400;
+			}
+
+		}
+
+	}
+
+	.entry-date-enabled {
+
+		.entry-content {
+			margin-left: power( $golden, 3 ) + 1em;
+
+			.sidebar &,
+			.widget-area & {
+				margin-left: power( $golden, 2 ) + 1em;
+			}
+
+		}
+
+	}
+
+
+
+// Tag Cloud
+
+	.tagcloud {
+
+		.widget & {
+
+			&:hover,
+			&:focus,
+			&:active {
+
+				a {
+					opacity: 1;
+				}
+
+			}
+
+			a {
+
+				&,
+				&:hover,
+				&:focus,
+				&:active {
+
+					&::before {
+						display: none;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Contact info
+
+	.contact-info {
+		position: relative;
+		padding-left: 2em;
+		margin-top: 1em;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&::before {
+			@extend %genericon;
+			position: absolute;
+			left: 0;
+			top: 0;
+			line-height: 1;
+			font-size: 1em + $golden_minor;
+		}
+
+		&.address::before {
+			content: '\f409';
+		}
+
+		&.hours::before {
+			content: '\f303';
+		}
+
+		&.phone::before {
+			content: '\f50c';
+		}
+
+		&.email::before {
+			content: '\f410';
+		}
+
+		table,
+		td {
+			padding: 0;
+			line-height: inherit;
+			border: 0;
+			border-color: inherit;
+		}
+
+		td {
+			padding-top: $golden_major +em;
+			border-bottom: 1px dotted;
+			border-color: inherit;
+
+			&:last-child {
+				text-align: right;
+			}
+
+		}
+
+		tr {
+
+			&:first-child {
+
+				td {
+					padding-top: 0;
+				}
+
+			}
+
+		}
+
+	}

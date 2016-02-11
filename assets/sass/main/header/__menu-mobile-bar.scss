@@ -1,0 +1,195 @@
+/* FILE: main/header/__menu-mobile-bar.scss */
+
+//
+// Mobile menu bar
+//
+
+
+
+
+
+.mobile-menu-container {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0; // Has to be on top to prevent hiding when mobile browser address bar shows/hides
+	line-height: 1 + $golden_minor / 2;
+	font-size: 13px;
+	text-align: center;
+	z-index: 991;
+	box-shadow: 0 0 ( $golden +rem ) rgba( #000, .33 );
+
+	@include responsive( map_get( $breakpoint, 's' ), 'max-height' ) {
+		clear: both;
+		position: relative;
+		box-shadow: none;
+	}
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+		display: none;
+	}
+
+	ul {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+		margin: 0;
+		border-color: inherit;
+		border-collapse: collapse;
+
+		a,
+		button {
+			display: block;
+			padding: 1em 0;
+			color: inherit;
+		}
+
+		button {
+			width: 100%;
+			line-height: inherit;
+			background: transparent;
+			box-shadow: none;
+		}
+
+	}
+
+	li {
+		display: table-cell;
+		border: 1px solid;
+		border-color: inherit;
+		vertical-align: middle;
+
+		&::before {
+			display: none;
+		}
+
+	}
+
+	i {
+		@extend .weight-400;
+		@extend %font_size_golden;
+		display: block;
+
+		&::before {
+			vertical-align: top;
+		}
+
+	}
+
+}
+
+
+
+// Mobile menu toggle button
+
+	.menu-toggle {
+
+		&,
+		&-bar {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			box-shadow: 0 0 $golden +rem rgba( #000, .33 );
+		}
+
+		@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+			position: fixed;
+			right: 0;
+			top: 0;
+			padding: ( $golden_major +em ) 1em;
+			line-height: 1 + $golden_minor;
+			text-align: center;
+			font-weight: 700;
+			border: 1px solid;
+			border-radius: 0;
+			z-index: 999;
+
+			.has-mobile-bar & {
+				display: none;
+			}
+
+			.active & {
+				width: 100%;
+
+				.has-mobile-bar & {
+					display: block;
+					border: 0;
+				}
+
+			}
+
+		}
+
+		@include responsive_minmax( map_get( $breakpoint, 'm' ), map_get( $breakpoint, 'l' ) ) {
+
+			.active & {
+				position: fixed;
+				top: $golden +rem;
+				right: $golden +rem;
+				border: 1px solid;
+				border-color: inherit;
+				z-index: 999;
+				box-shadow: none;
+			}
+
+		}
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			display: none;
+		}
+
+		&::before {
+			@extend %genericon;
+			content: '\f419';
+			margin-right: $golden_major +em;
+			vertical-align: middle;
+
+			.active & {
+				content: '\f406';
+			}
+
+			@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+				display: block;
+				margin-right: 0;
+			}
+
+			@include responsive( map_get( $breakpoint, 's' ), 'max-height' ) {
+				display: inline;
+				margin-right: $golden_major +em;
+			}
+
+		}
+
+		&-bar {
+
+			&-container {
+				@extend .weight-700;
+
+				i {
+
+					&::before {
+						@extend %genericon;
+						content: '\f476';
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	.menu-toggle-skip-link-container {
+		@extend %screen_reader_hiding;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			display: none;
+		}
+
+	}

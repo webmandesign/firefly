@@ -1,0 +1,94 @@
+/* FILE: main/plugins/__jetpack.scss */
+
+//
+// Jetpack
+//
+
+
+
+
+
+// Related posts
+
+	div#jp-relatedposts {
+
+		.jp-relatedposts-headline {
+			@extend .weight-700;
+		}
+
+	}
+
+
+
+// Sharing
+
+	div.sharedaddy {
+		margin-top: power( $golden, 2 ) +rem;
+
+		.sd-title {
+			@extend %font_size_1em;
+			@extend .weight-700;
+		}
+
+		.site-content & {
+
+			&:hover {
+
+				.sd-content {
+
+					ul {
+
+						li {
+
+							a {
+
+								&.sd-button:not(.no-text) {
+									opacity: .66;
+
+									&:hover {
+										opacity: 1;
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Widget: Blog Subscriptions
+
+	.jetpack_subscription_widget {
+
+		.fl-widget & {
+
+			.widgettitle {
+				@extend %font_size_1rem;
+			}
+
+		}
+
+		.form-button-simple & {
+
+			// Simple button styling
+
+				input[type="submit"] {
+					padding: $golden_major +em;
+					padding-top: calc( #{ $golden_major +em } - 2px );    // Compensating for 2px border
+					padding-bottom: calc( #{ $golden_major +em } - 2px ); // Compensating for 2px border
+				}
+
+		}
+
+	}

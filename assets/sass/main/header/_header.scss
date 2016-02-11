@@ -1,0 +1,45 @@
+/* FILE: main/header/_header.scss */
+
+//
+// Site header, branding, navigation and social links menu
+//
+
+
+
+
+
+// Site header
+
+	.site-header {
+		@extend .clearfix;
+		position: relative;
+		z-index: 99;
+
+		&-inner {
+			@extend %fullhd_width;
+			display: flex;
+			justify-content: space-between;
+			line-height: map_get( $header_height, "narrow" ) * 1rem;
+		}
+
+		@include responsive() {
+
+			&-inner {
+				line-height: map_get( $header_height, "normal" ) * 1rem;
+			}
+
+		}
+
+		a {
+			color: inherit;
+		}
+
+	}
+
+
+
+// Imports
+
+	@import "_branding";
+
+	@import "_menu";

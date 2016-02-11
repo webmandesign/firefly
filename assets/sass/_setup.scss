@@ -1,0 +1,339 @@
+/////////////////////
+//
+// Globals setup
+//
+/////////////////////
+
+
+
+	//
+	// Layout
+	//
+	// Breakpoints:
+	// 'xxs' :    0, // Too small
+	// 'xs'  :  300, // Minimal mobile portrait
+	// 's'   :  420, // Starting mobile landscape
+	// 'm'   :  680, // Starting tablet portrait
+	// 'l'   :  960, // Starting tablet landscape
+	// 'xl'  : 1200, // Starting laptop
+	// 'xxl' : 1500  // Starting desktop
+	//
+
+		$boxed_width: 1760;
+		$content_width: 1160;
+
+		$single_post_left_padding: .38 * .62 * 100; // %
+
+		$decorative_border_thickness: .38; // rem
+
+		$header_height: ( // In rem units
+			'normal': 5,
+			'narrow': 3
+		) !default;
+
+		$column_padding_vertical: 3.62rem;
+
+
+
+	//
+	// Typography
+	//
+
+		$font_size: 16; // Set also in `assets/css-generate/custom-styles.php`
+
+		$font_family: (
+			'body':     "'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+			'headings': "'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+			'logo':     "'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+		) !default;
+
+		$h_tags_setup: (
+
+			// $selector : (
+			//   $size
+			//   $line_height
+			//   $margin_top    [ ( span_4_or_3_lines - $size * $line_height - $margin_bottom ) / $size ]
+			//   $margin_bottom [ $margin_bottom / $size / $line_height ]
+			// )
+
+			// @link http://www.zell-weekeat.com/responsive-typography/
+			//
+			// Em vs Rem section regarding vertical rhythm
+			//
+			// "First, we’re not 100% precise and accurate with our math. We could get more precise (like 10 decimal places), but that would make our code ugly as hell…"
+			// "Second, different browsers handle subpixel rounding issues differently. This means we’ll never be able to get pixel-perfect rhythms no matter how hard we try."
+			// "So, here’s what I realized. It’s impossible to apply perfect responsive vertical rhythms across different browsers. At least not with the current technology."
+
+			'h1, .h1' : (
+					2.62,
+					1.19,
+					( 6.48 - 2.62 * 1.19 - 1.62 ) / 2.62,
+					1.62 / 2.62 / 1.19
+				),
+			'h2, .h2' : (
+					1.9,
+					1.19,
+					( 6.48 - 1.9 * 1.19 - 1.62 ) / 1.9,
+					1.62 / 1.9 / 1.19
+				),
+			'h3, .h3' : (
+					1.62,
+					1.38,
+					( 6.48 - 1.62 * 1.38 - 1.62 ) / 1.62,
+					1.62 / 1.62 / 1.38
+				),
+			'h4, .h4' : (
+					1.38,
+					1.38,
+					( 4.86 - 1.38 * 1.38 - 1.62 ) / 1.38,
+					1.62 / 1.38 / 1.38
+				),
+			'h5, .h5' : (
+					1.19,
+					1.62,
+					( 4.86 - 1.19 * 1.62 - 1.62 ) / 1.19,
+					1.62 / 1.19 / 1.62
+				),
+			'h6, .h6' : (
+					1,
+					1.62,
+					( 4.86 - 1 * 1.62 - 1.62 ) / 1,
+					1.62 / 1 / 1.62
+				)
+
+		) !default;
+
+		$display_text_size: (
+			1 : 2.62em, // this should match the H1 size
+			2 : 3.62em,
+			3 : 4.25em,
+			4 : 5em,
+		) !default;
+
+
+
+	//
+	// Margins
+	//
+
+		$tags_margin_bottom: (
+			'h1',
+			'h2',
+			'h3',
+			'.h1',
+			'.h2',
+			'.h3',
+			'p',
+			'ol',
+			'ul',
+			'.gallery',
+			'.tiled-gallery'
+		);
+
+
+
+	//
+	// Button elements
+	//
+
+		$button_elements: (
+			'.button',
+			'button',
+			'input[type="button"]',
+			'input[type="reset"]',
+			'input[type="submit"]'
+		);
+
+		$button_elements_beaver_builder: ();
+
+		$beaver_builder_button_prepend: '.fl-builder-content .fl-module';
+
+		@each $button_element in $button_elements {
+
+			$button_elements_beaver_builder: append( $button_elements_beaver_builder, '#{$beaver_builder_button_prepend} #{$button_element}', comma );
+
+		}
+
+
+
+	//
+	// Special color classes
+	//
+
+		$special_color_class_prefix: 'set-colors-';
+
+
+
+	//
+	// Post formats
+	//
+
+		$supported_post_formats: (
+			'audio',
+			'gallery',
+			'video'
+		);
+
+
+
+
+
+/////////////////////
+//
+// Icons
+//
+/////////////////////
+
+	$social_icons: (
+
+		// class: char href
+
+		'website':  '\f475' 'http',
+		'email':    '\f410' 'mailto:',
+		'rss':      '\f413' '/feed/',
+
+		'codepen':  '\f216' 'codepen.io',
+		'digg':     '\f221' 'digg.com',
+		'dribbble': '\f201' 'dribbble.com',
+		'dropbox':  '\f225' 'dropbox.com',
+		'facebook': '\f204' 'facebook.com',
+
+		'flickr':     '\f211' 'flickr.com',
+		'foursquare': '\f226' 'foursquare.com',
+		'github':     '\f200' 'github.com',
+		'instagram':  '\f215' 'instagram.com',
+		'linkedin':   '\f207' 'linkedin.com',
+
+		'pinterest':   '\f209' 'pinterest.com',
+		'google-plus': '\f218' 'plus.google.com',
+		'pocket':      '\f224' 'getpocket.com',
+		'polldaddy':   '\f217' 'polldaddy.com',
+		'reddit':      '\f222' 'reddit.com',
+
+		'skype':       '\f220' 'skype:',
+		'spotify':     '\f515' 'spotify.com',
+		'stumbleupon': '\f223' 'stumbleupon.com',
+		'tumblr':      '\f214' 'tumblr.com',
+		'twitch':      '\f516' 'twitch.tv',
+
+		'twitter':   '\f202' 'twitter.com',
+		'vimeo':     '\f212' 'vimeo.com',
+		'wordpress': '\f205' 'wordpress.',
+		'youtube':   '\f213' 'youtube.com',
+
+	);
+
+	$entry_meta_icons: (
+
+		// class: char
+
+		'author':          '\f304',
+		'cat-links':       '\f301',
+		'comments-link a': '\f300',
+		'entry-date':      '\f303',
+		'tags-links':      '\f302',
+
+		'entry-likes a': '\f461',
+		'entry-views':   '\f403',
+		'entry-edit':    '\f411',
+
+	);
+
+
+
+
+
+/////////////////////
+//
+// Colors
+//
+/////////////////////
+
+
+
+	//
+	// Media player
+	//
+
+		$color_mejs_bg: #4a4c4e; // Some neutral dark color that won't change
+
+
+
+	//
+	// Theme colors
+	// For accessibility test with http://jxnblk.com/colorable/demos/text/
+	//
+
+	$colors: (
+
+		// Body
+
+			'body_background': #fafcfe,
+
+		// Site header
+
+			'header_background': #f1f3f5,
+			'header_text':       #6a6c6e,
+
+			// Navigation
+
+				'navigation_background': #2a2c2e,
+				'navigation_text':       #eaecee,
+				'navigation_border':     #4a4c4e,
+
+			// Intro heading
+
+				'intro_background': #4abcfe,
+				// Intro title = accent color
+
+		// Site content
+
+			'content_background': #fafcfe,
+			'content_text':       #6a6c6e,
+			'content_headings':   #2a2c2e,
+			'content_border':     #caccce,
+
+			'sidebar_background': #f1f3f5,
+
+		// Site footer
+
+			'footer_background':  #2a2c2e,
+			'footer_text':        #caccce,
+			'footer_headings':    #eaecee,
+			'footer_border':      #4a4c4e,
+
+			'footer_accent':      #eaecfe,
+			'footer_accent_text': #3a3c4e,
+
+			// Footer info widgets
+
+				// = accent color
+
+		// Accent color
+
+			'accent':      #07599b,
+			'accent_text': #fafcfe,
+
+		// Predefined colors
+
+			'error_background': #aa3e0e,
+			'error_text':       #fafcfe,
+
+			'info_background': #07599b,
+			'info_text':       #fafcfe,
+
+			'neutral_background': #dadcde,
+			'neutral_text':       #3a3c3e,
+
+			'success_background': #038547,
+			'success_text':       #fafcfe,
+
+			'warning_background': #eaae3e,
+			'warning_text':       #3a3c3e,
+
+		// Simple button
+
+			'button_simple_light': #fafcfe,
+			'button_simple_dark':  #1a1c1e,
+
+	);

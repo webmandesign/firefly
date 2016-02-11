@@ -1,0 +1,59 @@
+/* FILE: custom-styles/_content.scss */
+
+//
+// Site content color styles.
+// Posts list color styles.
+// Sidebar color styles.
+// Breadcrumbs color styles.
+// Page templates color styles.
+//
+
+
+
+
+
+// Site content
+
+	%site_content_colors {
+		/*[*/
+		background-color: map_get( $colors, "content_background" );
+		color: map_get( $colors, "content_text" );
+		border-color: map_get( $colors, "content_border" );
+		/*]*/
+		/*//
+		background-color: ___color_content_background;
+		color: ___color_content_text;
+		border-color: ___color_content_border;
+		//*/
+	}
+
+	%site_content_headings_colors {
+		/*[*/
+		color: map_get( $colors, "content_headings" );
+		/*]*/
+		/*//
+		color: ___color_content_headings;
+		//*/
+	}
+
+	.site,
+	.site-content,
+	.#{$special_color_class_prefix}content {
+		@extend %site_content_colors;
+	}
+
+
+
+// Posts
+
+	.posts {
+
+		.hentry {
+			@extend %site_content_colors;
+		}
+
+		#{$h_tags} {
+			@extend %site_content_headings_colors;
+		}
+
+	}

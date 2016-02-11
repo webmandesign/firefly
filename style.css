@@ -1,0 +1,50 @@
+/**
+ * Theme Name:   Firefly
+ * Theme URI:    http://www.webmandesign.eu/firefly-wordpress-theme/
+ * Author:       WebMan Design
+ * Author URI:   http://www.webmandesign.eu/
+ * Version:      1.0
+ * Text Domain:  firefly
+ * Domain Path:  /languages
+ * License:      GNU General Public License v3
+ * License URI:  http://www.gnu.org/licenses/gpl-3.0.html
+ * Description:  <strong>Firefly</strong> is responsive, retina-ready small business WordPress theme. The theme is compatible with Chrome, Safari, Opera, Firefox, Internet Explorer 9+ browsers. Thank you for using one of WebMan's themes (other professional WordPress themes can be found at www.webmandesign.eu). Theme demo at http://themedemos.webmandesign.eu/firefly/
+ * Tags:         https://make.wordpress.org/themes/handbook/review/required/theme-tags/
+ *
+ * This theme, like WordPress, is licensed under the GPL.
+ * Use it to make something cool, have fun, and share what you've learned with others.
+ */
+
+
+
+
+
+/**
+ * IMPORTANT NOTE:
+ *
+ * It is highly recommended to place your custom CSS styles into a new child theme as you might
+ * loose all your custom CSS once you update the theme and overwrite this file!
+ *
+ * @link  http://www.webmandesign.eu/manual/firefly/#child-theme
+ */
+
+
+
+
+
+/**
+ * The CSS below is added to comply WordPress theme checker.
+ * The actual CSS styles is situated in the `assets/css/*.css` files.
+ *
+ * @link  http://plugins.svn.wordpress.org/theme-check/tags/20150818.1/checks/style_needed.php
+ */
+
+.sticky,
+.bypostauthor,
+.alignleft,
+.alignright,
+.aligncenter,
+.wp-caption,
+.wp-caption-text,
+.gallery-caption,
+.screen-reader-text {}

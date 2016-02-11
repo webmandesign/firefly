@@ -1,0 +1,113 @@
+/* FILE: main/base/__classes.scss */
+
+//
+// CSS classes
+//
+
+
+
+
+
+// Generic utility
+
+	.no-wrap {
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			white-space: nowrap;
+		}
+
+	}
+
+	.text-left   { text-align: left;   }
+	.text-center { text-align: center; }
+	.text-right  {
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			text-align: right;
+		}
+
+	}
+
+	.mt0 { margin-top: 0 !important; }
+	.mb0 { margin-bottom: 0 !important; }
+
+	.zindex-10 {
+		position: relative;
+		z-index: 10;
+	}
+
+	.background-size-stretch {
+
+		&,
+		&.fl-row,
+		&.fl-col {
+			background-size: 100% 100%;
+		}
+
+	}
+
+
+
+// Dropcaps
+
+	.dropcap-text {
+
+		&::first-letter {
+			float: left;
+			display: block;
+			padding: 0 ( $golden_minor / 2 +em ) 0 0;
+			line-height: 1;
+			font-size: power( $golden, 2 ) +em;
+			color: inherit;
+		}
+
+	}
+
+
+
+// Inline list
+
+	.inline {
+
+		li,
+		.widget ul li {
+			display: inline-block;
+			padding: 0 ( $golden_major +em );
+			border: 0;
+			border-left: 1px solid;
+
+			&:first-child {
+				border: 0;
+			}
+
+			&::before {
+				display: none;
+			}
+
+			&:hover {
+				transform: none;
+			}
+
+		}
+
+	}
+
+
+
+// Internet Explorer upgrade message
+
+	.message-oldie {
+		display: block;
+		padding: 1em;
+		margin: 1em;
+		text-align: center;
+		background: #c33;
+		color: #fff;
+
+		a {
+			text-decoration: underline;
+			font-weight: bold;
+			color: inherit;
+		}
+
+	}

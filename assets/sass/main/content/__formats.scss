@@ -1,0 +1,65 @@
+/* FILE: main/content/__formats.scss */
+
+//
+// Post formats
+//
+
+
+
+
+
+// Audio
+
+	.format-audio {
+
+		.posts & {
+
+			.entry-media {
+
+				iframe {
+					max-height: 182px; // SoundCloud iframe height
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Gallery
+
+	.format-gallery {
+
+		%format_gallery_image {
+			width: 50%;
+			padding: 1px;
+		}
+
+		// As strange as it may look, the `.image-count-2` and `.image-count-3` classes
+		// are added in posts list only. That's why we declare these styles:
+
+		.image-count-2 {
+
+			img {
+				@extend %format_gallery_image;
+			}
+
+		}
+
+		.image-count-3 {
+
+			img {
+				@extend %format_gallery_image;
+
+				&:first-child,
+				&:first-of-type { // This is to compensate for cache solutions that inserts <script> tag before img:first-child
+					width: 100%;
+				}
+
+			}
+
+		}
+
+	}

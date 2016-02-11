@@ -1,0 +1,92 @@
+/* FILE: custom-styles.scss */
+/* FILE: custom-styles/_base.scss */
+body { background-color: #fafcfe; }
+
+::-webkit-input-placeholder, :disabled::-webkit-input-placeholder { color: inherit !important; }
+
+::-moz-placeholder, :disabled::-moz-placeholder { color: inherit !important; }
+
+:-ms-input-placeholder, :disabled:-ms-input-placeholder { color: inherit !important; }
+
+::placeholder, :disabled::placeholder { color: inherit !important; }
+
+button, input, select, textarea, tbody tr:hover td, tbody tr:hover th, code, pre { background-color: rgba(0, 0, 0, 0.05); }
+
+.gallery-caption { background-color: rgba(0, 0, 0, 0.8); color: #fafcfe; }
+
+.pagination a:hover { background-color: rgba(0, 0, 0, 0.1); }
+
+.button, button, input[type="button"], input[type="reset"], input[type="submit"], .fl-builder-content .fl-module .button, .fl-builder-content .fl-module button, .fl-builder-content .fl-module input[type="button"], .fl-builder-content .fl-module input[type="reset"], .fl-builder-content .fl-module input[type="submit"], .main-navigation-container .button > a { /*[*/ background-color: #07599b; color: #fafcfe; /*]*/ /*// background-color: ___color_accent; color: ___color_accent_text; //*/ }
+
+@media only screen and (max-width: 959px) { .active .menu-toggle { /*[*/ background-color: #07599b; color: #fafcfe; /*]*/ /*// background-color: ___color_accent; color: ___color_accent_text; //*/ } }
+
+div[class*="set-colors-"] a, div[class*="set-colors-"] h1, div[class*="set-colors-"] .h1, div[class*="set-colors-"] h2, div[class*="set-colors-"] .h2, div[class*="set-colors-"] h3, div[class*="set-colors-"] .h3, div[class*="set-colors-"] h4, div[class*="set-colors-"] .h4, div[class*="set-colors-"] h5, div[class*="set-colors-"] .h5, div[class*="set-colors-"] h6, div[class*="set-colors-"] .h6, div[class*="set-colors-"] .wm-iconbox-module .image { color: inherit; }
+
+.sidebar .wm-subnav li a:hover, .sidebar .widget_nav_menu a:hover { /*[*/ background-color: #07599b; color: #fafcfe; /*]*/ /*// background-color: ___color_accent; color: ___color_accent_text; //*/ }
+
+.sidebar .wm-subnav .current_page_item > a, .sidebar .widget_nav_menu .current-menu-item > a { /*[*/ background-color: #2a2c2e; color: #eaecee; /*]*/ /*// background-color: ___color_navigation_background; color: ___color_navigation_text; //*/ }
+
+.widget .tagcloud a::before { background-color: #2a2c2e; color: #fafcfe; }
+
+blockquote::before, blockquote::after, blockquote.alignleft::before, blockquote.alignleft::after, blockquote.alignright::before, blockquote.alignright::after, button, input, select, textarea, .main-navigation-container li li, .header-info-widgets .search-field:focus, .entry-meta, .single .entry-meta, .comment-meta, .comment-respond, .comment-list .comment-respond, .pagination, .post-table-of-contents, .post-table-of-contents.top, .footer-widgets .widget::after, .footer-widgets .widget::before, .widget ul li, .widget .tagcloud a, .inline .widget ul li, div.sharedaddy, .site div#jp-relatedposts, .inline li { border-color: inherit; }
+
+/* FILE: custom-styles/_accent.scss */
+.posts .entry-meta, mark, .highlight, .pagination .current, .bypostauthor > .comment-body .comment-author::before, .comment-navigation a, .widget_calendar tbody a, .widget .tagcloud a:hover, .widget .tagcloud a:focus, .widget .tagcloud a:active, body #infinite-handle span, .hover-color-accent.fl-col:hover .fl-col-content, .set-colors-accent, .site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text), .sidebar::before { /*[*/ background-color: #07599b; /*]*/ /*// background-color: ___color_accent; //*/ }
+
+.infinite-loader .spinner > div > div { /*[*/ background-color: #07599b !important; /*]*/ /*// background-color: ___color_accent !important; //*/ }
+
+a, .accent-color, .wm-iconbox-module .image { /*[*/ color: #07599b; /*]*/ /*// color: ___color_accent; //*/ }
+
+.posts .entry-meta, mark, .highlight, .pagination .current, .bypostauthor > .comment-body .comment-author::before, .comment-navigation a, .widget_calendar tbody a, .widget .tagcloud a:hover, .widget .tagcloud a:focus, .widget .tagcloud a:active, body #infinite-handle span, .hover-color-accent.fl-col:hover .fl-col-content, .set-colors-accent { /*[*/ color: #fafcfe; /*]*/ /*// color: ___color_accent_text; //*/ }
+
+.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) { /*[*/ color: #fafcfe !important; /*]*/ /*// color: ___color_accent_text !important; //*/ }
+
+.widget .tagcloud a:hover, .widget .tagcloud a:focus, .widget .tagcloud a:active { /*[*/ border-color: #07599b; /*]*/ /*// border-color: ___color_accent; //*/ }
+
+mark, .highlight { /*[*/ box-shadow: 0.382em 0 0 #07599b, -0.382em 0 0 #07599b; /*]*/ /*// box-shadow: .382em 0 0 ___color_accent, -.382em 0 0 ___color_accent; //*/ }
+
+@media only screen and (max-width: 679px) { .pagination a { /*[*/ background-color: #07599b; color: #fafcfe; /*]*/ /*// background-color: ___color_accent; color: ___color_accent_text; //*/ } }
+
+/* FILE: custom-styles/_header.scss */
+.site-header, .set-colors-header { /*[*/ background-color: #f1f3f5; color: #6a6c6e; /*]*/ /*// background-color: ___color_header_background; color: ___color_header_text; //*/ }
+
+.type-text.styled { background-color: #2a2c2e; color: #fafcfe; box-shadow: 0 0 0 4px #2a2c2e; }
+
+@media only screen and (max-width: 959px) { .main-navigation-container .menu li a:focus, .main-navigation-container .menu li a:hover, .main-navigation-container .menu li.current-menu-item > a { /*[*/ background-color: #4a4c4e; /*]*/ /*// background-color: ___color_navigation_border; //*/ } }
+
+@media only screen and (min-width: 960px) { .main-navigation-container .menu > ul > li a:hover, .main-navigation-container .menu > ul > li a:focus, .main-navigation-container .menu > ul > li a:active, .main-navigation-container .menu > ul > li:not(.button):hover > a, .main-navigation-container .menu > ul > li.focus > a, .main-navigation-container .menu > ul > li.current-menu-item:not(.button) > a, .main-navigation-container .menu > ul > li.current-menu-ancestor:not(.button) > a { /*[*/ background-color: #2a2c2e; color: #eaecee; /*]*/ /*// background-color: ___color_navigation_background; color: ___color_navigation_text; //*/ }
+  .main-navigation-container .menu li li > a:focus, .main-navigation-container .menu li li:hover > a, .main-navigation-container .menu li li.focus > a, .main-navigation-container .menu li li.current-menu-item > a, .main-navigation-container .menu li li.current-menu-ancestor > a { /*[*/ background-color: #4a4c4e; /*]*/ /*// background-color: ___color_navigation_border; //*/ } }
+
+.main-navigation-container ul { /*[*/ border-color: #4a4c4e; /*]*/ /*// border-color: ___color_navigation_border; //*/ }
+
+@media only screen and (min-width: 960px) { .main-navigation-container li ul { /*[*/ background-color: #2a2c2e; color: #eaecee; /*]*/ /*// background-color: ___color_navigation_background; color: ___color_navigation_text; //*/ } }
+
+.menu-toggle, .mobile-menu-container, .main-navigation.active, .set-colors-navigation { /*[*/ background-color: #2a2c2e; color: #eaecee; border-color: #4a4c4e; /*]*/ /*// background-color: ___color_navigation_background; color: ___color_navigation_text; border-color: ___color_navigation_border; //*/ }
+
+.mobile-menu-container .current-menu-item { /*[*/ background-color: #4a4c4e; /*]*/ /*// background-color: ___color_navigation_border; //*/ }
+
+.intro { background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 25%, transparent); color: #fafcfe; }
+
+/* FILE: custom-styles/_content.scss */
+.site, .site-content, .set-colors-content, .posts .hentry, .breadcrumbs-container { /*[*/ background-color: #fafcfe; color: #6a6c6e; border-color: #caccce; /*]*/ /*// background-color: ___color_content_background; color: ___color_content_text; border-color: ___color_content_border; //*/ }
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .post-navigation, .posts .page-icon, .posts h1, .posts .h1, .posts h2, .posts .h2, .posts h3, .posts .h3, .posts h4, .posts .h4, .posts h5, .posts .h5, .posts h6, .posts .h6 { /*[*/ color: #2a2c2e; /*]*/ /*// color: ___color_content_headings; //*/ }
+
+.breadcrumbs-container { /*[*/ background-color: #f1f3f5; /*]*/ /*// background-color: ___color_sidebar_background; //*/ }
+
+.site-content + .breadcrumbs-container { /*[*/ border-color: #caccce; /*]*/ /*// border-color: ___color_content_border; //*/ }
+
+/* FILE: custom-styles/_footer.scss */
+.site-footer, .set-colors-footer { /*[*/ background-color: #2a2c2e; color: #caccce; border-color: #4a4c4e; /*]*/ /*// background-color: ___color_footer_background; color: ___color_footer_text; border-color: ___color_footer_border; //*/ }
+
+.site-footer h1, .site-footer .h1, .site-footer h2, .site-footer .h2, .site-footer h3, .site-footer .h3, .site-footer h4, .site-footer .h4, .site-footer h5, .site-footer .h5, .site-footer h6, .site-footer .h6, .set-colors-footer h1, .set-colors-footer .h1, .set-colors-footer h2, .set-colors-footer .h2, .set-colors-footer h3, .set-colors-footer .h3, .set-colors-footer h4, .set-colors-footer .h4, .set-colors-footer h5, .set-colors-footer .h5, .set-colors-footer h6, .set-colors-footer .h6 { /*[*/ color: #eaecee; /*]*/ /*// color: ___color_footer_headings; //*/ }
+
+.site-footer::after { /*[*/ background-color: #07599b; /*]*/ /*// background-color: ___color_footer_decoration; //*/ }
+
+.site-footer a { /*[*/ color: #eaecfe; /*]*/ /*// color: ___color_footer_accent; //*/ }
+
+.site-footer mark, .site-footer .highlight, .site-footer .button, .site-footer button, .site-footer input[type="button"], .site-footer input[type="reset"], .site-footer input[type="submit"], .site-footer .widget_calendar tbody a, .site-footer .widget .tagcloud a:hover, .site-footer .widget .tagcloud a:focus, .site-footer .widget .tagcloud a:active { /*[*/ background-color: #eaecfe; color: #3a3c4e; /*]*/ /*// background-color: ___color_footer_accent; color: ___color_footer_accent_text; //*/ }
+
+.site-footer mark, .site-footer .highlight { /*[*/ box-shadow: 0.382em 0 0 #eaecfe, -0.382em 0 0 #eaecfe; /*]*/ /*// box-shadow: 0.382em 0 0 ___color_footer_accent, -0.382em 0 0 ___color_footer_accent; //*/ }
+
+.site-footer input:focus, .site-footer select:focus, .site-footer textarea:focus, .site-footer .widget .tagcloud a:hover, .site-footer .widget .tagcloud a:focus, .site-footer .widget .tagcloud a:active { /*[*/ border-color: #eaecfe; /*]*/ /*// border-color: ___color_footer_accent; //*/ }

@@ -1,0 +1,93 @@
+/* FILE: main/content/__content-area.scss */
+
+//
+// Site content
+//
+
+
+
+
+
+// Site content styles
+
+	.site-main {
+		@extend .clearfix;
+	}
+
+	.site-content {
+		padding: ( power( $golden, 2 ) +rem ) 0;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			padding-top: power( $golden, 4 ) +rem;
+			padding-bottom: power( $golden, 4 ) +rem;
+		}
+
+		* {
+			border-color: inherit;
+		}
+
+	}
+
+	.content-area {
+		@extend %content_width;
+	}
+
+	.content-container, // For index, archives and search results
+	.single .hentry,
+	.attachment .hentry,
+	.page-template-sidebar .hentry {
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			float: left;
+			width: percentage( $golden_major );
+		}
+
+	}
+
+
+
+// Special link styles in post content
+
+	%link_style_accessible {
+		text-decoration: none;
+		border-bottom: 1px dotted;
+
+		&:hover,
+		&:focus,
+		&:active {
+			border-bottom-style: solid;
+			outline: thin dotted;
+		}
+
+	}
+
+	#{$h_tags},
+	p,
+	blockquote,
+	li,
+	dd {
+
+		.entry-content & {
+
+			a {
+				@extend %link_style_accessible;
+			}
+
+			.button {
+				border-bottom: 0;
+			}
+
+		}
+
+		// Reset special link styles where not needed
+
+			.sidebar &,
+			.posts .hentry & {
+
+				a {
+					border-bottom: 0;
+				}
+
+			}
+
+	}

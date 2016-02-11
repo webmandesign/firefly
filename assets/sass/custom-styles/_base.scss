@@ -1,0 +1,184 @@
+/* FILE: custom-styles/_base.scss */
+
+//
+// Basic elements color styles.
+// Default buttons color styles.
+// Special color classes.
+// Widgets.
+// Default border styles - inherit color.
+//
+
+
+
+
+
+// Base
+
+	body {
+		background-color: map_get( $colors, "body_background" ); //*
+	}
+
+	#{$h_tags},
+	.post-navigation,
+	.posts .page-icon {
+		@extend %site_content_headings_colors;
+	}
+
+	::placeholder,
+	:disabled::placeholder {
+		color: inherit !important; //*
+	}
+
+	button,
+	input,
+	select,
+	textarea,
+	tbody tr:hover td,
+	tbody tr:hover th,
+	code,
+	pre {
+		background-color: rgba( #000, .05 ); //*
+	}
+
+	.gallery-caption {
+		background-color: rgba( #000, .8 ); //*
+		color: #fafcfe; //*
+	}
+
+	.pagination a:hover {
+		background-color: rgba( #000, .1 ); //*
+	}
+
+
+
+// Default buttons color
+
+	#{$button_elements},
+	#{$button_elements_beaver_builder},
+	.main-navigation-container .button > a {
+		/*[*/
+		background-color: map_get( $colors, "accent" );
+		color: map_get( $colors, "accent_text" );
+		/*]*/
+		/*//
+		background-color: ___color_accent;
+		color: ___color_accent_text;
+		//*/
+	}
+
+	@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+
+		.menu-toggle {
+
+			.active & {
+				/*[*/
+				background-color: map_get( $colors, "accent" );
+				color: map_get( $colors, "accent_text" );
+				/*]*/
+				/*//
+				background-color: ___color_accent;
+				color: ___color_accent_text;
+				//*/
+			}
+
+		}
+
+	}
+
+
+
+// Widgets
+
+	a {
+
+		&:hover {
+
+			.sidebar .wm-subnav li &,
+			.sidebar .widget_nav_menu & {
+				/*[*/
+				background-color: map_get( $colors, "accent" );
+				color: map_get( $colors, "accent_text" );
+				/*]*/
+				/*//
+				background-color: ___color_accent;
+				color: ___color_accent_text;
+				//*/
+			}
+
+		}
+
+		.sidebar .wm-subnav .current_page_item > &,
+		.sidebar .widget_nav_menu .current-menu-item > & {
+			/*[*/
+			background-color: map_get( $colors, "navigation_background" );
+			color: map_get( $colors, "navigation_text" );
+			/*]*/
+			/*//
+			background-color: ___color_navigation_background;
+			color: ___color_navigation_text;
+			//*/
+		}
+
+	}
+
+	.tagcloud {
+
+		.widget & {
+
+			a {
+
+				&::before {
+					background-color: #2a2c2e; //*
+					color: #fafcfe; //*
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Borders
+
+	// Blockquotes
+	blockquote::before,
+	blockquote::after,
+	blockquote.alignleft::before,
+	blockquote.alignleft::after,
+	blockquote.alignright::before,
+	blockquote.alignright::after,
+	// Forms
+	button,
+	input,
+	select,
+	textarea,
+	// Header and navigation
+	.main-navigation-container li li,
+	.header-info-widgets .search-field:focus,
+	// Post meta
+	.entry-meta,
+	.single .entry-meta,
+	// Comments
+	.comment-meta,
+	.comment-respond,
+	.comment-list .comment-respond,
+	// Pagination and table of contents
+	.pagination,
+	.post-table-of-contents,
+	.post-table-of-contents.top,
+	// Footer
+	.footer-widgets .widget::after,
+	.footer-widgets .widget::before,
+	// Widgets
+	.widget ul li,
+	.widget .tagcloud a,
+	.inline .widget ul li,
+	// Jetpack
+	div.sharedaddy,
+	.site div#jp-relatedposts,
+	// Others
+	.inline li {
+		border-color: inherit; //*
+	}

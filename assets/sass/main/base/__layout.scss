@@ -1,0 +1,68 @@
+/* FILE: main/base/__layout.scss */
+
+//
+// Layout
+//
+
+
+
+
+
+html {
+	min-width: 320px;
+}
+
+body {
+
+	@include responsive_minmax( map_get( $breakpoint, 'm' ), map_get( $breakpoint, 's' ), 'max-width', 'min-height' ) {
+
+		&.has-mobile-bar {
+			padding-top: ( 2 + ( 1 + $golden_minor / 2 ) * ( 1 + $golden ) ) * 13px; // Mobile menu bar height
+		}
+
+		&.admin-bar.has-mobile-bar {
+			margin-top: -46px; // Compensating for top margin on HTML applied with WordPress admin bar styling
+		}
+
+	}
+
+}
+
+.site {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.site-layout-boxed {
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+		padding: ( $golden_minor + 1rem ) 2%;
+	}
+
+	.site {
+		max-width: $boxed_width +px;
+		max-width: $boxed_width * $px;
+		box-shadow: 0 0 1rem rgba( #000, .1 );
+	}
+
+}
+
+.site-layout-fullwidth {
+	padding: 0;
+}
+
+%content_width {
+	// (*) Overriden in `assets/css-generate/custom-styles.php`
+	width: $content_width +px;
+	width: $content_width * $px;
+	max-width: 88%;
+	margin: 0 auto;
+}
+
+%fullhd_width {
+	width: 1920px;
+	width: 1920 * $px;
+	max-width: 88%;
+	margin: 0 auto;
+}

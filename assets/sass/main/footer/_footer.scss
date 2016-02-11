@@ -1,0 +1,66 @@
+/* FILE: main/footer/_footer.scss */
+
+//
+// Site footer and info
+//
+
+
+
+
+
+// Footer
+
+	.site-footer {
+		@extend %font_size_smaller;
+		position: relative;
+
+		* {
+			border-color: inherit;
+		}
+
+		&-area-inner {
+			@extend %fullhd_width;
+		}
+
+	}
+
+	// For footer widgets see "Sidebar" section
+
+
+
+// Site info (credits)
+
+	.footer-area-site-info {
+		@extend .clearfix;
+		position: relative;
+		background: inherit;
+
+		a {
+			@extend .weight-700;
+
+			.site-footer & {
+				color: inherit;
+			}
+
+		}
+
+	}
+
+	.site-info {
+
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
+			float: left;
+		}
+
+		&-inner {
+			padding: $golden +rem 0;
+			border-top-left-radius: $golden_minor / 2 +rem;
+			border-top-right-radius: $golden_minor / 2 +rem;
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				padding: power( $golden, 2 ) +rem 0;
+			}
+
+		}
+
+	}

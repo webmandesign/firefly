@@ -1,0 +1,64 @@
+/* FILE: main/forms/__search.scss */
+
+//
+// Search form
+//
+
+
+
+
+
+.search-form {
+	position: relative;
+
+	.site & {
+
+		&::before {
+			@extend %genericon;
+			content: '\f400';
+			position: absolute;
+			width: power( $golden, 2 ) +rem;
+			height: 100%;
+			right: 0;
+			top: 0;
+			text-align: center;
+			font-size: $golden +em;
+			z-index: 1;
+		}
+
+		.search-submit {
+
+			&,
+			&:hover,
+			&:active,
+			&:focus {
+				@extend .overflow-hidden;
+				position: absolute;
+				width: power( $golden, 2 ) +rem;
+				height: 100%;
+				right: 0;
+				top: 0;
+				padding: 0;
+				text-indent: -999em;
+				background: none;
+				color: inherit;
+				border: 0;
+				z-index: 2;
+				box-shadow: none;
+			}
+
+		}
+
+	}
+
+	label {
+		// Label wraps the search input field and contains .screen-reader-text span
+		display: block;
+		padding: 0;
+	}
+
+}
+
+.search-field {
+	padding-right: power( $golden, 2 ) +rem;
+}

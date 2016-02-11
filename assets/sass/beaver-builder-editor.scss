@@ -1,0 +1,332 @@
+/* FILE: beaver-builder-editor.scss */
+
+//
+// Beaver Builder page editor stylesheet
+//
+// This is to fix style issues when editing a page.
+//
+// @package    Firefly
+// @copyright  WebMan Design, Oliver Juhas
+//
+// @since    1.0
+// @version  1.0
+//
+
+
+
+
+
+// Links should not work when editing the page
+
+	.fl-builder-edit {
+
+		.site-header {
+
+			&,
+			a {
+				pointer-events: none;
+			}
+
+		}
+
+	}
+
+
+
+// Wider module edit form
+
+	body {
+
+		.fl-builder-lightbox {
+
+			.fl-lightbox {
+				width: 720px;
+			}
+
+		}
+
+		.fl-builder-settings-tab {
+			width: 100%;
+		}
+
+	}
+
+
+
+// Transparent module edit form lightbox when dragging
+
+	.ui-draggable-dragging {
+
+		.fl-lightbox-content-wrap {
+			opacity: 0;
+		}
+
+		&.fl-lightbox {
+			background: transparent;
+			border: 1px dotted #dfdfdf;
+			box-shadow: rgba( #000, .33 ) 0 4px 20px;
+		}
+
+	}
+
+
+
+// Removing column margin setup (not really needed...)
+
+	// .fl-builder-col-settings {
+
+	// 	#fl-builder-settings-section-margins {
+	// 		display: none;
+	// 	}
+
+	// }
+
+
+
+// Visual editor fixes
+
+	.wp-editor-wrap {
+
+		button {
+			box-shadow: none;
+		}
+
+	}
+
+
+
+// Fixing Posts shortcode display
+
+	// In certain cases (possibly when Posts shortcode used as first element
+	// on the singular page) there are comments displayed in posts list entries.
+	// This is displayed only when editing the Posts shortcode module in BB and
+	// it disappears when we save the Posts shortcode module settings form.
+
+	.wm-posts,
+	.posts {
+
+		.comments-area {
+			display: none;
+		}
+
+	}
+
+
+
+// Editting content z-index
+
+	.fl-row {
+
+		&:not(:hover) {
+			z-index: 0;
+		}
+
+	}
+
+	.fl-module {
+
+		.fl-col-content & {
+
+			&:hover {
+				position: relative;
+				z-index: 999;
+			}
+
+		}
+
+	}
+
+
+
+// Accordion display
+
+	.wm-accordion {
+
+		.wm-item-content {
+			display: none;
+		}
+
+		%accordion_item_display {
+			display: block;
+		}
+
+		@for $i from 1 through 9 {
+
+			&[data-active="#{$i}"] {
+
+				.wm-item:nth-child(#{$i}) {
+
+					.wm-item-content {
+						@extend %accordion_item_display;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Editting scrollable posts
+
+	[class*="scrollable-"] {
+
+		.wm-items-container {
+
+			&:not(.owl-carousel) {
+
+				> article {
+					display: none;
+				}
+
+			}
+
+		}
+
+		%scrollable_display {
+			display: block;
+		}
+
+		@for $i from 1 through 6 {
+
+			@for $j from 1 through $i {
+
+				.wm-items-container {
+
+					&:not(.owl-carousel)[data-columns="#{$i}"] {
+
+						> article {
+
+							&:nth-child(#{$j}) {
+								@extend %scrollable_display;
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Responsive display in page editor
+
+	.fl-visible-desktop,
+	.fl-visible-desktop-medium,
+	.fl-visible-medium,
+	.fl-visible-medium-mobile,
+	.fl-visible-mobile {
+
+		.site & {
+			position: relative;
+			display: block !important;
+
+			&.fl-col-group,
+			&.fl-col,
+			&.fl-col-content {
+				display: flex !important;
+			}
+
+			&::after {
+				content: '\f437'; // Phone icon as default
+
+				font-family: 'Genericons';
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-decoration: inherit;
+				text-transform: none;
+				speak: none;
+
+				display: block;
+				position: absolute;
+				padding: 2px 8px;
+				left: 50%;
+				top: 50%;
+				text-align: center;
+				font-size: 24px;
+				background: #d44;
+				color: #fff;
+				border-radius: 100px;
+				z-index: 10;
+				opacity: .9;
+				transform: translateX(-50%) translateY(-50%);
+			}
+
+		}
+
+	}
+
+	.fl-visible-medium-mobile {
+
+		.site & {
+
+			&::after {
+				content: '\f437 \f453';
+			}
+
+		}
+
+	}
+
+	.fl-visible-medium {
+
+		.site & {
+
+			&::after {
+				content: '\f453'; // Tablet
+			}
+
+		}
+
+	}
+
+
+	.fl-visible-desktop-medium {
+
+		.site & {
+
+			&::after {
+				content: '\f453 \f474';
+			}
+
+		}
+
+	}
+
+	.fl-visible-desktop {
+
+		.site & {
+
+			&::after {
+				content: '\f474'; // Fullscreen
+			}
+
+		}
+
+	}
+
+
+
+// Divider: Making empty space divider visible to allow manipulation
+
+	.wm-divider {
+
+		.fl-builder-content & {
+
+			&.type-whitespace {
+				border: 4px dashed rgba( #fff, .5 );
+			}
+
+		}
+
+	}

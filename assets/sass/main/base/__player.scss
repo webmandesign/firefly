@@ -1,0 +1,25 @@
+/* FILE: main/base/__player.scss */
+
+//
+// WordPress media player (MediaElement) custom styles
+//
+
+
+
+
+
+.wp-playlist {
+
+	.site & {
+		// Wrapping within `.site` class to override WordPress default styles.
+		background: none;
+		border: 1px solid;
+		border-color: inherit;
+
+		&-item {
+			border-color: inherit;
+		}
+
+	}
+
+}

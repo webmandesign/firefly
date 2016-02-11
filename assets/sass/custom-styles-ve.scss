@@ -1,0 +1,38 @@
+/* FILE: custom-styles-ve.scss */
+
+//
+// Theme custom stylesheet - Visual Editor
+//
+// Notes:
+//   //* = Doesn't change via Customizer.
+//
+// @package    Firefly
+// @copyright  WebMan Design, Oliver Juhas
+//
+// @since    1.0
+// @version  1.0
+//
+
+
+
+
+
+// Imports
+
+	@import "setup";
+
+	@import "starter/tools/functions";
+
+	@import "starter/setup/variables";
+
+	@import "starter/tools/mixins";
+
+	// Partial custom styles files
+
+		@import "custom-styles/base";
+
+		@import "custom-styles/accent";
+
+	// Editor styles fixes and overrides
+
+		@import "custom-styles/editor-style";

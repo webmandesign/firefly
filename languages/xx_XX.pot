@@ -1,0 +1,1185 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Firefly\n"
+"Report-Msgid-Bugs-To: http://support.webmandesign.eu\n"
+"POT-Creation-Date: 2016-02-07 11:06+0100\n"
+"PO-Revision-Date: 2015-05-12 20:39+0100\n"
+"Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:24
+msgid "Oops! That page can not be found."
+msgstr ""
+
+#: 404.php:30
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:39
+msgid "Most Used Categories"
+msgstr ""
+
+#: comments.php:48
+#, php-format
+msgctxt "Comments list title."
+msgid "1 comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:55
+msgctxt "Add new comment link text."
+msgid "Add yours &rarr;"
+msgstr ""
+
+#: comments.php:72
+msgid "Comments are closed. You can not add new comments."
+msgstr ""
+
+#: comments.php:112
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:116
+msgid "&larr; Older comments"
+msgstr ""
+
+#: comments.php:117
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:84
+#, php-format
+msgctxt "%s: theme name."
+msgid "About %s"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:139
+#, php-format
+msgctxt "1: theme name, 2: theme version number."
+msgid "Welcome to %1$s %2$s"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:151
+#, php-format
+msgctxt "1: theme name, 2: theme developer link."
+msgid "Thank you for using %1$s WordPress theme by %2$s!"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:158
+msgid "Please take time to read the steps below to set your website up."
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:165
+msgid "User Manual"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:167
+msgid "Support Center"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:179
+msgid "Quickstart Guide"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:187
+msgid "WebMan Amplifier"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:190
+#, php-format
+msgctxt "%s: plugin name."
+msgid ""
+"To make the theme highly flexible, open and future-proof, it uses the %s "
+"plugin."
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:191
+msgid ""
+"Please, install and activate this plugin to provide the additional "
+"functionality."
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:194
+#, php-format
+msgctxt "%s: plugin name."
+msgid "Install %s &raquo;"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:202
+msgid "The WordPress settings"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:205
+msgid ""
+"Do not forget to set up your WordPress in \"Settings\" section of the main "
+"WordPress admin menu. Please go through all the subsections and options."
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:208
+msgid "Set up WordPress &raquo;"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:216
+msgid "Customize the theme"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:219
+msgid ""
+"You can customize the theme using live-preview editor. Apply a design "
+"changes with no fear of them affecting your website front-end - nothing is "
+"going live until you save the changes!"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:222
+msgid "Customize the Theme &raquo;"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:235
+msgid "Important:"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:242
+msgid ""
+"For the best performance, the theme generates a single CSS stylesheet file "
+"using WordPress native filesystem API. The file is being generated after "
+"saving theme customizer settings."
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:243
+msgid ""
+"If you notice an error message in WordPress dashboard after leaving the "
+"theme customizer, please check whether you should set up the FTP credentials "
+"in your \"wp-config.php\" file."
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:244
+msgid "Please read the instructions."
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:252
+msgid "Installing the theme demo content"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:255
+msgid ""
+"You can obtain the most recent theme demo content file in the theme on-line "
+"user manual. Please click the button below to obtain the file and read the "
+"short instructions on how to install the demo content."
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:260
+msgid ""
+"Please, pay attention to section on what additional plugins should be "
+"installed beforehand."
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:264
+msgctxt "%s: plugin name."
+msgid "Install demo content &raquo;"
+msgstr ""
+
+#: includes/admin/about-page/about-page.php:272
+msgid ""
+"You can disable this page in Appearance &raquo; Customize &raquo; Theme "
+"&raquo; Others."
+msgstr ""
+
+#: includes/front/footer.php:81
+#, php-format
+msgid "Powered by %s"
+msgstr ""
+
+#: includes/front/footer.php:82
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: includes/front/footer.php:86
+#, php-format
+msgctxt "1: theme name, 2: theme developer name"
+msgid "Theme: %1$s by %2$s"
+msgstr ""
+
+#: includes/front/footer.php:91 template-parts/menu-social.php:34
+msgid "Back to top &uarr;"
+msgstr ""
+
+#: includes/front/header.php:451
+msgid "Sorry, but this website does not support Internet Explorer 8 or lower."
+msgstr ""
+
+#: includes/front/header.php:452
+msgid "Please, upgrade your Internet Explorer."
+msgstr ""
+
+#: includes/front/header.php:453
+msgid "Or, switch to another browser."
+msgstr ""
+
+#: includes/front/header.php:479
+msgid "Skip to navigation"
+msgstr ""
+
+#: includes/front/loop.php:47
+msgctxt "Pagination text (visible): previous."
+msgid "&laquo;"
+msgstr ""
+
+#: includes/front/loop.php:48
+msgctxt "Pagination text (hidden): previous."
+msgid "Previous page"
+msgstr ""
+
+#: includes/front/loop.php:49
+msgctxt "Pagination text (hidden): next."
+msgid "Next page"
+msgstr ""
+
+#: includes/front/loop.php:50
+msgctxt "Pagination text (visible): next."
+msgid "&raquo;"
+msgstr ""
+
+#: includes/front/loop.php:58
+msgid "Posts Navigation"
+msgstr ""
+
+#: includes/front/loop.php:94
+msgid "Part %"
+msgstr ""
+
+#: includes/front/menu.php:48 includes/setup/setup.php:223
+msgid "Primary Menu"
+msgstr ""
+
+#: includes/front/menu.php:52
+msgctxt "Mobile navigation toggle button title."
+msgid "Menu"
+msgstr ""
+
+#: includes/front/menu.php:65
+msgid "More"
+msgstr ""
+
+#: includes/front/menu.php:83
+msgid "Skip to menu toggle button"
+msgstr ""
+
+#: includes/front/menu.php:90
+msgctxt "Display search form button title."
+msgid "Search"
+msgstr ""
+
+#: includes/front/menu.php:121
+msgid "Please, set up the menu in Appearance &raquo; Menus."
+msgstr ""
+
+#: includes/front/post.php:80
+msgid "This content is password protected."
+msgstr ""
+
+#: includes/front/post.php:80
+msgid "Enter the password to view it."
+msgstr ""
+
+#: includes/front/post.php:194
+#, php-format
+msgctxt "%s: Name of current post."
+msgid "Continue reading%s&hellip;"
+msgstr ""
+
+#: includes/front/post.php:279
+msgid ""
+"<span class=\"meta-nav\">Published In</span> <span class=\"post-title\">"
+"%title</span>"
+msgstr ""
+
+#: includes/front/post.php:289
+msgid ""
+"<span class=\"meta-nav\">Previous</span> <span class=\"post-title\">%title</"
+"span>"
+msgstr ""
+
+#: includes/front/post.php:296
+msgid ""
+"<span class=\"meta-nav\">Next</span> <span class=\"post-title\">%title</span>"
+msgstr ""
+
+#: includes/front/post.php:304
+msgid "Post navigation"
+msgstr ""
+
+#: includes/front/post.php:593
+msgid "Skip back to navigation"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:55
+msgid "Intro heading section"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:59
+msgid "Intro title section"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:63
+msgid "Disable intro title section"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:63
+msgid "Disable intro title section for this page"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:103
+msgid "Subpages list setup"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:107
+msgid "Instructions"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:110
+msgid ""
+"These settings will modify the page display in the list of subpages. The "
+"page needs to be nested under a parent page and you need to set up the "
+"parent page with \"List subpages\" page template assigned."
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:114
+msgid "Page icon class"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:117
+msgid "Icon class can be found in Appearance > Icon Font"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:127
+msgid "Featured image in list of subpages"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:130
+msgid "Set this if you wish to override the display of the page featured image"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:570
+msgid "- Choose from predefined classes -"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:575
+msgid "Posts list classes:"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:578
+msgid "Masonry items layout"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:579
+msgid "Border around items"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:581
+msgid "Posts: Hide media (featured images, video and audio players)"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:583
+msgid "Staff: Hide excerpt"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:585
+msgid "Content Module: Inline icon box layout"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:586
+msgid "Content Module: Hide title"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:594
+msgid "Layout classes:"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:597
+msgid "Text center"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:598
+msgid "Text right"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:600
+msgid "Make elements fullwidth"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:602
+msgid "Center row or column content vertically"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:604
+msgid "Force column as last"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:605
+msgid "Force column as first"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:607
+msgid "Apply sidebar layout"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:615
+msgid "Color classes:"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:618
+msgid "Set error colors"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:619
+msgid "Set info colors"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:620
+msgid "Set neutral colors"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:621
+msgid "Set success colors"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:622
+msgid "Set warning colors"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:624
+msgid "Set accent colors"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:625
+msgid "Set header colors"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:626
+msgid "Set navigation colors"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:627
+msgid "Set header info widgets colors"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:628
+msgid "Set content colors"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:629
+msgid "Set sidebar colors"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:630
+msgid "Set footer colors"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:631
+msgid "Set footer info widgets colors"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:632
+msgid "Set footer credits colors"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:634
+msgid "Hover error"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:635
+msgid "Hover info"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:636
+msgid "Hover neutral"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:637
+msgid "Hover success"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:638
+msgid "Hover warning"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:646
+msgid "Button classes:"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:649
+msgid "Simple button, inherit text color"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:650
+msgid "Simple button, dark"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:651
+msgid "Simple button, light"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:652
+msgid "Force simple submit button in form"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:660
+msgid "Widget classes:"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:663
+msgid "Hide widget title"
+msgstr ""
+
+#: includes/plugins/beaver-builder/beaver-builder.php:664
+msgid "Hide widget title accessibly"
+msgstr ""
+
+#: includes/plugins/breadcrumb-navxt/breadcrumb-navxt.php:104
+msgid "Breadcrumbs navigation"
+msgstr ""
+
+#: includes/plugins/jetpack/jetpack.php:196
+msgid "Load more&hellip;"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:262
+msgctxt "Generalized, abstract color name."
+msgid "Success"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:263
+msgctxt "Generalized, abstract color name."
+msgid "Info"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:264
+msgctxt "Generalized, abstract color name."
+msgid "Warning"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:265
+msgctxt "Generalized, abstract color name."
+msgid "Error"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:266
+msgctxt "Generalized, abstract color name."
+msgid "Neutral"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:746
+msgid "Icon"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:747
+msgid "Icon color"
+msgstr ""
+
+#: includes/setup/setup.php:99 includes/theme-options/theme-options.php:404
+msgid "Sidebar"
+msgstr ""
+
+#: includes/setup/setup.php:103
+msgid "Footer Widgets"
+msgstr ""
+
+#: includes/setup/setup.php:224
+msgid "Social Links Menu"
+msgstr ""
+
+#: includes/setup/setup.php:225
+msgid "Mobile Bar (max 4 links)"
+msgstr ""
+
+#: includes/setup/setup.php:412
+#, php-format
+msgid "Thank you for installing the %s theme!"
+msgstr ""
+
+#: includes/setup/setup.php:412
+msgid "Please read the information about the theme."
+msgstr ""
+
+#: includes/setup/setup.php:492
+msgid "In posts list."
+msgstr ""
+
+#: includes/setup/setup.php:499
+msgid "In single staff post page."
+msgstr ""
+
+#: includes/setup/setup.php:506
+msgid "In single post page."
+msgstr ""
+
+#: includes/setup/setup.php:513
+msgid "In staff and testimonials list."
+msgstr ""
+
+#: includes/setup/setup.php:520
+msgid "As intro heading background."
+msgstr ""
+
+#: includes/setup/setup.php:652
+msgctxt "WordPress predefined image size name."
+msgid "Thumbnail size"
+msgstr ""
+
+#: includes/setup/setup.php:653
+msgctxt "WordPress predefined image size name."
+msgid "Medium size"
+msgstr ""
+
+#: includes/setup/setup.php:654
+msgctxt "WordPress predefined image size name."
+msgid "Large size"
+msgstr ""
+
+#: includes/setup/setup.php:687
+msgid "Recommended image sizes"
+msgstr ""
+
+#: includes/setup/setup.php:688
+msgid ""
+"For the theme to work correctly, please, set these recommended image sizes:"
+msgstr ""
+
+#: includes/setup/setup.php:694
+msgid "Size name"
+msgstr ""
+
+#: includes/setup/setup.php:695
+msgid "Size parameters"
+msgstr ""
+
+#: includes/setup/setup.php:696
+msgid "Theme usage"
+msgstr ""
+
+#: includes/setup/setup.php:704
+msgid "cropped"
+msgstr ""
+
+#: includes/setup/setup.php:704
+msgid "scaled"
+msgstr ""
+
+#: includes/setup/setup.php:712
+msgid ""
+"Additional image size added by the theme. Can not be changed on this page."
+msgstr ""
+
+#: includes/setup/setup.php:717
+#, php-format
+msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
+msgid "%1$d &times; %2$d, %3$s"
+msgstr ""
+
+#: includes/setup/setup.php:995
+msgid "Thin (hairline) text"
+msgstr ""
+
+#: includes/setup/setup.php:996
+msgid "Extra light text"
+msgstr ""
+
+#: includes/setup/setup.php:997
+msgid "Light text"
+msgstr ""
+
+#: includes/setup/setup.php:998
+msgid "Normal weight text"
+msgstr ""
+
+#: includes/setup/setup.php:999
+msgid "Medium text"
+msgstr ""
+
+#: includes/setup/setup.php:1000
+msgid "Semi bold text"
+msgstr ""
+
+#: includes/setup/setup.php:1001
+msgid "Bold text"
+msgstr ""
+
+#: includes/setup/setup.php:1002
+msgid "Extra bold text"
+msgstr ""
+
+#: includes/setup/setup.php:1003
+msgid "Heavy text"
+msgstr ""
+
+#: includes/setup/setup.php:1008
+msgid "Text weights"
+msgstr ""
+
+#: includes/tgmpa/plugins.php:44
+msgid "WebMan Amplifier (theme features)"
+msgstr ""
+
+#: includes/tgmpa/plugins.php:58
+msgid "Beaver Builder (page builder)"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:77
+#: includes/theme-options/theme-options.php:108
+#: includes/theme-options/theme-options.php:241
+#: includes/theme-options/theme-options.php:327
+#: includes/theme-options/theme-options.php:432
+#: includes/theme-options/theme-options.php:601
+#: includes/theme-options/theme-options.php:615
+#: includes/theme-options/theme-options.php:716
+#: includes/theme-options/theme-options.php:737
+#: includes/theme-options/theme-options.php:812
+msgctxt "Customizer panel title."
+msgid "Theme"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:78
+msgid "Theme Credits"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:81
+#, php-format
+msgctxt "1: linked theme name, 2: theme author name."
+msgid "%1$s is a WordPress theme developed by %2$s."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:88
+#, php-format
+msgctxt "%s: theme author link."
+msgid "You can obtain other professional WordPress themes at %s."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:93
+msgid "Thank you for using this awesome theme!"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:107
+#: includes/theme-options/theme-options.php:240
+#: includes/theme-options/theme-options.php:326
+#: includes/theme-options/theme-options.php:431
+#: includes/theme-options/theme-options.php:600
+#, php-format
+msgctxt "%s = section name. Customizer section title."
+msgid "Colors: %s"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:107
+msgctxt "Customizer color section title"
+msgid "Accents"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:118
+#: includes/theme-options/theme-options.php:124
+#: includes/theme-options/theme-options.php:502
+msgid "Accent color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:125
+msgid "This color affects links and other elements, such as buttons"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:131
+#: includes/theme-options/theme-options.php:510
+msgid "Accent text color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:132
+#: includes/theme-options/theme-options.php:511
+msgid "Color of text on accent color background"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:144
+msgid "\"Error\" color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:150
+#: includes/theme-options/theme-options.php:168
+#: includes/theme-options/theme-options.php:186
+#: includes/theme-options/theme-options.php:204
+#: includes/theme-options/theme-options.php:222
+#: includes/theme-options/theme-options.php:258
+#: includes/theme-options/theme-options.php:299
+#: includes/theme-options/theme-options.php:345
+#: includes/theme-options/theme-options.php:449
+#: includes/theme-options/theme-options.php:530
+#: includes/theme-options/theme-options.php:568
+msgid "Background color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:156
+#: includes/theme-options/theme-options.php:174
+#: includes/theme-options/theme-options.php:192
+#: includes/theme-options/theme-options.php:210
+#: includes/theme-options/theme-options.php:228
+#: includes/theme-options/theme-options.php:271
+#: includes/theme-options/theme-options.php:306
+#: includes/theme-options/theme-options.php:358
+#: includes/theme-options/theme-options.php:462
+#: includes/theme-options/theme-options.php:543
+#: includes/theme-options/theme-options.php:581
+msgid "Text color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:162
+msgid "\"Info\" color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:180
+msgid "\"Neutral\" color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:198
+msgid "\"Success\" color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:216
+msgid "\"Warning\" color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:240
+msgctxt "Customizer color section title"
+msgid "Header"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:252
+#: includes/theme-options/theme-options.php:676
+msgid "Header"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:292
+msgid "Navigation"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:293
+msgid ""
+"The navigation colors will also affect other theme elements, such as Custom "
+"Menu and Submenu widget."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:300
+msgid "Sets the background of submenus and active top level menu items"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:307
+msgid "Top level menu items text color is affected by header text color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:313
+#: includes/theme-options/theme-options.php:385
+#: includes/theme-options/theme-options.php:489
+msgid "Borders color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:314
+msgid "This color will also be used as submenu item mouse hover color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:326
+msgctxt "Customizer color section title"
+msgid "Content"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:338
+msgid "Content"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:339
+msgid ""
+"The content colors will also affect other theme elements, such as standard "
+"posts and Staff posts list items."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:371
+#: includes/theme-options/theme-options.php:475
+msgid "Headings color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:410
+msgid "Sidebar background color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:411
+msgid "Set this to slightly different color than the content background"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:412
+msgid ""
+"Set this to slightly different color than the content background. This color "
+"will also be applied on default layout of Content Modules and breadcrumbs "
+"navigation."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:431
+msgctxt "Customizer color section title"
+msgid "Footer"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:443
+#: includes/theme-options/theme-options.php:689
+msgid "Footer"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:503
+msgid "This color affects links and other elements"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:524
+msgid "Info widgets"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:562
+msgid "Credits area"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:600
+msgctxt "Customizer color section title"
+msgid "Site background"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:614
+msgctxt "Customizer section title."
+msgid "Layout"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:620
+msgctxt "A website container."
+msgid "Container"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:626
+msgid "Website layout"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:629
+msgid "Boxed"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:630
+msgid "Fullwidth"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:638
+msgid "Website max width"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:639
+msgid "For boxed website layout."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:639
+#: includes/theme-options/theme-options.php:657
+#, php-format
+msgid "Default value: %s"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:656
+msgid "Content width"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:682
+msgid "Sticky header"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:695
+msgid "Number of columns"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:715
+msgctxt "Customizer section title."
+msgid "Texts"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:722
+msgid "Footer credits (copyright)"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:723
+#, php-format
+msgid "Set %s to disable the this area."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:736
+msgctxt "Customizer section title."
+msgid "Fonts"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:743
+msgid "Basic font size in px"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:744
+msgid ""
+"All other font sizes are calculated automatically from this basic font size"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:762
+msgid "Disable theme fonts loading"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:763
+msgid ""
+"If you are using a custom fonts plugin you should disable the default theme "
+"fonts loading scripts."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:770
+#, php-format
+msgctxt ""
+"%s: linked examples of web fonts libraries such as Google Fonts or Adobe "
+"Typekit."
+msgid ""
+"This theme does not restrict you to a predefined set of fonts. Please use "
+"any font service (such as %s) plugin you want and set the plugin according "
+"to the information below."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:773
+msgid "List of CSS selectors for predefined theme font sets:"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:776
+msgctxt "CSS selector group name."
+msgid "Texts:"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:779
+#: includes/theme-options/theme-options.php:787
+#: includes/theme-options/theme-options.php:795
+#, php-format
+msgid "Default font used: %s"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:784
+msgctxt "CSS selector group name."
+msgid "Headings:"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:792
+msgctxt "CSS selector group name."
+msgid "Logo:"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:811
+msgctxt "Customizer section title."
+msgid "Others"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:818
+msgid "Disable logo styling"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:819
+msgid "Removes the theme text logo styling."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:829
+msgid "Disable \"About\" page"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:830
+msgid ""
+"Removes the theme \"About\" page from \"Appearance\" menu of your WordPress "
+"dashboard."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:851
+msgid "Beaver Builder - all modules"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:852
+msgid ""
+"If you are using Beaver Builder Pro version, and you would like to use "
+"preset templates, please enable all the plugin native modules here."
+msgstr ""
+
+#: search.php:29
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: sidebar-footer.php:64
+msgctxt "Sidebar aria label"
+msgid "Footer sidebar"
+msgstr ""
+
+#: sidebar.php:36
+msgctxt "Sidebar aria label"
+msgid "Sidebar"
+msgstr ""
+
+#: template-parts/content-attachment-image.php:32
+msgctxt "Attachment page image info table caption."
+msgid "Image info"
+msgstr ""
+
+#: template-parts/content-attachment-image.php:37
+msgctxt "Attachment page publish time."
+msgid "Image published on:"
+msgstr ""
+
+#: template-parts/content-attachment-image.php:44
+msgid "Image size:"
+msgstr ""
+
+#: template-parts/content-attachment-image.php:51
+msgid "Image file name:"
+msgstr ""
+
+#: template-parts/content-none.php:22
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:34
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:50
+msgid ""
+"It seems we can not find what you are looking for. Perhaps searching can "
+"help."
+msgstr ""
+
+#: template-parts/content-status.php:21
+#, php-format
+msgctxt ""
+"Status post format text on mouse hover (1: author name, 2: status publish "
+"date)."
+msgid "Status: %1$s on %2$s"
+msgstr ""
+
+#: template-parts/menu-social.php:22
+msgid "Social Menu"
+msgstr ""
+
+#: template-parts/menu-social.php:34
+msgid "Back to top"
+msgstr ""

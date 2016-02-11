@@ -1,0 +1,44 @@
+/* FILE: main/base/__pagination.scss */
+
+//
+// Pagination
+//
+
+
+
+
+
+.pagination {
+	@extend .overflow-hidden;
+	margin-top: $golden +rem;
+	text-align: center;
+	border: 1px solid;
+
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+		margin-top: power( $golden, 2 ) +rem;
+	}
+
+	a,
+	span {
+		margin: 0;
+		background: transparent;
+		color: inherit;
+	}
+
+	a {
+		opacity: 1;
+	}
+
+	.prev {
+		float: left;
+		border-right: 1px solid;
+		border-color: inherit;
+	}
+
+	.next {
+		float: right;
+		border-left: 1px solid;
+		border-color: inherit;
+	}
+
+}

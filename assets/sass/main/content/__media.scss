@@ -1,0 +1,89 @@
+/* FILE: main/content/__media.scss */
+
+//
+// Media
+//
+
+
+
+
+
+// Entry media
+
+	.entry-media {
+		margin-bottom: power( $golden, 2 ) +rem;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			margin-bottom: power( 1 + $golden_minor, 4 ) +rem;
+		}
+
+		.single-wm_staff & {
+			float: left;
+			width: percentage( $golden_minor );
+			margin: 0 ( $golden +em ) 1em 0;
+
+			img {
+				@extend %photo;
+				cursor: zoom-in;
+			}
+
+		}
+
+		.posts & {
+			margin: 0 ( -$golden +rem ) ( $golden +rem );
+		}
+
+		.hide-media & {
+			display: none;
+		}
+
+		a {
+			display: inline-block; // To wrap the focus outline around the image/entry media object
+			width: 100%;
+
+			.single-post & {
+
+				img {
+					cursor: zoom-in;
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Images
+
+	.attachment {
+
+		caption {
+			caption-side: top;
+		}
+
+		.post-thumbnail {
+
+			img {
+				@extend %photo;
+				cursor: zoom-in;
+			}
+
+		}
+
+	}
+
+
+
+// Media player playlist
+
+	.wp-playlist {
+
+		.posts & {
+			border-top: 0;
+			border-left: 0;
+			border-right: 0;
+		}
+
+	}

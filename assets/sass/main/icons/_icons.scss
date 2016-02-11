@@ -1,0 +1,69 @@
+/* FILE: main/icons/_icons.scss */
+
+//
+// Icons
+//
+
+
+
+
+
+@font-face {
+	font-family: 'Genericons';
+	/*[*/
+	src: url('../fonts/genericons/Genericons.woff') format('woff'),
+	     url('../fonts/genericons/Genericons.ttf') format('truetype');
+	/*]*/
+	/*//
+	src: url('___get_template_directory_uri/assets/fonts/genericons/Genericons.woff') format('woff'),
+	     url('___get_template_directory_uri/assets/fonts/genericons/Genericons.ttf') format('truetype');
+	//*/
+	font-weight: normal;
+	font-style: normal;
+}
+
+%genericon {
+	font-family: 'Genericons';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: inherit;
+	text-transform: none;
+	speak: none;
+}
+
+[class^="icon-"],
+[class*="icon-"] {
+
+	&::before {
+		@extend %font_smoothing;
+		line-height: 1;
+	}
+
+	&.vertical-align-middle::before {
+		@extend .vertical-align-middle;
+	}
+
+	&.vertical-align-baseline::before {
+		@extend .vertical-align-baseline;
+	}
+
+	&.vertical-align-bottom::before {
+		@extend .vertical-align-bottom;
+	}
+
+}
+
+
+
+// Shortcodes
+
+	// Has to include shortcode icons here as you can not extend anything from an external SCSS file
+
+	.owl-buttons div::before,
+	.wm-accordion .wm-item-title::before,
+	.wm-testimonials-item::before,
+	.wm-tour-nav .prev a::before,
+	.wm-tour-nav .next a::after {
+		@extend %genericon;
+	}

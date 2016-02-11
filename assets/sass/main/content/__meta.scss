@@ -1,0 +1,187 @@
+/* FILE: main/content/__meta.scss */
+
+//
+// Entry meta
+//
+
+
+
+
+
+.entry-meta {
+
+	.single & {
+		margin-top: power( $golden, 2 ) +rem;
+		margin-bottom: 0;
+	}
+
+	&-element {
+		margin-right: $golden_major +em;
+		opacity: 1;
+	}
+
+	&-description {
+		@extend %screen_reader_hiding;
+	}
+
+	// Date styling
+
+		.entry-date {
+			text-transform: uppercase;
+
+			.posts & {
+				padding: 0 0 1em;
+				line-height: 1 + $golden_minor / 2;
+
+				span {
+					display: block;
+				}
+
+				&::before {
+					display: block;
+					margin: 0;
+				}
+
+				.day {
+					font-size: 2em - $golden_minor / 2;
+				}
+
+				.month {
+					font-size: 1em + $golden_minor / 2;
+				}
+
+				.year {
+					@extend %font_size_smaller;
+				}
+
+			}
+
+		}
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+
+		// Single post meta on left from post content
+
+			.single-post:not(.fl-builder) .entry-content + &,
+			.single-post .entry-header & {
+				float: left;
+				width: percentage( $single_post_left_padding / 100 );
+				padding: 0 ( $golden +rem ) 0 0;
+				margin: 0 0 ( $golden +em );
+				line-height: 1 + $golden_minor; // 1.38
+				font-size: 1em - $golden_minor / 2; // .81
+				border: 0;
+				border-color: inherit;
+
+				.entry-meta-element {
+					display: block;
+					padding: $golden_major +em;
+					margin: 0 0 1em;
+					text-align: center;
+					border: 1px solid;
+					border-color: inherit;
+				}
+
+				.entry-date ~ .entry-meta-element {
+					border-style: dashed;
+					opacity: .66;
+				}
+
+				&:hover {
+
+					.entry-date ~ .entry-meta-element {
+						border-style: solid;
+						opacity: 1;
+					}
+
+				}
+
+				// Date styling
+
+				.entry-date {
+					line-height: 1;
+					border-style: solid;
+					opacity: 1;
+
+					&::before {
+						display: none;
+					}
+
+					span {
+						display: inline;
+					}
+
+					.day {
+						display: block;
+						margin-top: -.09em;
+						font-size: power( $golden, 3 ) +em;
+					}
+
+				}
+
+			}
+
+			.single-post .entry-header & {
+
+				&,
+				& .entry-meta-element {
+					margin-bottom: 0;
+				}
+
+			}
+
+	}
+
+	@include responsive( map_get( $breakpoint, 'xl' ) ) {
+
+		// Single post meta on left from post content
+
+			.single-post:not(.fl-builder) .entry-content + &,
+			.single-post .entry-header & {
+
+				// Date styling
+
+					.entry-date {
+						font-size: $golden_minor + 1em;
+					}
+
+			}
+
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	// Meta element icon
+
+		@each $icon, $char in $entry_meta_icons {
+
+			.#{$icon}::before {
+				@extend %genericon;
+				content: $char;
+			}
+
+		}
+
+	.posts & {
+		@extend %font_size_smaller;
+		position: absolute;
+		width: power( 1 + $golden_minor, 4 ) +rem;
+		height: 100%;
+		left: 0;
+		top: 0;
+		padding: ( $golden +em ) 0 0;
+		margin: 0;
+		text-align: center;
+		border: 0;
+
+		&-element {
+			display: block;
+			padding: 0;
+			margin: 0 0 1em;
+		}
+
+	}
+
+}

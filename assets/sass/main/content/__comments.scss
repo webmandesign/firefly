@@ -1,0 +1,129 @@
+/* FILE: main/content/__comments.scss */
+
+//
+// Comments
+//
+
+
+
+
+
+.comments-area {
+	clear: both;
+	padding: ( $golden +rem ) 0 0;
+	margin: ( power( $golden, 2 ) +rem ) 0 0;
+	border-top: 2px solid;
+	border-color: inherit;
+
+	.reply {
+		margin-top: 1em;
+	}
+
+}
+
+.comments-title {
+	@extend .weight-700;
+
+	.add-comment-link {
+		float: none;
+		display: block;
+		margin-top: $golden_major +em;
+	}
+
+	span {
+		@extend .weight-400;
+		@extend %font_style_italic;
+	}
+
+}
+
+.comment-list {
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+		padding-left: percentage( $single_post_left_padding / 100 );
+		margin-left: -1 * power( $golden, 3 ) +rem; // This is only approximate fallback value
+		margin-left: calc( #{ -80*$px } - #{ $golden +em } ); // Pull the avatars out
+	}
+
+}
+
+.comment-meta {
+	border-bottom-width: 1px;
+}
+
+.comment-body {
+	padding-bottom: 0;
+}
+
+.bypostauthor {
+
+	> .comment-body {
+
+		.comment-author {
+
+			&::before {
+				@extend %genericon;
+				content: '\f304';
+				position: absolute;
+				display: block;
+				width: 30*$px;
+				height: 30*$px;
+				left: 15*$px; // Avatar is 60x60 px
+				top: 45*$px; // Avatar is 60x60 px
+				margin-top: $golden +em;
+				line-height: 28*$px;
+				text-align: center;
+				font-size: 1em + $golden_minor / 2;
+				border-radius: 50%;
+				z-index: 1;
+
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
+					// Avatar is 90x90 px
+					left: 30*$px;
+					top: 75*$px;
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+.comment-edit-link,
+.comment-reply-link {
+
+	&::before {
+		@extend %genericon;
+		content: '\f467';
+		margin-right: $golden_minor / 2 +em;
+		font-size: 1em + $golden_minor;
+		vertical-align: middle;
+	}
+
+}
+
+.comment-edit-link{
+
+	&::before {
+		content: '\f411';
+	}
+
+}
+
+.comment-respond {
+	border-top: 0;
+
+	.comment-list & {
+		padding: 0 ( $golden +em );
+		margin-bottom: 0;
+		margin-left: 0;
+		border-bottom: 0;
+	}
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+		margin-left: percentage( $single_post_left_padding / 100 );
+	}
+
+}

@@ -1,0 +1,40 @@
+/* FILE: custom-styles.scss */
+
+//
+// Theme custom stylesheet
+//
+// Notes:
+//   //* = Doesn't change via Customizer.
+//
+// @package    Firefly
+// @copyright  WebMan Design, Oliver Juhas
+//
+// @since    1.0
+// @version  1.0
+//
+
+
+
+
+
+// Imports
+
+	@import "setup";
+
+	@import "starter/tools/functions";
+
+	@import "starter/setup/variables";
+
+	@import "starter/tools/mixins";
+
+	// Partial custom styles files
+
+		@import "custom-styles/base";
+
+		@import "custom-styles/accent";
+
+		@import "custom-styles/header";
+
+		@import "custom-styles/content";
+
+		@import "custom-styles/footer";

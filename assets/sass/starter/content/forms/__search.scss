@@ -1,0 +1,26 @@
+/* FILE: starter/form/__search.scss */
+
+//
+// Search form
+//
+
+
+
+
+
+.form-search,
+.search-form {
+	display: block;
+	position: relative;
+	max-width: 100%;
+	margin: 0;
+	text-align: left;
+
+	.search-field {
+		position: relative;
+		width: 100%;
+		text-align: inherit;
+		z-index: 0;
+	}
+
+}

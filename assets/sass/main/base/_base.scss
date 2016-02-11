@@ -1,0 +1,99 @@
+/* FILE: main/base/_base.scss */
+
+//
+// Basic global styles
+//
+
+
+
+
+
+// Elements
+
+	ul {
+		list-style: square;
+	}
+
+	ol {
+
+		.entry-content & {
+			counter-reset: orderedList;
+			margin-left: 0;
+			margin-right: 0;
+			list-style: none;
+
+			ol {
+				margin-left: $golden_minor + 1em;
+			}
+
+			li {
+				display: block;
+
+				&::before {
+					counter-increment: orderedList;
+					content: counters(orderedList, '.') ') ';
+					margin-right: $golden_major +em;
+					font-weight: 700;
+				}
+
+			}
+
+		}
+
+	}
+
+	abbr {
+		@extend .weight-700;
+
+		&[title] {
+			border: 0;
+		}
+
+	}
+
+	blockquote {
+		@extend %line_height_golden;
+	}
+
+	mark,
+	ins,
+	.highlight {
+		padding: 0;
+	}
+
+	table,
+	th,
+	td {
+		border-left: 0;
+		border-right: 0;
+	}
+
+	th,
+	tfoot td {
+		border-width: 1px;
+	}
+
+	hr {
+		height: 0;
+		margin: ( power( 1 + $golden_minor, 4 ) +em ) 0;
+		border-bottom: 1px solid;
+		border-color: inherit;
+	}
+
+	#{$tags_margin_bottom} {
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+
+
+// Imports
+
+	@import "_layout";
+
+	@import "_classes";
+
+	@import "_player";

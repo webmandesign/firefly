@@ -1,0 +1,735 @@
+/* FILE: print.scss */
+
+//
+// Print stylesheet
+//
+// @package    Firefly
+// @copyright  WebMan Design, Oliver Juhas
+//
+// @since    1.0
+// @version  1.0
+//
+
+
+
+
+
+// Print styles from HTML boilerplate v5.2.0 (adapted to our needs)
+// @link  https://github.com/h5bp/html5-boilerplate/blob/5.2.0/dist/css/main.css#L205
+
+	*,
+	*:before,
+	*:after,
+	*:first-letter,
+	*:first-line {
+		background: transparent !important;
+		color: #000 !important; // Black prints faster: http://www.sanbeiji.com/archives/953
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+
+	a[href]:after {
+		content: ' (' attr( href ) ')';
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+	}
+
+	// Don't show links that are fragment identifiers, or use the `javascript:` pseudo protocol
+
+		a[href^="#"]:after,
+		a[href^="javascript:"]:after {
+			content: '';
+		}
+
+	abbr[title]:after {
+		content: ' (' attr( title ) ')';
+	}
+
+	pre,
+	blockquote {
+		border: 1pt solid #999;
+		page-break-inside: avoid;
+	}
+
+	// Printing Tables: http://css-discuss.incutio.com/wiki/Printing_Tables
+
+	thead {
+		display: table-header-group;
+	}
+
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+	p,
+	h1, h2, h3, h4, h5, h6 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		page-break-after: avoid;
+	}
+
+
+
+// Base
+
+	%font_serif {
+		font-family: Georgia, serif;
+	}
+
+	%font_sans {
+		font-family: Arial, sans-serif;
+	}
+
+	%font_size_small {
+		font-size: .81em;
+	}
+
+	%background_light {
+		background: #f6f6f6 !important;
+	}
+
+	%no_link_after {
+
+		&:after {
+			display: none;
+		}
+
+	}
+
+	.noprint {
+		display: none !important;
+	}
+
+	body {
+		@extend %font_serif;
+		font-size: 11pt;
+	}
+
+	h1 {
+		font-size: 1.62em;
+
+		a {
+			@extend %no_link_after;
+		}
+
+	}
+
+	h2 {
+		font-size: 1.38em;
+
+		a {
+			@extend %no_link_after;
+		}
+
+	}
+
+	h3 {
+		font-size: 1.19em;
+
+		a {
+			@extend %no_link_after;
+		}
+
+	}
+
+	h4, h5, h6 {
+		font-size: 1em;
+
+		a {
+			@extend %no_link_after;
+		}
+
+	}
+
+	figure {
+		padding: 0;
+		margin: 0;
+	}
+
+	img {
+		height: auto;
+	}
+
+	blockquote {
+		margin: 1em 0;
+		padding: 0 1em !important;
+		border: 0;
+		border-left: 2pt solid;
+	}
+
+	pre {
+		padding: 1em;
+		border: 1pt dashed;
+	}
+
+	table {
+		border: 1pt solid;
+		border-collapse: collapse;
+	}
+
+	td,
+	th {
+		padding: .19em .62em;
+		border: 1pt solid;
+	}
+
+
+
+// WP styles for layout
+
+	.alignleft,
+	.wp-caption.alignleft,
+	img.alignleft {
+		float: left;
+		margin-right: 1.62em;
+		margin-bottom: 1.62em;
+	}
+
+	.alignright,
+	.wp-caption.alignright,
+	img.alignright {
+		float: right;
+		margin-left: 1.62em;
+		margin-bottom: 1.62em;
+	}
+
+	.aligncenter,
+	.wp-caption.aligncenter,
+	img.aligncenter {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.alignnone,
+	img.alignnone {
+		margin: 0;
+	}
+
+	%pullquote {
+		clear: none;
+		width: percentage( .38 );
+		padding: 0;
+		margin-top: 0;
+		margin-left: 6%;
+		margin-right: 6%;
+		text-align: left;
+		padding: 0 6%;
+	}
+
+	blockquote {
+
+		&.alignleft {
+			@extend %pullquote;
+			padding-left: 0;
+			margin-left: 0;
+			text-align: right;
+		}
+
+		&.alignright {
+			@extend %pullquote;
+			padding-right: 0;
+			margin-right: 0;
+		}
+
+	}
+
+	.wp-caption {
+		position: relative;
+		display: inline-block;
+		max-width: 100%;
+		padding: 0;
+		margin: 0 auto .62em;
+		text-align: center;
+		font-size: .81em;
+		page-break-inside: avoid;
+		page-break-before: avoid;
+
+		.wp-caption-text {
+			padding: .62em 0 0;
+		}
+
+	}
+
+	.gallery {
+		clear: both;
+		margin: 0 0 1.62em;
+		overflow: hidden;
+
+		a {
+			display: block;
+			width: 100%;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		$columns: 2; // default gallery layout on small devices
+		$gutter: 2;  // %
+
+		&-item {
+			float: left;
+			width: percentage( ( 100 / $columns - $gutter ) / 100 );
+			padding: 0;
+			margin: 0 percentage( $gutter / 2 / 100 ) percentage( $gutter / 100 );
+			overflow: hidden;
+
+			.gallery-columns-1 & {
+				float: none;
+				width: 100%;
+			}
+
+			@for $i from 2 through 9 {
+				.gallery-columns-#{$i} & {
+					$columns: $i; // on large devices do not force any default gallery layout, use actual gallery columns setup
+					width: percentage( ( 100 / $columns - $gutter ) / 100 );
+				}
+			}
+
+		}
+
+		&-caption {
+			@extend .noprint;
+		}
+
+	}
+
+	.twitter-tweet-rendered,
+	.wp-video {
+		@extend .noprint;
+	}
+
+	img.wp-smiley {
+
+		.page-content &,
+		.entry-content &,
+		.comment-content & {
+			display: inline;
+			width: auto;
+			max-height: 1em;
+			margin: 0;
+			border: 0;
+		}
+
+	}
+
+	.mejs {
+
+		&-container {
+			height: auto !important;
+			text-align: center !important;
+			font-size: 1.62em;
+			border: 1px solid;
+			border-radius: 200pt;
+
+			&:before {
+				content: '\25b6';
+			}
+
+		}
+
+		&-inner {
+			@extend .noprint;
+		}
+
+	}
+
+
+
+// Header
+
+	.site-header {
+		@extend %font_sans;
+		@extend %font_size_small;
+		@extend %background_light;
+		padding: 1.62em;
+		margin-bottom: 2.62em;
+		border: 2pt solid;
+		page-break-inside: avoid;
+	}
+
+	.site-header-placeholder {
+		@extend .noprint;
+	}
+
+	.site-branding {
+
+		h1,
+		h2 {
+			padding: 0;
+			margin: 0;
+			font-size: 1.19em;
+		}
+
+		a {
+			@extend %no_link_after;
+		}
+
+	}
+
+	.site-title {
+
+		span {
+			display: none;
+
+			.home & {
+				display: block;
+			}
+
+		}
+
+	}
+
+	.site-description {
+		margin: .62em 0;
+	}
+
+	nav {
+		@extend .noprint;
+	}
+
+	.header-info-widgets-container {
+		@extend .noprint;
+	}
+
+
+
+// Content
+
+	.breadcrumbs-container,
+	.skip-link {
+		@extend .noprint;
+	}
+
+	.entry-media,
+	.image,
+	.gallery,
+	.tiled-gallery {
+
+		a {
+			@extend %no_link_after;
+		}
+
+	}
+
+	.entry-media {
+		width: 38%;
+		float: left;
+		margin: 0 1.62em 1em 0;
+
+		.posts & {
+			width: 100%;
+			float: none;
+			margin: 0 0 1em;
+		}
+
+		.format-gallery & {
+
+			img {
+				display: none;
+
+				&:first-child {
+					display: block;
+				}
+
+			}
+
+		}
+
+	}
+
+	.comments-area {
+		@extend .noprint;
+	}
+
+	.post-table-of-contents.top,
+	.sharedaddy,
+	.jp-relatedposts {
+		@extend .noprint;
+	}
+
+	.entry-meta {
+		clear: both;
+		margin: 1.62em 0;
+		padding: 1em 0;
+		border-top: 2pt dotted;
+		page-break-inside: avoid;
+
+		a {
+			@extend %no_link_after;
+		}
+
+		&-element {
+			margin-right: 1.62em;
+		}
+
+	}
+
+	.sidebar {
+		@extend .noprint;
+	}
+
+	.list-subpages {
+		overflow: hidden;
+
+		.subpage {
+			float: left;
+			width: 28%;
+			width: calc( 29.33% - 2pt );
+			padding: 2%;
+			border: 1pt solid;
+			page-break-inside: avoid;
+
+			&:nth-child(3n+1) {
+				clear: left;
+			}
+
+			&-media {
+				@extend %no_link_after;
+
+				.screen-reader-text {
+					@extend .noprint;
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Footer
+
+	.site-footer {
+		@extend %font_sans;
+		@extend %font_size_small;
+		@extend %background_light;
+		clear: both;
+		padding: 1.62em;
+		margin-top: 2.62em;
+		border: 2pt solid;
+		page-break-inside: avoid;
+	}
+
+	.footer-area-footer-info-widgets {
+		@extend .noprint;
+	}
+
+	.footer-area-footer-widgets {
+		@extend .noprint;
+	}
+
+	.footer-area-site-info {
+
+		a {
+			@extend %no_link_after;
+		}
+
+	}
+
+	.back-to-top {
+		@extend .noprint;
+	}
+
+
+
+// Beaver Builder layout
+
+	// Beaver Builder stylesheet is loaded for all media, so,
+	// hoping they include print styles.
+
+	.fl-animation,
+	.fl-animated {
+		animation: none !important;
+		opacity: 1 !important;
+	}
+
+	.fl-row-content,
+	.fl-col-content {
+		max-width: 100% !important;
+		padding: .5em 0 !important;
+		margin: 0 !important;
+	}
+
+	.fl-row-content-wrap {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	.fl-col-group {
+		overflow: hidden;
+
+		.fl-col {
+			max-width: 100% !important;
+			float: left;
+			margin: 0;
+			border: 0;
+		}
+
+		.fl-col-content {
+			padding: .5em 1em !important;
+		}
+
+	}
+
+	.fl-module-photo {
+
+		img {
+			max-width: 38% !important;
+		}
+
+	}
+
+
+
+// Shortcodes
+
+	.wm-filter,
+	.wm-tab-links,
+	.wm-tour-nav {
+		@extend .noprint;
+	}
+
+	.wm-item-content,
+	.wm-tabs .wm-item {
+		display: block !important;
+	}
+
+	%remove_js_styles_container {
+		width: auto !important;
+		height: auto !important;
+		transform: none !important;
+	}
+
+	%remove_js_styles {
+		position: relative !important;
+		left: auto !important;
+		right: auto !important;
+		top: auto !important;
+		bottom: auto !important;
+		transform: none !important;
+	}
+
+	%floating_column {
+		float: left;
+		padding: 1em;
+	}
+
+	.filter-this {
+		@extend %remove_js_styles_container;
+	}
+
+	.masonry {
+		@extend %remove_js_styles_container;
+
+		&-brick {
+			@extend %remove_js_styles;
+		}
+
+	}
+
+	@for $i from 2 through 6 {
+
+		.width-1-#{$i} {
+			@extend %floating_column;
+			width: percentage( 1 / $i );
+
+			&:nth-child(#{$i}n+1) {
+				clear: left;
+			}
+
+		}
+
+	}
+
+	.wm-column {
+		margin-bottom: 1em;
+
+		.masonry-this &,
+		.filter-this & {
+			@extend %remove_js_styles;
+		}
+
+	}
+
+	.owl {
+
+		&-wrapper,
+		&-item {
+			@extend %remove_js_styles;
+			width: 100% !important;
+		}
+
+		&-item {
+
+			.wm-column {
+				width: 100% !important;
+			}
+
+		}
+
+		&-controls {
+			@extend .noprint;
+		}
+
+	}
+
+	.button,
+	.wm-button {
+		display: inline-block;
+		padding: .62em 1em;
+		border: 1pt solid;
+	}
+
+	.wm-message {
+		margin: 1em 0;
+		padding: 1em;
+		border: 2pt solid;
+	}
+
+	.type-wm_staff {
+
+		.posts & {
+			page-break-inside: avoid;
+		}
+
+		.taxonomy {
+			margin-bottom: .62em;
+			text-transform: uppercase;
+		}
+
+	}
+
+	.wm-testimonials {
+
+		.screen-reader-text,
+		img {
+			@extend .noprint;
+		}
+
+	}
+
+
+
+// Subtitles
+
+	.entry-subtitle {
+		display: block;
+		margin-top: .38em;
+		font-size: .81em;
+	}

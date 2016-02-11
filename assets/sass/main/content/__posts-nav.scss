@@ -1,0 +1,145 @@
+/* FILE: main/content/__posts-nav.scss */
+
+//
+// Post navigation: Previous and next post link
+//
+
+
+
+
+
+.post-navigation {
+	@extend %line_height_tight;
+	clear: both;
+	margin: ( power( $golden, 2 ) +rem ) 0 0;
+	border-top: 2px solid;
+	border-bottom: 1px solid;
+	border-color: inherit;
+
+	.single-wm_staff.fl-builder & {
+		margin-top: 0;
+		border-bottom: 0;
+		border-color: inherit;
+	}
+
+	.nav-link {
+		position: relative;
+		border-bottom: 1px solid;
+		border-color: inherit;
+
+		.single-wm_staff.fl-builder & {
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				border-bottom: 0;
+				text-align: center;
+			}
+
+		}
+
+	}
+
+	a {
+		@extend %font_size_golden_minor;
+		@extend .weight-700;
+		display: block;
+		position: relative;
+		padding: ( $golden +rem ) 0;
+		color: inherit;
+		transition: padding-left .3s;
+
+		.single-wm_staff.fl-builder & {
+			padding-left: 6%;
+			padding-right: 6%;
+		}
+
+		&:hover {
+			text-decoration: none;
+			padding-left: $golden +rem;
+		}
+
+	}
+
+	.meta-nav {
+		@extend %font_size_tiny;
+		@extend .weight-300;
+		display: block;
+		margin-bottom: $golden_major +em;
+		text-transform: uppercase;
+	}
+
+	.nav-next {
+
+		.meta-nav {
+
+			&::after {
+				content: '\2192';
+				margin-left: $golden_minor +em;
+			}
+
+		}
+
+	}
+
+	.nav-previous {
+
+		.meta-nav {
+
+			&::before {
+				content: '\2190';
+				margin-right: $golden_minor +em;
+			}
+
+		}
+
+	}
+
+	.taxonomy {
+		@extend %font_size_tiny;
+		@extend .weight-400;
+		display: block;
+		margin: ( $golden_major +em ) ( -$golden_minor +em ) 0;
+
+		.type-wm_staff & {
+			background: none;
+			color: inherit;
+		}
+
+		span {
+			margin: 0 ( $golden_minor +em );
+		}
+
+		&-staff_position {
+			@extend .weight-700;
+		}
+
+	}
+
+}
+
+.links-count-2 {
+
+	.nav-link {
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+			.single-wm_staff.fl-builder & {
+				display: inline-block;
+				width: 50%;
+
+				&s {
+					display: flex; // Making both links equally high
+					flex-shrink: 1; // IE10 required on flex children
+				}
+
+				&:first-child {
+					border-right: 1px solid;
+					border-color: inherit;
+				}
+
+			}
+
+		}
+
+	}
+
+}

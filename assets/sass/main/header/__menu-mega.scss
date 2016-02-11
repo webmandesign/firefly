@@ -1,0 +1,148 @@
+/* FILE: main/header/__menu-mega.scss */
+
+//
+// Megamenu
+//
+
+
+
+
+
+@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+	.main-navigation-container {
+
+		.megamenu {
+			position: inherit;
+
+			> ul {
+				display: block;
+				width: 100%;
+				right: 0;
+				padding: 1em .5em 0;
+				margin-left: 0;
+				margin-right: 0;
+				border-radius: $golden_minor / 2 +rem;
+
+				> li {
+					float: left;
+					padding: 0 .5em;
+					border: 0;
+					vertical-align: top;
+
+					a {
+						min-width: 0;
+					}
+
+					// Column label
+
+						> a {
+							margin-bottom: $golden_minor +em;
+							text-transform: uppercase;
+							letter-spacing: 1px;
+							font-size: 1em - $golden_minor / 2;
+							font-weight: 700;
+							opacity: .66;
+
+							.expander {
+								display: none;
+							}
+
+							.menu-item-description {
+								opacity: .81;
+							}
+
+						}
+
+					// Column content (sub-submenu)
+
+						> ul {
+							display: block;
+							position: relative;
+							min-width: 100%;
+							left: 0;
+							top: 0;
+							padding: 0;
+							margin: 0 0 1em;
+							border-radius: 0;
+							box-shadow: none;
+							transition: none;
+						}
+
+						.no-js &:hover {
+
+							ul {
+								left: 0;
+							}
+
+						}
+
+				}
+
+			}
+
+			// Columns layout
+
+				@for $i from 2 through 4 {
+
+					&.columns-#{$i} {
+
+						> ul {
+
+							> li {
+								width: percentage( 100 / $i / 100 );
+
+								&:nth-child(#{ $i + 1 }n) {
+									clear: left;
+								}
+
+							}
+
+						}
+
+					}
+
+				}
+
+			.no-js &:hover ul,
+			&.focus ul {
+				opacity: 1;
+			}
+
+			li {
+				white-space: normal;
+			}
+
+			> ul > li > ul ul,
+			.menu-item-has-children > a::after {
+				display: none;
+			}
+
+		}
+
+		.menu {
+
+			.megamenu {
+
+				> ul {
+
+					> li {
+
+						> a:hover,
+						&:hover > a,
+						&.current-menu-item > a,
+						&.current-menu-ancestor > a {
+							background: none;
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}

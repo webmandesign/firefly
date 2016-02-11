@@ -1,0 +1,95 @@
+/* FILE: main/content/__parted.scss */
+
+//
+// Posts parts (post table of contents)
+//
+
+
+
+
+
+.post-table-of-contents {
+	margin-top: power( $golden, 2 ) +rem;
+
+	ol {
+		counter-reset: table-of-contents-counter;
+	}
+
+	li {
+		padding: 0;
+		border-top: 1px solid;
+		border-color: inherit;
+
+		&:first-child {
+			border: 0;
+		}
+
+		&::before {
+			display: none;
+		}
+
+	}
+
+	a {
+		padding: ( $golden_major +em ) 1em;
+		padding-left: power( $golden, 2 ) +em;
+
+		.entry-content & {
+			border: 0;
+		}
+
+		&::before {
+			@extend .weight-700;
+			@extend %font_size_higher;
+			content: counter( table-of-contents-counter );
+			counter-increment: table-of-contents-counter;
+			float: left;
+			margin-top: $golden_minor / -2 +em;
+			margin-left: -1em - $golden_minor;
+		}
+
+		&::after {
+			content: '\00bb';
+			margin-left: $golden_major +em;
+		}
+
+	}
+
+	.passed {
+
+		a {
+			text-decoration: line-through;
+			opacity: .66;
+
+			&:hover,
+			&:focus {
+				opacity: 1;
+			}
+
+			&::before {
+				text-decoration: inherit;
+			}
+
+		}
+
+	}
+
+	.current {
+
+		a {
+			opacity: .33;
+
+			&:hover,
+			&:focus {
+				opacity: 1;
+			}
+
+		}
+
+	}
+
+	&.top {
+		display: none;
+	}
+
+}

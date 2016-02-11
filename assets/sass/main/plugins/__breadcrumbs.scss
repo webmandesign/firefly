@@ -1,0 +1,63 @@
+/* FILE: main/plugins/__breadcrumbs.scss */
+
+//
+// Breadcrumbs
+//
+
+
+
+
+
+.breadcrumbs {
+	@extend %content_width;
+	padding-top: 1em - $golden_minor / 2;
+	padding-bottom: 1em - $golden_minor / 2;
+
+	&-title {
+		@extend .weight-700;
+	}
+
+	&-container {
+		@extend %font_size_smaller;
+		position: relative;
+		border-bottom: 1px solid;
+		z-index: 9;
+
+		.site-content + & {
+			border-top: 1px solid;
+			border-bottom: 0;
+		}
+
+		.back-to-top {
+			display: none;
+			margin-right: $golden +em;
+
+			&.alignleft,
+			&.alignright {
+				margin-bottom: 0;
+			}
+
+			.site-content + & {
+				display: inline-block;
+
+				@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+					float: none;
+
+					&.alignright {
+						margin-left: 0;
+						margin-right: 1em;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	a {
+		@extend %link_style_accessible;
+	}
+
+}

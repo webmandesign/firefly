@@ -1,0 +1,108 @@
+/* FILE: custom-styles/_footer.scss */
+
+//
+// Site footer color styles.
+// Footer info widgets color styles.
+// Site info (credits) color styles.
+//
+
+
+
+
+
+// Site footer
+
+	.site-footer,
+	.#{$special_color_class_prefix}footer {
+		/*[*/
+		background-color: map_get( $colors, "footer_background" );
+		color: map_get( $colors, "footer_text" );
+		border-color: map_get( $colors, "footer_border" );
+		/*]*/
+		/*//
+		background-color: ___color_footer_background;
+		color: ___color_footer_text;
+		border-color: ___color_footer_border;
+		//*/
+
+		#{$h_tags} {
+			/*[*/
+			color: map_get( $colors, "footer_headings" );
+			/*]*/
+			/*//
+			color: ___color_footer_headings;
+			//*/
+		}
+
+	}
+
+	.site-footer {
+
+		// Decorative border
+
+			&::after {
+				/*[*/
+				background-color: map_get( $colors, "accent" );
+				/*]*/
+				/*//
+				background-color: ___color_footer_decoration;
+				//*/
+			}
+
+		// Accent color
+
+			a {
+				/*[*/
+				color: map_get( $colors, "footer_accent" );
+				/*]*/
+				/*//
+				color: ___color_footer_accent;
+				//*/
+			}
+
+			mark,
+			.highlight,
+			.button,
+			button,
+			input[type="button"],
+			input[type="reset"],
+			input[type="submit"],
+			.widget_calendar tbody a,
+			.widget .tagcloud a:hover,
+			.widget .tagcloud a:focus,
+			.widget .tagcloud a:active {
+				/*[*/
+				background-color: map_get( $colors, "footer_accent" );
+				color: map_get( $colors, "footer_accent_text" );
+				/*]*/
+				/*//
+				background-color: ___color_footer_accent;
+				color: ___color_footer_accent_text;
+				//*/
+			}
+
+			mark,
+			.highlight {
+				/*[*/
+				box-shadow: 0.382em 0 0 map_get( $colors, "footer_accent" ), -0.382em 0 0 map_get( $colors, "footer_accent" );
+				/*]*/
+				/*//
+				box-shadow: 0.382em 0 0 ___color_footer_accent, -0.382em 0 0 ___color_footer_accent;
+				//*/
+			}
+
+			input:focus,
+			select:focus,
+			textarea:focus,
+			.widget .tagcloud a:hover,
+			.widget .tagcloud a:focus,
+			.widget .tagcloud a:active {
+				/*[*/
+				border-color: map_get( $colors, "footer_accent" );
+				/*]*/
+				/*//
+				border-color: ___color_footer_accent;
+				//*/
+			}
+
+	}

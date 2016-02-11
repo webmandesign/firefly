@@ -1,0 +1,49 @@
+/* FILE: main/content/__pages.scss */
+
+//
+// Page styles
+//
+
+
+
+
+
+// Special pages
+
+	// Error 404 and "not found" page
+
+		.error-404,
+		.not-found {
+			text-align: center;
+
+			form {
+				display: inline-block;
+				width: percentage( $golden_major );
+				text-align: center;
+
+				&::before {
+					padding: ( $golden_minor +em ) 0;
+					line-height: 1em + $golden_minor / 2;
+				}
+
+			}
+
+		}
+
+		.not-found {
+
+			// There is a sidebar on this page
+
+			form {
+				width: 100%;
+			}
+
+		}
+
+		.error-404 {
+
+			.page-content {
+				margin-top: 1em;
+			}
+
+		}

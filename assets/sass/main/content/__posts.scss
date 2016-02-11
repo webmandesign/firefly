@@ -1,0 +1,185 @@
+/* FILE: main/content/__posts.scss */
+
+//
+// Posts list
+//
+
+
+
+
+
+// Post shadow
+
+	%post_shadow {
+		box-shadow: 0 ( $golden_minor / 2 +em ) ( $golden_major +em ) rgba( #000, .2 );
+	}
+
+
+
+// Post excerpt
+
+	.entry-summary {
+
+		&.has-more-tag {
+			text-transform: uppercase;
+		}
+
+	}
+
+
+
+// Post content
+
+	.entry-content {
+
+		.posts .entry-header + &,
+		.hide-media .entry-media + & {
+			padding-top: $golden +rem;
+			border-top: 2px solid;
+			border-color: inherit;
+		}
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+
+			.single-post:not(.fl-builder) & {
+				float: right;
+				width: percentage( ( 100 - $single_post_left_padding ) / 100 );
+			}
+
+			.single-wm_staff:not(.fl-builder) & {
+				// This post type has different layout than standard blog posts:
+				padding-left: percentage( $single_post_left_padding / 100 );
+			}
+
+			// Other post types should fall back to fullwidth .entry-content (minus .sidebar)
+
+		}
+
+	}
+
+
+
+// Posts list
+
+	$columns: 2;
+	$gutter: $golden; // rem
+
+	.posts {
+		@extend .clearfix;
+
+		&:not(.wm-posts) {
+			margin: 0;
+			margin-left: -#{ $gutter / 2 +rem };
+			margin-right: -#{ $gutter / 2 +rem };
+		}
+
+		.hentry {
+			position: relative;
+			width: 100%;
+			width: calc( 100% - #{ $gutter +rem } );
+			padding: $golden +rem;
+			margin: 0 0 ( $gutter +rem );
+			margin-left: calc( #{ $gutter / 2 +rem } - 1px ); // -1px compensation for wide browser support
+			margin-right: calc( #{ $gutter / 2 +rem } - 1px ); // -1px compensation for wide browser support
+			border: 1px solid;
+			border-color: inherit;
+			border-radius: $golden_minor / 2 +rem;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			transition: box-shadow .2s;
+
+			&:hover {
+				@extend %post_shadow;
+			}
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				float: left;
+				width: percentage( 1 / $columns );
+				width: calc( #{ percentage( 1 / $columns ) } - #{ $gutter +rem } );
+			}
+
+			// First post on blog page is large
+
+				.blog:not(.paged) &:first-child {
+					float: none;
+					width: 100%;
+					width: calc( 100% - #{ $gutter +rem } );
+				}
+
+		}
+
+		.type-post {
+			padding-left: power( 1 + $golden_minor, 4 ) + $golden +rem;
+		}
+
+		// Search list
+
+			.type-page {
+
+				.entry-summary {
+					margin-bottom: 0;
+				}
+
+			}
+
+			.page-icon {
+				position: relative;
+				display: inline-block;
+				width: power( $golden, 2 ) * 2rem;
+				height: power( $golden, 2 ) * 2rem;
+				margin-bottom: $golden_minor + 1rem;
+				line-height: power( $golden, 2 ) * 2rem;
+				text-align: center;
+				font-size: power( $golden, 2 ) +rem;
+
+				&::before {
+					position: relative;
+					z-index: 1;
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					border: 2px solid;
+					opacity: .1;
+					box-shadow: inset 0 0 0 ( power( $golden, 2 ) * 2rem );
+					transition: box-shadow .8s, opacity .4s;
+					z-index: 0;
+				}
+
+			}
+
+			.hentry {
+
+				&:hover {
+
+					.page-icon {
+
+						&::after {
+							opacity: .3;
+							box-shadow: none;
+						}
+
+					}
+
+				}
+
+			}
+
+	}
+
+
+
+// More link
+
+	.link-more {
+
+		.entry-summary + & {
+			margin-top: 1rem;
+		}
+
+	}

@@ -1,0 +1,473 @@
+/* FILE: main/header/__menu.scss */
+
+//
+// Main navigation
+//
+
+
+
+
+
+.main-navigation {
+	position: relative;
+
+	@include responsive_minmax( map_get( $breakpoint, 'l' ), map_get( $breakpoint, 'xl' ) ) {
+		clear: both;
+		width: 100%;
+		margin: -1em 0 0;
+		line-height: map_get( $header_height, "narrow" ) * 1rem;
+
+		&-container {
+
+			li {
+
+				.sub-menu {
+					margin-top: 0;
+				}
+
+			}
+
+		}
+
+	}
+
+	&-container {
+
+		@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+			direction: rtl; // Hack to reposition scrollbar to left
+			position: fixed;
+			display: none; // This is required for skipping the menu with TAB key for accessibility
+			width: 100%;
+			height: 100%;
+			right: 100%;
+			top: 0;
+			line-height: 1em + $golden_minor;
+			background: inherit;
+			color: inherit;
+			border-color: inherit;
+			overflow-y: auto;
+			z-index: 995;
+
+			.active & {
+				display: block;
+				right: 0;
+			}
+
+			.menu {
+				direction: ltr; // Reset back to normal after applying the scrollbar position hack
+				position: relative;
+				height: 100%;
+
+				> ul {
+					max-width: map_get( $breakpoint, 's' ) * $px;
+					padding: ( power( $golden, 3 ) +rem ) ( $golden +rem ) ( power( $golden, 2 ) +rem );
+					margin-left: auto;
+					margin-right: auto;
+
+					> li {
+
+						> a {
+							font-weight: 700;
+						}
+
+					}
+
+				}
+
+			}
+
+			li {
+				border-top: 1px solid;
+				border-color: inherit;
+
+				&.button {
+					display: block;
+					padding-top: 1em;
+					padding-bottom: 1em;
+				}
+
+				li {
+
+					a {
+
+						&::before {
+							content: '\21B3\2002'; // Submenu indentation on mobile screen
+							font-weight: 400;
+							opacity: .5;
+						}
+
+					}
+
+					li {
+
+						a {
+							padding-left: $golden_major * 2em * 2;
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		// Menu wrapper
+
+			.menu {
+				margin-top: $golden +rem;
+
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
+					margin-top: 0;
+				}
+
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+					// First menu row
+
+						> ul {
+
+							> li {
+								margin-left: $golden_minor +rem;
+
+								> a {
+									padding: 0 ( $golden_major +em );
+									margin: 0;
+									line-height: 3rem - 2 * $golden_minor;
+									font-weight: 700;
+									transition: line-height .1s, background .3s, color .3s;
+
+									.menu-item-description {
+										display: none;
+									}
+
+									&:hover,
+									&:focus,
+									&:active {
+										line-height: 3rem;
+									}
+
+								}
+
+								&.menu-item-has-children {
+
+									> a {
+										padding-right: 2em;
+									}
+
+								}
+
+								&.button {
+
+									> a {
+										padding-top: 0;
+										padding-bottom: 0;
+									}
+
+								}
+
+								// Menu item hover
+
+									.no-js &.menu-item-has-children:hover,
+									&.focus {
+
+										> a {
+											border-bottom-right-radius: 0;
+											border-bottom-left-radius: 0;
+											box-shadow: 0 3px 4px 0 rgba( #000, .1 );
+										}
+
+									}
+
+									&:not(.button):hover,
+									&.focus {
+
+										> a {
+											line-height: 3rem;
+										}
+
+									}
+
+							}
+
+						}
+
+				}
+
+			}
+
+		// All menu links
+
+			a {
+				position: relative; // Required for expander positioning
+
+				@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+					margin-top: 1px;
+					margin-bottom: 1px;
+				}
+
+				&:hover,
+				&:active {
+					color: inherit;
+				}
+
+			}
+
+			.hide,
+			.hide-link {
+
+				> a {
+					@extend %screen_reader_hiding;
+
+					&:focus {
+						@extend %screen_reader_hiding_disable;
+					}
+
+				}
+
+			}
+
+		// All menu lists
+
+			ul {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+
+				a {
+					display: block;
+					max-width: 100%; // Fix for FF and IE
+					padding: ( 1em - $golden_minor / 2 ) ( $golden_major * 2em );
+					text-decoration: none;
+
+					@include responsive( map_get( $breakpoint, 'l' ) ) {
+						display: inline-block;
+					}
+
+				}
+
+			}
+
+		// All menu list items
+
+			li {
+				position: relative;
+				padding: 0;
+				margin: 0;
+
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
+					float: left;
+					white-space: nowrap;
+				}
+
+				&.button {
+					background: transparent;
+					box-shadow: none;
+
+					&:active {
+						opacity: 1;
+					}
+
+				}
+
+				// Submenu
+
+					ul {
+						@extend %font_size_smaller;
+
+						ul {
+							font-size: 1em;
+						}
+
+						@include responsive( map_get( $breakpoint, 'l' ) ) {
+							position: absolute;
+							min-width: 100%;
+							min-width: calc( 100% + #{ $golden_major * 2em } );
+							left: -9999rem;
+							top: percentage( 1 + $golden_minor );
+							padding: 1em;
+							margin: ( ( map_get( $header_height, "normal" ) - 3 ) / 2 * -1rem ) -1em 0; // margin-top = -( header_hight - menu_link_height_3rem ) / 2
+							box-shadow: 0 3px 4px 0 rgba( #000, .1 );
+							opacity: 0;
+							z-index: 9;
+						}
+
+						@include responsive( map_get( $breakpoint, 'xl' ) ) {
+							transition: top .3s, opacity .3s;
+						}
+
+						a {
+							@extend %line_height_golden_minor;
+							margin: 1px 0;
+							transition: opacity .3s, background .3s;
+						}
+
+					}
+
+				// Submenu active (visible)
+
+					.no-js &:hover,
+					&.focus {
+
+						> ul {
+
+							@include responsive( map_get( $breakpoint, 'l' ) ) {
+								left: 0;
+								top: 100%;
+								opacity: 1;
+							}
+
+						}
+
+						> a {
+
+							.expander {
+
+								&::after {
+									visibility: hidden;
+								}
+
+							}
+
+						}
+
+					}
+
+				// All submenu list items
+
+					li {
+						border-top: 1px solid;
+
+						@include responsive( map_get( $breakpoint, 'l' ) ) {
+							float: none;
+							display: block;
+
+							// Submenu links
+
+								> a {
+									display: block;
+									min-width: 10em;
+								}
+
+								&.menu-item-has-children > a {
+									padding-right: $golden_minor + 2em;
+								}
+
+							// Sub-submenu
+
+								ul {
+									min-width: 0;
+									margin-top: $golden_minor * -1em;
+									margin-left: 0;
+								}
+
+								// Sub-submenu active (visible)
+
+									.no-js &:hover,
+									&.focus {
+
+										> ul {
+											left: 100%;
+											top: 0;
+										}
+
+									}
+
+							// First submenu list item
+
+								&:first-child {
+									border: 0;
+								}
+
+						}
+
+					}
+
+			}
+
+		// Submenu expander
+
+			.expander {
+				display: none;
+
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
+					display: inline-block;
+					position: absolute;
+					width: 16px;
+					height: 16px;
+					right: $golden_major +em;
+					top: 50%;
+					margin-left: 2px;
+					border: 1px solid;
+					border-radius: 50%;
+					opacity: .66;
+					transform: translateY(-50%);
+
+					// Using pseudo elements to create "+" to prevent issues with line-height
+
+					&::after,
+					&::before {
+						content: '';
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						border: 1px solid;
+					}
+
+					&::before {
+						width: 8px;
+						height: 2px;
+						margin: -1px -4px;
+					}
+
+					&::after {
+						width: 2px;
+						height: 8px;
+						margin: -4px -1px;
+					}
+
+				}
+
+			}
+
+		// Icon in menu item (has to be included with HTML)
+
+			[class^="icon-"] {
+				margin-right: $golden_minor +em;
+			}
+
+	}
+
+}
+
+
+
+// Menu item description text (only on submenu items)
+
+	.menu-item-description {
+		@extend %font_size_small;
+		@extend .weight-300;
+		display: block;
+		margin-top: $golden_minor +em;
+		text-transform: uppercase;
+		opacity: .66;
+	}
+
+
+
+// Active menu item
+
+	.current-menu-item > a,
+	.current-menu-ancestor > a {
+		@extend .weight-700;
+	}
+
+
+
+// Imports
+
+	@import "_menu-mega";
+
+	@import "_menu-mobile-bar";
+
+	@import "_menu-social";

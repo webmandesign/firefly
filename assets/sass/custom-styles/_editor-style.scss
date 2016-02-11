@@ -1,0 +1,151 @@
+/* FILE: custom-styles/_editor-style.scss */
+
+//
+// TinyMCE editor styles overrides and fixes.
+//
+
+
+
+
+
+// Core
+
+	body {
+		width: 100%;
+		max-width: 590px; // Default, will be overriden
+		font-family: #{ map_get( $font_family, 'body' ) };
+		font-size: 16px; // Default, will be overriden
+
+		/*[*/
+		background-color: map_get( $colors, "content_background" );
+		color: map_get( $colors, "content_text" );
+		border-color: map_get( $colors, "content_border" );
+		/*]*/
+		/*//
+		background-color: ___color_content_background;
+		color: ___color_content_text;
+		border-color: ___color_content_border;
+		//*/
+
+		&.post-type-page {
+			max-width: 1200px; // Default, will be overriden
+		}
+
+		&.wp-autoresize {
+			padding: 20px !important;
+		}
+
+		* {
+			border-color: inherit;
+		}
+
+		// Media player
+
+			.mejs-container,
+			.wp-playlist {
+				margin: 0 !important;
+			}
+
+	}
+
+	#tinymce {
+		position: relative;
+		padding: 20px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 1;
+			height: 100%;
+			right: 0;
+			top: 0;
+			border-right: 1px dashed;
+			opacity: .33;
+		}
+
+	}
+
+	#{$h_tags} {
+		font-family: #{ map_get( $font_family, 'headings' ) };
+		font-weight: 400;
+	}
+
+
+
+// Media player
+
+	.wpview-content {
+		margin: 0 0 1.62em;
+	}
+
+
+
+// WP Captions
+
+	.wp-caption-dd {
+		margin-top: 1em;
+	}
+
+
+
+// Tables
+
+	.mce-item-table,
+	.mce-item-table td,
+	.mce-item-table th,
+	.mce-item-table caption {
+		border: 1px solid;
+		border-color: inherit;
+	}
+
+
+
+// Pullquotes
+
+	blockquote.alignleft {
+		margin-left: 0;
+	}
+
+	blockquote.alignright {
+		margin-right: 0;
+	}
+
+
+
+// Responsive media
+
+	img,
+	embed,
+	iframe,
+	object,
+	video {
+		max-width: 100%;
+	}
+
+	embed,
+	iframe,
+	object,
+	video {
+		width: 100% !important;
+	}
+
+	#{$h_tags},
+	p,
+	blockquote,
+	li,
+	dd {
+
+		a {
+			text-decoration: none;
+			border-bottom: 1px dotted;
+
+			&:hover,
+			&:focus,
+			&:active {
+				border-bottom-style: solid;
+				outline: thin dotted;
+			}
+
+		}
+
+	}

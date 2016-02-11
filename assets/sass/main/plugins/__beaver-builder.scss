@@ -1,0 +1,584 @@
+/* FILE: main/plugins/__beaver-builder.scss */
+
+//
+// Beaver Builder
+//
+
+
+
+
+
+// (*)
+// Breaking mobile first rule here as the Beaver Builder does not support it.
+// Also, !important is required to override the column inline styles.
+// Some styles has to use higher selector specificity to override native BB styles.
+
+%fullwidth_sections_layout {
+
+	.site-content {
+		padding: 0;
+		margin: 0;
+	}
+
+	.hentry {
+		float: none;
+		width: auto;
+	}
+
+	.content-area {
+		width: 100%;
+		max-width: 100%;
+		padding: 0;
+	}
+
+}
+
+.fl-builder {
+
+	&.page:not(.page-template-sidebar),
+	&.single-wm_staff {
+		@extend %fullwidth_sections_layout;
+	}
+
+}
+
+.fl-row {
+
+	&-content {
+		padding: 0;
+
+		&-wrap {
+
+			@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+
+				.site & {
+					// Fixing Beaver Builder module border color inheritance
+					border-color: inherit !important;
+				}
+
+				.site .fl-row & {
+					padding: 0; // Removing custom row paddings if set
+				}
+
+				.custom-row-background.fl-row-fixed-width & {
+					padding-left: $golden +rem !important;
+					padding-right: $golden +rem !important;
+				}
+
+			}
+
+		}
+
+	}
+
+	&-fixed-width {
+
+		.site & {
+			max-width: $content_width +px;
+			max-width: $content_width * $px;
+
+			.single-post &,
+			.page-template-sidebar & {
+				max-width: 100%;
+			}
+
+		}
+
+		// Default fullwidth site layout responsive styles
+		//
+		// This will get overriden via custom CSS.
+
+			@include responsive( round( $content_width / .88 ), 'max-width' ) {
+
+				.site & {
+					max-width: 88%;
+				}
+
+			}
+
+		// Default boxed site layout responsive styles
+		//
+		// This will get overriden via custom CSS.
+
+			@include responsive( round( $content_width / .88 / .96 ), 'max-width' ) {
+
+				.site-layout-boxed & {
+					max-width: 88%;
+				}
+
+			}
+
+		& .fl-row-fixed-width {
+
+			.site & {
+				max-width: 100%;
+			}
+
+		}
+
+	}
+
+}
+
+.fl-col {
+
+	&.center-vertically,
+	.center-vertically & {
+		vertical-align: middle; // Flexbox fallback
+	}
+
+	// Equal column height
+	//
+	// Using CSS flexbox.
+	// IE9 fallback: see `ie.scss`.
+
+	&-group {
+		width: 100%;
+		width: calc( 100% + #{ power( $golden, 2 ) +rem } );
+		margin-left: power( $golden, 2 ) / 2 * -1rem;
+		margin-right: power( $golden, 2 ) / 2 * -1rem;
+
+		.single-post &,
+		.page-template-sidebar &,
+		.row-layout-full-full & {
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.fl-row-fixed-width.custom-row-background & {
+			width: 100%;
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+		}
+
+		// Responsive (*) -> see above)
+
+			@include responsive( map_get( $breakpoint, 's' ) ) {
+				display: block; // Flexbox fallback
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				display: table; // Flexbox fallback
+				table-layout: fixed; // FLexbox fallback
+				border-collapse: collapse; // FLexbox fallback
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+		.fl-col {
+			float: none; // Removing float as we use table layout as fallback
+			position: relative;
+
+			// Responsive (*) -> see above)
+
+				@include responsive( map_get( $breakpoint, 's' ) ) {
+					display: block; // Flexbox fallback
+					display: flex; // Make the columns equally high
+					flex-grow: 1;
+					flex-shrink: 1; // IE10 required on flex children
+				}
+
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
+					display: table-cell; // Flexbox fallback
+					vertical-align: top; // Flexbox fallback
+					display: flex; // Make the columns equally high
+					flex-grow: 1;
+					flex-shrink: 1; // IE10 required on flex children
+				}
+
+				@include responsive( map_get( $breakpoint, 'xl' ), 'max-width' ) {
+					margin: 0;
+				}
+
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
+
+					&.last {
+						order: 10;
+					}
+
+					&.first {
+						order: -10;
+					}
+
+				}
+
+		}
+
+	}
+
+	&-content {
+		width: 100%; // Reguired to strech the flexbox content in column
+		padding: $column_padding_vertical ( power( $golden, 2 ) / 2 +rem );
+
+		@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+			padding-top: power( $golden, 2 ) +rem;
+			padding-bottom: power( $golden, 2 ) +rem;
+		}
+
+		@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+
+			.site & {
+				// Override column padding removing in Beaver Builder layout stylesheet
+				padding-left: power( $golden, 2 ) / 2 +rem !important;
+				padding-right: power( $golden, 2 ) / 2 +rem !important;
+				// Fixing Beaver Builder module border color inheritance
+				border-color: inherit !important;
+			}
+
+		}
+
+		.fl-col.no-padding & {
+			padding: 0 !important;
+		}
+
+		.custom-column-background & {
+			padding-left: power( $golden, 2 ) +rem;
+			padding-right: power( $golden, 2 ) +rem;
+		}
+
+		.center-vertically & {
+			display: flex;
+			flex-shrink: 1; // IE10 required on flex children
+			flex-direction: column;
+			justify-content: center;
+		}
+
+	}
+
+	// Fixing flexbox layout column margin for Webkit browsers
+
+		.fl-row &-group::after,
+		.fl-row &-group::before,
+		.fl-row &::after,
+		.fl-row &::before {
+			display: none;
+		}
+
+	// Hover column effect
+
+		&[class*="hover-color-"] {
+
+			&:hover {
+
+				* {
+					color: inherit;
+				}
+
+			}
+
+			.fl-col-content {
+				transition: background .3s, color .3s, transform .3s;
+			}
+
+			.fl-builder-content &:hover .fl-col-content {
+				border: 0;
+			}
+
+		}
+
+	// Responsive (*) -> see above)
+
+		.fl-row & {
+
+			@include responsive_minmax( map_get( $breakpoint, 'l' ), map_get( $breakpoint, 'xl' ) ) {
+
+				&-width-1-5,
+				&-width-1-6 {
+					width: 33.33333% !important;
+				}
+
+				// Last two 1/5 column
+
+					&-width-1-5:nth-child(4),
+					&-width-1-5:last-child {
+						width: 50% !important;
+					}
+
+			}
+
+			@include responsive_minmax( map_get( $breakpoint, 'm' ), map_get( $breakpoint, 'l' ) ) {
+
+				&-width-1-5,
+				&-width-1-6 {
+					width: 33.33333% !important;
+				}
+
+				&-width-1-4{
+					width: 50% !important;
+				}
+
+				&-width-3-4 {
+					width: 66.66666% !important;
+				}
+
+				// Last two 1/5 column
+
+					&-width-1-5:nth-child(4),
+					&-width-1-5:last-child {
+						width: 50% !important;
+					}
+
+				// 1/4+3/4 combinations
+				// Not using `children()` mixin here due to its problem and in favour of code organization.
+
+					&-width-1-4:nth-child(1):nth-last-child(2),
+					&-width-1-4:nth-child(2):nth-last-child(1) {
+						width: 33.33333% !important;
+					}
+
+				// 1/4+1/4+1/2 combinations
+
+					&-width-1-4:nth-child(1):nth-last-child(3),
+					&-width-1-4:nth-child(2):nth-last-child(2),
+					&-width-1-2 + .fl-col-width-1-4 {
+						width: 50% !important;
+					}
+
+					&-width-1-2:nth-child(1):nth-last-child(3),
+					&-width-1-2:nth-child(3):nth-last-child(1),
+					&-width-1-4 + .fl-col-width-1-2 {
+						width: 100% !important;
+					}
+
+				// 1/4+1/2+1/4
+
+					&-width-1-2:nth-child(2):nth-last-child(2) {
+						order: -1; // Moving half column before the quarter ones
+					}
+
+			}
+
+			@include responsive_minmax( map_get( $breakpoint, 's' ), map_get( $breakpoint, 'm' ) ) {
+				width: 100% !important;
+				max-width: 100%;
+
+				&-width-1-4,
+				&-width-1-5,
+				&-width-1-6 {
+					width: 50% !important;
+				}
+
+				// Last 1/5 column
+
+					&-width-1-5:last-child {
+						width: 100% !important;
+					}
+
+				// 2 columns in a row (specially for 1/4+3/4 or 1/3+2/3 combinations)
+				// Not using `children()` mixin here due to its problem and in favour of code organization.
+
+					&:nth-child(1):nth-last-child(2),
+					&:nth-child(2):nth-last-child(1) {
+						width: 100% !important;
+					}
+
+				// 3 columns in a row (specially for 1/4+1/4+1/2 combinations)
+				// Not using `children()` mixin here due to its problem and in favour of code organization.
+
+					&:nth-child(1):nth-last-child(3),
+					&:nth-child(2):nth-last-child(2),
+					&:nth-child(3):nth-last-child(1) {
+						width: 100% !important;
+					}
+
+			}
+
+			@include responsive( map_get( $breakpoint, 's' ), 'max-width' ) {
+				width: 100% !important;
+				max-width: 100%;
+			}
+
+		}
+
+}
+
+.fl-module {
+
+	@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+
+		+ .fl-module {
+			margin-top: $golden +rem;
+		}
+
+	}
+
+}
+
+
+
+// "Templates" custom post type
+
+	.single-fl-builder-template {
+		@extend %fullwidth_sections_layout;
+
+		.entry-header {
+			margin: 0;
+
+			h1 {
+				@extend %font_size_golden_rem;
+				@extend %font_style_italic;
+				@extend .weight-300;
+				padding: 1em;
+				text-align: center;
+				color: inherit;
+
+				&::before,
+				&::after {
+					content: '\0022'; // "
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Row video background
+
+	embed,
+	iframe,
+	object,
+	video {
+
+		.fl-bg-video & {
+			max-width: none;
+		}
+
+	}
+
+
+
+// Beaver Builder native modules
+
+	// Contact form
+
+		.fl-input-group {
+			margin-bottom: 1em;
+		}
+
+		.fl-contact-form {
+
+			label {
+				display: block;
+			}
+
+			input[type="submit"],
+			input[type="text"],
+			input[type="email"],
+			textarea {
+				width: 100%;
+			}
+
+		}
+
+	// Images / Photos
+
+		.fl-photo-content {
+			width: 100%;
+
+			.fullwidth & {
+
+				img {
+					width: 100% !important;
+				}
+
+			}
+
+		}
+
+	// Text module
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+			%column_gap {
+				column-gap: $golden +em;
+			}
+
+			.fl-rich-text {
+
+				// When text module has a `.columns-#` special class,
+				// a CSS3 columns layout will apply on the text.
+				//
+				// @link  http://caniuse.com/#search=column
+
+				@for $i from 2 through 6 {
+
+					.columns-#{$i} & {
+						column-count: $i;
+						@extend %column_gap;
+					}
+
+				}
+
+			}
+
+		}
+
+
+
+// Visibility classes
+
+	%hide_on_desktop {
+
+		// Tablet landscape
+		// Desktop
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			display: none !important;
+		}
+
+	}
+
+	%hide_on_tablet {
+
+		// Tablet landscape
+
+		@include responsive_minmax( map_get( $breakpoint, 'm' ), map_get( $breakpoint, 'l' ) ) {
+			display: none !important;
+		}
+
+	}
+
+	%hide_on_mobile {
+
+		// Mobile portrait
+		// Mobile landscape
+		// Tablet portrait
+
+		@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+			display: none !important;
+		}
+
+	}
+
+	.fl-visible-desktop {
+		@extend %hide_on_mobile;
+		@extend %hide_on_tablet;
+	}
+
+	.fl-visible-desktop-medium {
+		@extend %hide_on_mobile;
+	}
+
+	.fl-visible-medium {
+		@extend %hide_on_mobile;
+		@extend %hide_on_desktop;
+	}
+
+	.fl-visible-medium-mobile {
+		@extend %hide_on_desktop;
+	}
+
+	.fl-visible-mobile {
+		@extend %hide_on_tablet;
+		@extend %hide_on_desktop;
+	}

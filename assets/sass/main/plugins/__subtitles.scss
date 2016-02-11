@@ -1,0 +1,55 @@
+/* FILE: main/plugins/__subtitles.scss */
+
+//
+// Subtitles
+//
+
+
+
+
+
+.entry-subtitle {
+	@extend %font_size_tiny;
+	@extend .weight-400;
+	display: block;
+	margin-top: $golden_major +em;
+	text-transform: uppercase;
+	opacity: .75;
+
+	.is-singular[class*="paged-"] & {
+		margin-bottom: $golden_major +em;
+	}
+
+	.posts & {
+		@extend %font_size_1rem;
+		@extend .weight-400;
+	}
+
+	.posts .type-wm_staff & {
+		@extend %font_size_small;
+		text-transform: none;
+	}
+
+	.widget & {
+		@extend %font_size_smaller;
+		display: inline;
+		text-transform: none;
+
+		&::before {
+			content: '(';
+		}
+
+		&::after {
+			content: ')';
+		}
+
+	}
+
+	.post-table-of-contents &,
+	.comments-title &,
+	.widget_recent_entries &,
+	.widget_recent_comments & {
+		display: none;
+	}
+
+}
