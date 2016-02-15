@@ -57,12 +57,12 @@
 	#{$button_elements_beaver_builder},
 	.main-navigation-container .button > a {
 		/*[*/
-		background-color: map_get( $colors, "accent" );
-		color: map_get( $colors, "accent_text" );
+		background-color: map_get( $colors, "accent_primary_background" );
+		color: map_get( $colors, "accent_primary_text" );
 		/*]*/
 		/*//
-		background-color: ___color_accent;
-		color: ___color_accent_text;
+		background-color: ___color_accent_primary_background;
+		color: ___color_accent_primary_text;
 		//*/
 	}
 
@@ -72,12 +72,12 @@
 
 			.active & {
 				/*[*/
-				background-color: map_get( $colors, "accent" );
-				color: map_get( $colors, "accent_text" );
+				background-color: map_get( $colors, "accent_primary_background" );
+				color: map_get( $colors, "accent_primary_text" );
 				/*]*/
 				/*//
-				background-color: ___color_accent;
-				color: ___color_accent_text;
+				background-color: ___color_accent_primary_background;
+				color: ___color_accent_primary_text;
 				//*/
 			}
 
@@ -96,12 +96,12 @@
 			.sidebar .wm-subnav li &,
 			.sidebar .widget_nav_menu & {
 				/*[*/
-				background-color: map_get( $colors, "accent" );
-				color: map_get( $colors, "accent_text" );
+				background-color: map_get( $colors, "accent_primary_background" );
+				color: map_get( $colors, "accent_primary_text" );
 				/*]*/
 				/*//
-				background-color: ___color_accent;
-				color: ___color_accent_text;
+				background-color: ___color_accent_primary_background;
+				color: ___color_accent_primary_text;
 				//*/
 			}
 

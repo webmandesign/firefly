@@ -19,13 +19,13 @@
 			@extend %fullhd_width;
 			display: flex;
 			justify-content: space-between;
-			line-height: map_get( $header_height, "narrow" ) * 1rem;
+			line-height: 3rem;
 		}
 
 		@include responsive() {
 
 			&-inner {
-				line-height: map_get( $header_height, "normal" ) * 1rem;
+				line-height: 5rem;
 			}
 
 		}

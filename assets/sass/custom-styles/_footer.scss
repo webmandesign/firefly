@@ -12,8 +12,7 @@
 
 // Site footer
 
-	.site-footer,
-	.#{$special_color_class_prefix}footer {
+	.site-footer {
 		/*[*/
 		background-color: map_get( $colors, "footer_background" );
 		color: map_get( $colors, "footer_text" );
@@ -37,17 +36,6 @@
 	}
 
 	.site-footer {
-
-		// Decorative border
-
-			&::after {
-				/*[*/
-				background-color: map_get( $colors, "accent" );
-				/*]*/
-				/*//
-				background-color: ___color_footer_decoration;
-				//*/
-			}
 
 		// Accent color
 

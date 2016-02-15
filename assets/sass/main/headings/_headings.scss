@@ -84,12 +84,20 @@
 
 // Widget title
 
-	.widget-title,
-	.sidebar .widgettitle {
+	.widget-title {
 		@extend %font_size_smaller_rem;
 		@extend .weight-700;
 		margin: 0 0 ( $golden +rem );
 		text-transform: uppercase;
+		letter-spacing: $golden_minor / 4 +em;
+
+		.sidebar & {
+			padding: 1em ( $golden +rem );
+			margin-left: -$golden +rem;
+			margin-right: -$golden +rem;
+			line-height: 1;
+		}
+
 	}
 
 	.hide-widget-title {
@@ -125,7 +133,7 @@
 		&-container {
 			position: relative;
 			height: 90vh;
-			height: calc( 100vh - #{ map_get( $header_height, "normal" ) * 1rem } );
+			height: calc( 100vh - 5rem );
 			background-position: 50% 50%;
 			background-size: cover;
 			z-index: 1;

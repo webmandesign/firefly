@@ -20,16 +20,9 @@
 	//
 
 		$boxed_width: 1760;
-		$content_width: 1160;
+		$content_width: 1200;
 
 		$single_post_left_padding: .38 * .62 * 100; // %
-
-		$decorative_border_thickness: .38; // rem
-
-		$header_height: ( // In rem units
-			'normal': 5,
-			'narrow': 3
-		) !default;
 
 		$column_padding_vertical: 3.62rem;
 
@@ -39,12 +32,12 @@
 	// Typography
 	//
 
-		$font_size: 16; // Set also in `assets/css-generate/custom-styles.php`
+		$font_size: 18; // Set also in `assets/css-generate/custom-styles.php`
 
 		$font_family: (
-			'body':     "'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif",
-			'headings': "'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif",
-			'logo':     "'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+			'body':     "'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+			'headings': "'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+			'logo':     "'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif",
 		) !default;
 
 		$h_tags_setup: (
@@ -157,14 +150,6 @@
 
 
 	//
-	// Special color classes
-	//
-
-		$special_color_class_prefix: 'set-colors-';
-
-
-
-	//
 	// Post formats
 	//
 
@@ -255,7 +240,7 @@
 	// Media player
 	//
 
-		$color_mejs_bg: #4a4c4e; // Some neutral dark color that won't change
+		$color_mejs_bg: #2a2c2e; // Some neutral dark color that won't change
 
 
 
@@ -272,19 +257,9 @@
 
 		// Site header
 
-			'header_background': #f1f3f5,
-			'header_text':       #6a6c6e,
-
-			// Navigation
-
-				'navigation_background': #2a2c2e,
-				'navigation_text':       #eaecee,
-				'navigation_border':     #4a4c4e,
-
-			// Intro heading
-
-				'intro_background': #4abcfe,
-				// Intro title = accent color
+			'header_background':     #f1f3f5,
+			'header_text_primary':   #1a1c1e,
+			'header_text_secondary': #fafcfe,
 
 		// Site content
 
@@ -292,8 +267,6 @@
 			'content_text':       #6a6c6e,
 			'content_headings':   #2a2c2e,
 			'content_border':     #caccce,
-
-			'sidebar_background': #f1f3f5,
 
 		// Site footer
 
@@ -305,35 +278,12 @@
 			'footer_accent':      #eaecfe,
 			'footer_accent_text': #3a3c4e,
 
-			// Footer info widgets
-
-				// = accent color
-
 		// Accent color
 
-			'accent':      #07599b,
-			'accent_text': #fafcfe,
+			'accent_primary_background': #0a7c3e,
+			'accent_primary_text':       #fafcfe,
 
-		// Predefined colors
-
-			'error_background': #aa3e0e,
-			'error_text':       #fafcfe,
-
-			'info_background': #07599b,
-			'info_text':       #fafcfe,
-
-			'neutral_background': #dadcde,
-			'neutral_text':       #3a3c3e,
-
-			'success_background': #038547,
-			'success_text':       #fafcfe,
-
-			'warning_background': #eaae3e,
-			'warning_text':       #3a3c3e,
-
-		// Simple button
-
-			'button_simple_light': #fafcfe,
-			'button_simple_dark':  #1a1c1e,
+			'accent_secondary_background': #07599b,
+			'accent_secondary_text':       #fafcfe,
 
 	);

@@ -203,7 +203,7 @@
 
 			$output = $image_url = '';
 
-			$image_size = 'firefly-banner';
+			$image_size = 'large';
 
 
 		// Processing

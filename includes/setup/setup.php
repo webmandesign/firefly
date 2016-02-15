@@ -272,8 +272,8 @@
 					add_theme_support( 'custom-header', apply_filters( 'wmhook_fn_firefly_theme_setup_custom_header_args', array(
 							'default-image' => Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/images/header.jpg' ),
 							'header-text'   => false,
-							'width'         => ( isset( $image_sizes['firefly-banner'] ) ) ? ( $image_sizes['firefly-banner'][0] ) : ( 1500 ),
-							'height'        => ( isset( $image_sizes['firefly-banner'] ) ) ? ( $image_sizes['firefly-banner'][1] ) : ( 500 ),
+							'width'         => ( isset( $image_sizes['large'] ) ) ? ( $image_sizes['large'][0] ) : ( 1500 ),
+							'height'        => ( isset( $image_sizes['large'] ) ) ? ( $image_sizes['large'][1] ) : ( 500 ),
 							'flex-height'   => true,
 							'flex-width'    => true,
 						) ) );
@@ -296,10 +296,6 @@
 					add_theme_support( 'post-formats', array(
 							'audio',
 							'gallery',
-							'image',
-							'link',
-							'quote',
-							'status',
 							'video',
 						) );
 
@@ -497,30 +493,23 @@
 				$image_sizes = array(
 
 						'thumbnail' => array(
-								480,
-								640,
+								absint( $content_width * .62 ),
+								absint( $content_width * .62 * 9 / 16 ),
 								true,
 								esc_html__( 'In posts list.', 'firefly' )
 							),
 
 						'medium' => array(
-								absint( $content_width * .62 ),
+								absint( $content_width ),
 								9999,
 								false,
 								esc_html__( 'In single staff post page.', 'firefly' )
 							),
 
 						'large' => array(
-								absint( $content_width ),
-								9999,
-								false,
-								esc_html__( 'In single post page.', 'firefly' )
-							),
-
-						'firefly-banner' => array(
 								$banner_width,
 								$banner_height,
-								true,
+								false,
 								esc_html__( 'As intro heading background.', 'firefly' )
 							),
 
@@ -766,8 +755,7 @@
 			// Helper variables
 
 				$fonts_setup = array(
-						'Roboto Condensed:700',
-						'Roboto:700,400,300',
+						'Source Sans Pro:700,400,300',
 					);
 
 

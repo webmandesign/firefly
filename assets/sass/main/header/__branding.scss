@@ -22,13 +22,8 @@
 		img {
 			display: inline-block;
 			width: auto;
-			max-height: map_get( $header_height, "normal" ) * .8 * 1rem; // 80% of the header height
+			max-height: .8 * 5rem; // 80% of the header height
 			vertical-align: middle;
-
-			.has-scrolled & {
-				max-height: map_get( $header_height, "narrow" ) * .8 * 1rem; // 80% of the header height
-			}
-
 		}
 
 		a {
@@ -71,12 +66,11 @@
 			&.styled {
 				position: relative;
 				display: inline-block;
-				padding: ( $golden_major +rem ) 1rem;
-				line-height: 1;
+				padding: 0 1em;
+				line-height: 3rem;
 				text-transform: uppercase;
 				font-size: 1rem;
 				letter-spacing: $golden_minor / 4 +em;
-				border: 1px solid;
 			}
 
 		}

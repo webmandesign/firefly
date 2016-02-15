@@ -15,7 +15,7 @@
 		clear: both;
 		width: 100%;
 		margin: -1em 0 0;
-		line-height: map_get( $header_height, "narrow" ) * 1rem;
+		line-height: 3rem;
 
 		&-container {
 
@@ -80,12 +80,6 @@
 				border-top: 1px solid;
 				border-color: inherit;
 
-				&.button {
-					display: block;
-					padding-top: 1em;
-					padding-bottom: 1em;
-				}
-
 				li {
 
 					a {
@@ -128,23 +122,18 @@
 						> ul {
 
 							> li {
-								margin-left: $golden_minor +rem;
+								margin-left: 1px;
+								margin-right: 1px;
 
 								> a {
-									padding: 0 ( $golden_major +em );
+									padding: 0 1em;
 									margin: 0;
-									line-height: 3rem - 2 * $golden_minor;
+									line-height: 3rem;
 									font-weight: 700;
-									transition: line-height .1s, background .3s, color .3s;
+									transition: box-shadow .3s, background .3s, color .3s;
 
 									.menu-item-description {
 										display: none;
-									}
-
-									&:hover,
-									&:focus,
-									&:active {
-										line-height: 3rem;
 									}
 
 								}
@@ -152,16 +141,8 @@
 								&.menu-item-has-children {
 
 									> a {
-										padding-right: 2em;
-									}
-
-								}
-
-								&.button {
-
-									> a {
-										padding-top: 0;
-										padding-bottom: 0;
+										padding-right: 2.5em;
+										padding-right: calc( 1.25em + 16px );
 									}
 
 								}
@@ -175,15 +156,6 @@
 											border-bottom-right-radius: 0;
 											border-bottom-left-radius: 0;
 											box-shadow: 0 3px 4px 0 rgba( #000, .1 );
-										}
-
-									}
-
-									&:not(.button):hover,
-									&.focus {
-
-										> a {
-											line-height: 3rem;
 										}
 
 									}
@@ -260,16 +232,6 @@
 					white-space: nowrap;
 				}
 
-				&.button {
-					background: transparent;
-					box-shadow: none;
-
-					&:active {
-						opacity: 1;
-					}
-
-				}
-
 				// Submenu
 
 					ul {
@@ -286,7 +248,7 @@
 							left: -9999rem;
 							top: percentage( 1 + $golden_minor );
 							padding: 1em;
-							margin: ( ( map_get( $header_height, "normal" ) - 3 ) / 2 * -1rem ) -1em 0; // margin-top = -( header_hight - menu_link_height_3rem ) / 2
+							margin: -1rem -1em 0; // margin-top = -( header_hight - menu_link_height_3rem ) / 2
 							box-shadow: 0 3px 4px 0 rgba( #000, .1 );
 							opacity: 0;
 							z-index: 9;
@@ -395,9 +357,8 @@
 					position: absolute;
 					width: 16px;
 					height: 16px;
-					right: $golden_major +em;
+					right: .75em;
 					top: 50%;
-					margin-left: 2px;
 					border: 1px solid;
 					border-radius: 50%;
 					opacity: .66;
@@ -428,12 +389,6 @@
 
 				}
 
-			}
-
-		// Icon in menu item (has to be included with HTML)
-
-			[class^="icon-"] {
-				margin-right: $golden_minor +em;
 			}
 
 	}

@@ -2,10 +2,8 @@
 
 //
 // Site content color styles.
-// Posts list color styles.
+// Posts color styles.
 // Sidebar color styles.
-// Breadcrumbs color styles.
-// Page templates color styles.
 //
 
 
@@ -36,24 +34,43 @@
 		//*/
 	}
 
-	.site,
-	.site-content,
-	.#{$special_color_class_prefix}content {
+	.site-content {
 		@extend %site_content_colors;
 	}
+
+	// Elements with inner border style (logo style)
+
+		%inner_border_content {
+			/*[*/
+			background-color: map_get( $colors, "content_headings" );
+			color: map_get( $colors, "content_background" );
+			box-shadow: inset 0 0 0 4px map_get( $colors, "content_headings" ), inset 0 0 0 5px;
+			/*]*/
+			/*//
+			background-color: ___color_content_headings;
+			color: ___color_content_background;
+			box-shadow: inset 0 0 0 4px ___color_content_headings, inset 0 0 0 5px;
+			//*/
+		}
 
 
 
 // Posts
 
-	.posts {
+	// Single post meta
 
-		.hentry {
-			@extend %site_content_colors;
+		.single .entry-meta-element {
+			@extend %inner_border_content;
 		}
 
-		#{$h_tags} {
-			@extend %site_content_headings_colors;
+
+
+// Sidebar
+
+	.widget-title {
+
+		.sidebar & {
+			@extend %inner_border_content;
 		}
 
 	}

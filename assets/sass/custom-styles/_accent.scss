@@ -37,23 +37,22 @@
 // Background color
 
 	#{$accent_color_elements},
-	.#{$special_color_class_prefix}accent,
 	.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text),
 	.sidebar::before {
 		/*[*/
-		background-color: map_get( $colors, "accent" );
+		background-color: map_get( $colors, "accent_primary_background" );
 		/*]*/
 		/*//
-		background-color: ___color_accent;
+		background-color: ___color_accent_primary_background;
 		//*/
 	}
 
 		.infinite-loader .spinner > div > div {
 			/*[*/
-			background-color: map_get( $colors, "accent" ) !important;
+			background-color: map_get( $colors, "accent_primary_background" ) !important;
 			/*]*/
 			/*//
-			background-color: ___color_accent !important;
+			background-color: ___color_accent_primary_background !important;
 			//*/
 		}
 
@@ -65,29 +64,28 @@
 	.accent-color,
 	.wm-iconbox-module .image {
 		/*[*/
-		color: map_get( $colors, "accent" );
+		color: map_get( $colors, "accent_primary_background" );
 		/*]*/
 		/*//
-		color: ___color_accent;
+		color: ___color_accent_primary_background;
 		//*/
 	}
 
-	#{$accent_color_elements},
-	.#{$special_color_class_prefix}accent {
+	#{$accent_color_elements} {
 		/*[*/
-		color: map_get( $colors, "accent_text" );
+		color: map_get( $colors, "accent_primary_text" );
 		/*]*/
 		/*//
-		color: ___color_accent_text;
+		color: ___color_accent_primary_text;
 		//*/
 	}
 
 		.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
 			/*[*/
-			color: map_get( $colors, "accent_text" ) !important;
+			color: map_get( $colors, "accent_primary_text" ) !important;
 			/*]*/
 			/*//
-			color: ___color_accent_text !important;
+			color: ___color_accent_primary_text !important;
 			//*/
 		}
 
@@ -99,10 +97,10 @@
 	.widget .tagcloud a:focus,
 	.widget .tagcloud a:active {
 		/*[*/
-		border-color: map_get( $colors, "accent" );
+		border-color: map_get( $colors, "accent_primary_background" );
 		/*]*/
 		/*//
-		border-color: ___color_accent;
+		border-color: ___color_accent_primary_background;
 		//*/
 	}
 
@@ -113,10 +111,10 @@
 	mark,
 	.highlight {
 		/*[*/
-		box-shadow: .382em 0 0 map_get( $colors, "accent" ), -.382em 0 0 map_get( $colors, "accent" );
+		box-shadow: .382em 0 0 map_get( $colors, "accent_primary_background" ), -.382em 0 0 map_get( $colors, "accent_primary_background" );
 		/*]*/
 		/*//
-		box-shadow: .382em 0 0 ___color_accent, -.382em 0 0 ___color_accent;
+		box-shadow: .382em 0 0 ___color_accent_primary_background, -.382em 0 0 ___color_accent_primary_background;
 		//*/
 	}
 
@@ -126,12 +124,12 @@
 
 			@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
 				/*[*/
-				background-color: map_get( $colors, "accent" );
-				color: map_get( $colors, "accent_text" );
+				background-color: map_get( $colors, "accent_primary_background" );
+				color: map_get( $colors, "accent_primary_text" );
 				/*]*/
 				/*//
-				background-color: ___color_accent;
-				color: ___color_accent_text;
+				background-color: ___color_accent_primary_background;
+				color: ___color_accent_primary_text;
 				//*/
 			}
 

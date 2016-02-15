@@ -19,7 +19,7 @@
 		}
 
 		&-area-inner {
-			@extend %fullhd_width;
+			@extend %content_width;
 		}
 
 	}
@@ -31,9 +31,23 @@
 // Site info (credits)
 
 	.footer-area-site-info {
-		@extend .clearfix;
 		position: relative;
-		background: inherit;
+		line-height: power( $golden, 2 ) +em; // To center child elements vertically
+		border-top: 1px solid;
+		border-color: inherit;
+		z-index: 1; // Trick to keep pseudo element below child elements
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background-color: currentColor;
+			opacity: .1;
+			z-index: -1; // Trick to keep pseudo element below child elements
+		}
 
 		a {
 			@extend .weight-700;
@@ -53,14 +67,8 @@
 		}
 
 		&-inner {
-			padding: $golden +rem 0;
-			border-top-left-radius: $golden_minor / 2 +rem;
-			border-top-right-radius: $golden_minor / 2 +rem;
-
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
-				padding: power( $golden, 2 ) +rem 0;
-			}
-
+			@extend .clearfix;
+			padding: ( $golden +em ) 0;
 		}
 
 	}

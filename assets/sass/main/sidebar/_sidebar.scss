@@ -17,19 +17,13 @@
 
 		@include responsive( map_get( $breakpoint, 'l' ) ) {
 			width: percentage( $golden_minor - .08 ); // 8% margin from content area
+			width: calc( #{ percentage( $golden_minor ) } - #{ $golden * 2rem } ); // better calculation for widget title borders
 			margin-top: 0;
 		}
 
-		.hentry & {
-
-			a {
-				text-decoration: none;
-			}
-
-		}
-
 		.widget {
-			margin-top: power( $golden, 3 ) +rem;
+			padding: 0 ( $golden +rem );
+			margin-top: power( $golden_minor + 1, 4 ) +em;
 		}
 
 	}

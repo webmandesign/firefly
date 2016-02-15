@@ -154,7 +154,7 @@
 
 	} // /firefly_excerpt_length
 
-	add_filter( 'excerpt_length', 'firefly_excerpt_length', 10 );
+	// add_filter( 'excerpt_length', 'firefly_excerpt_length', 10 );
 
 
 
@@ -405,10 +405,11 @@
 			$output = '';
 
 			$args = wp_parse_args( $args, apply_filters( 'wmhook_fn_firefly_post_title_defaults', array(
+					'addon'           => '',
 					'class'           => 'entry-title',
 					'class_container' => 'entry-header',
 					'link'            => esc_url( get_permalink() ),
-					'output'          => '<header class="{class_container}"><{tag} class="{class}"' . firefly_schema_org( 'name' ) . '>{title}</{tag}></header>',
+					'output'          => '<header class="{class_container}"><{tag} class="{class}"' . firefly_schema_org( 'name' ) . '>{title}</{tag}>{addon}</header>',
 					'tag'             => ( firefly_is_singular() ) ? ( 'h1' ) : ( 'h2' ),
 					'title'           => '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $title . '</a>',
 				) ) );
@@ -447,6 +448,28 @@
 
 				}
 
+			// Addon
+
+				// Post date in post header on single post page
+
+					if ( is_singular( 'post' ) ) {
+
+						$time_html = '<span class="{class}"{attributes}>{description}'
+						             . '<time datetime="' . esc_attr( get_the_date( 'c' ) ) . '" class="published" title="' . esc_attr( get_the_date() ) . ' | ' . esc_attr( get_the_time( '' ) ) . '"' . firefly_schema_org( '   datePublished' ) . '>'
+						             . '<span class="day">' . esc_html( get_the_date( 'd' ) ) . '</span> '
+						             . '<span class="month">' . esc_html( get_the_date( 'M' ) ) . '</span> '
+						             . '<span class="year">' . esc_html( get_the_date( 'Y' ) ) . '</span>'
+						             . '</time>'
+						             . '</span>';
+
+						$args['addon'] = Firefly_Theme_Framework::get_the_post_meta_info( array(
+								'container'   => 'div',
+								'meta'        => array( 'date' ),
+								'html_custom' => array( 'date' => $time_html ),
+							) );
+
+					}
+
 			// Filter processed $args
 
 				$args = apply_filters( 'wmhook_fn_firefly_post_title_args', $args );
@@ -455,6 +478,7 @@
 		// Processing
 
 			$replacements = (array) apply_filters( 'wmhook_fn_firefly_post_title_replacements', array(
+					'{addon}'           => $args['addon'],
 					'{class}'           => esc_attr( $args['class'] ),
 					'{class_container}' => esc_attr( $args['class_container'] ),
 					'{tag}'             => tag_escape( $args['tag'] ),
@@ -473,35 +497,6 @@
 
 
 	/**
-	 * Post meta top
-	 *
-	 * @since    1.0
-	 * @version  1.0
-	 */
-	function firefly_post_meta_top() {
-
-		// Output
-
-			if ( in_array( get_post_type(), (array) apply_filters( 'wmhook_fn_firefly_post_meta_top_post_type', array( 'post' ) ) ) ) {
-
-				if ( is_single() ) {
-
-					Firefly_Theme_Framework::the_post_meta_info( apply_filters( 'wmhook_fn_firefly_post_meta_top_args', array(
-							'class' => 'entry-meta entry-meta-top',
-							'meta'  => array( 'date', 'category', 'author', 'comments', 'likes' ),
-						) ) );
-
-				}
-
-			}
-
-	} // /firefly_post_meta_top
-
-	add_action( 'tha_entry_top', 'firefly_post_meta_top', 20 );
-
-
-
-	/**
 	 * Post meta bottom
 	 *
 	 * @since    1.0
@@ -509,25 +504,38 @@
 	 */
 	function firefly_post_meta_bottom() {
 
+		// Helper variables
+
+			$time_html = '<span class="{class}"{attributes}>{description}'
+			             . '<time datetime="' . esc_attr( get_the_date( 'c' ) ) . '" class="published" title="' . esc_attr( get_the_date() ) . ' | ' . esc_attr( get_the_time( '' ) ) . '"' . firefly_schema_org( '   datePublished' ) . '>'
+			             . '<span class="day">' . esc_html( get_the_date( 'd' ) ) . '</span> '
+			             . '<span class="month">' . esc_html( get_the_date( 'M' ) ) . '</span> '
+			             . '<span class="year">' . esc_html( get_the_date( 'Y' ) ) . '</span>'
+			             . '</time>'
+			             . '</span>';
+
+
 		// Output
 
-			if ( in_array( get_post_type(), apply_filters( 'wmhook_fn_firefly_post_meta_bottom_post_type', array( 'post' ) ) ) ) {
+			if ( in_array( get_post_type(), (array) apply_filters( 'wmhook_fn_firefly_post_meta_bottom_post_type', array( 'post' ) ) ) ) {
 
 				if ( is_single() ) {
 
-					Firefly_Theme_Framework::the_post_meta_info( apply_filters( 'wmhook_fn_firefly_post_meta_bottom_args', array(
+					$args = array(
 							'container' => 'footer',
-							'class'     => 'entry-meta entry-meta-bottom',
-							'meta'      => array( 'tags' ),
-						) ) );
+							'meta'      => array( 'category', 'author', 'comments', 'likes' ),
+						);
+
+					Firefly_Theme_Framework::the_post_meta_info( apply_filters( 'wmhook_fn_firefly_post_meta_top_args', $args ) );
+
+					echo '<div class="clear"></div>'; // Required to clear floats for special blog post layout
 
 				} else {
 
 					Firefly_Theme_Framework::the_post_meta_info( apply_filters( 'wmhook_fn_firefly_post_meta_bottom_args', array(
 							'container'   => 'footer',
-							'class'       => 'entry-meta',
 							'meta'        => array( 'date', 'comments', 'likes' ),
-							'date_format' => 'j M Y',
+							'html_custom' => array( 'date' => $time_html ),
 						) ) );
 
 				}
@@ -537,6 +545,24 @@
 	} // /firefly_post_meta_bottom
 
 	add_action( 'tha_entry_bottom', 'firefly_post_meta_bottom', 10 );
+
+
+
+	/**
+	 * Post comments
+	 *
+	 * @since    1.0
+	 * @version  1.0
+	 */
+	function firefly_post_comments() {
+
+		// Output
+
+			comments_template( '', true );
+
+	} // /firefly_post_comments
+
+	add_action( 'tha_entry_bottom', 'firefly_post_comments', 20 );
 
 
 
@@ -558,25 +584,7 @@
 
 	} // /firefly_post_navigation
 
-	add_action( 'tha_entry_bottom', 'firefly_post_navigation', 20 );
-
-
-
-	/**
-	 * Post comments
-	 *
-	 * @since    1.0
-	 * @version  1.0
-	 */
-	function firefly_post_comments() {
-
-		// Output
-
-			comments_template( '', true );
-
-	} // /firefly_post_comments
-
-	add_action( 'tha_entry_bottom', 'firefly_post_comments', 30 );
+	add_action( 'tha_entry_bottom', 'firefly_post_navigation', 30 );
 
 
 
@@ -851,25 +859,9 @@
 	 */
 	function firefly_post_thumbnail_size( $image_size ) {
 
-		// Processing
-
-			if (
-					firefly_is_singular()
-					|| is_attachment()
-				) {
-
-				$image_size = 'large';
-
-			} else {
-
-				$image_size = 'thumbnail';
-
-			}
-
-
 		// Output
 
-			return $image_size;
+			return 'thumbnail';
 
 	} // /firefly_post_thumbnail_size
 
@@ -926,14 +918,6 @@
 
 						case 'gallery':
 							$output .= firefly_post_gallery( $image_size );
-							break;
-
-						case 'image':
-							$output .= firefly_post_image( $image_size );
-							break;
-
-						case 'status':
-							$output .= firefly_post_avatar( $image_size );
 							break;
 
 						case 'video':
@@ -1037,152 +1021,6 @@
 				return $output;
 
 		} // /firefly_post_image_featured
-
-
-
-		/**
-		 * Featured or content image
-		 *
-		 * @since    1.0
-		 * @version  1.0
-		 *
-		 * @param  string $image_size
-		 */
-		function firefly_post_image_content( $image_size ) {
-
-			// Pre
-
-				$pre = apply_filters( 'wmhook_fn_firefly_post_image_content_pre', false, $image_size );
-
-				if ( false !== $pre ) {
-					return $pre;
-				}
-
-
-			// Helper variables
-
-				$output = '';
-
-
-			// Processing
-
-				if ( has_post_thumbnail() ) {
-
-					$output .= firefly_post_image_featured( $image_size );
-
-				} else {
-
-					$image_link = ( is_single() || is_attachment() ) ? ( wp_get_attachment_image_src( $image_id, 'full' ) ) : ( array( esc_url( get_permalink() ) ) );
-					$image_link = array_filter( (array) apply_filters( 'wmhook_fn_firefly_post_image_content_link', $image_link ) );
-
-					$post_media = (string) Firefly_Post_Formats::get();
-					$image_alt  = the_title_attribute( 'echo=0' );
-
-					// Get the image size URL if we got image ID
-
-						if ( is_numeric( $post_media ) ) {
-							$image_alt  = get_post_meta( absint( $post_media ), '_wp_attachment_image_alt', true );
-							$post_media = wp_get_attachment_image_src( absint( $post_media ), $image_size );
-							$post_media = $post_media[0];
-						}
-
-					// Set the output
-
-						if ( $post_media ) {
-
-							$output .= '<figure class="post-thumbnail"' . firefly_schema_org( 'image' ) . '>';
-
-								if ( ! empty( $image_link ) ) {
-									$output .= '<a href="' . esc_url( $image_link[0] ) . '">';
-								}
-
-								$output .= '<img src="' . esc_url( $post_media ) . '" alt="' . esc_attr( $image_alt ) . '" title="' . the_title_attribute( 'echo=0' ) . '" />';
-
-								if ( ! empty( $image_link ) ) {
-									$output .= '</a>';
-								}
-
-							$output .= '</figure>';
-
-						}
-
-				}
-
-
-			// Output
-
-				return $output;
-
-		} // /firefly_post_image_content
-
-
-
-		/**
-		 * Featured image or avatar
-		 *
-		 * @since    1.0
-		 * @version  1.0
-		 *
-		 * @param  string $image_size
-		 */
-		function firefly_post_image_avatar( $image_size ) {
-
-			// Pre
-
-				$pre = apply_filters( 'wmhook_fn_firefly_post_image_avatar_pre', false, $image_size );
-
-				if ( false !== $pre ) {
-					return $pre;
-				}
-
-
-			// Helper variables
-
-				$output = '';
-
-
-			// Processing
-
-				if ( has_post_thumbnail() ) {
-
-					$output .= firefly_post_image_featured( $image_size );
-
-				} else {
-
-					// Get image width for avatar
-
-						if ( in_array( $image_size, array( 'thumbnail', 'medium', 'large' ) ) ) {
-
-							$image_width = get_option( $image_size . '_size_w' );
-
-						} else {
-
-							global $_wp_additional_image_sizes;
-
-							$image_width = 420;
-
-							if ( isset( $_wp_additional_image_sizes[ $image_size ] ) ) {
-								$image_width = $_wp_additional_image_sizes[ $image_size ]['width'];
-							}
-
-						}
-
-					// Set the output
-
-						$output .= '<figure class="post-thumbnail"' . firefly_schema_org( 'image' ) . '>';
-
-							$output .= get_avatar( get_the_author_meta( 'ID' ), absint( $image_width ) );
-
-						$output .= '</figure>';
-
-				}
-
-
-			// Output
-
-				return $output;
-
-		} // /firefly_post_image_avatar
 
 
 

@@ -13,6 +13,7 @@
 	.single & {
 		margin-top: power( $golden, 2 ) +rem;
 		margin-bottom: 0;
+		line-height: 1 + $golden_minor; // 1.38
 	}
 
 	&-element {
@@ -68,18 +69,16 @@
 				width: percentage( $single_post_left_padding / 100 );
 				padding: 0 ( $golden +rem ) 0 0;
 				margin: 0 0 ( $golden +em );
-				line-height: 1 + $golden_minor; // 1.38
 				font-size: 1em - $golden_minor / 2; // .81
 				border: 0;
 				border-color: inherit;
 
 				.entry-meta-element {
 					display: block;
-					padding: $golden_major +em;
+					padding: ( $golden +em ) ( $golden_major +em );
 					margin: 0 0 1em;
 					text-align: center;
-					border: 1px solid;
-					border-color: inherit;
+					border: 0;
 				}
 
 				.entry-date ~ .entry-meta-element {
@@ -160,28 +159,11 @@
 			.#{$icon}::before {
 				@extend %genericon;
 				content: $char;
+				margin-top: 0;
+				line-height: 1;
+				vertical-align: top;
 			}
 
 		}
-
-	.posts & {
-		@extend %font_size_smaller;
-		position: absolute;
-		width: power( 1 + $golden_minor, 4 ) +rem;
-		height: 100%;
-		left: 0;
-		top: 0;
-		padding: ( $golden +em ) 0 0;
-		margin: 0;
-		text-align: center;
-		border: 0;
-
-		&-element {
-			display: block;
-			padding: 0;
-			margin: 0 0 1em;
-		}
-
-	}
 
 }

@@ -13,7 +13,6 @@
 	@extend .weight-400;
 	display: block;
 	margin-top: $golden_major +em;
-	text-transform: uppercase;
 	opacity: .75;
 
 	.is-singular[class*="paged-"] & {
@@ -22,12 +21,6 @@
 
 	.posts & {
 		@extend %font_size_1rem;
-		@extend .weight-400;
-	}
-
-	.posts .type-wm_staff & {
-		@extend %font_size_small;
-		text-transform: none;
 	}
 
 	.widget & {
