@@ -255,7 +255,7 @@ th, tfoot td { text-align: left; border-width: 2px; }
 .vertical-align-bottom, [class^="icon-"].vertical-align-bottom::before, [class*="icon-"].vertical-align-bottom::before { vertical-align: bottom; }
 
 /* FILE: starter/base/__clearing.scss */
-.clearfix::after, .clear::after, .gallery::after, .site-header::after, .site-content::after, .site-footer::after, .entry-content::after, .comment-content::after, .widget_text::after, .tagcloud::after, .jetpack_subscription_widget form::after, .site-main::after, .posts::after, .site-info-inner::after, .footer-widgets::after { content: ''; clear: both; display: table; table-layout: fixed; }
+.clearfix::after, .clear::after, .gallery::after, .site-header::after, .site-content::after, .site-footer::after, .entry-content::after, .comment-content::after, .widget_text::after, .tagcloud::after, .jetpack_subscription_widget form::after, .site-main::after, .posts::after, .site-info-inner::after, .intro-widgets::after, .footer-widgets::after { content: ''; clear: both; display: table; table-layout: fixed; }
 
 .clear { clear: both; }
 
@@ -838,7 +838,7 @@ html { min-width: 320px; }
 
 .site-layout-fullwidth { padding: 0; }
 
-.intro-inner, .content-area, .site-footer-area-inner, .breadcrumbs { width: 1200px; width: 66.66667rem; max-width: 88%; margin: 0 auto; }
+.intro-inner, .content-area, .site-footer-area-inner, .intro-widgets, .breadcrumbs { width: 1200px; width: 66.66667rem; max-width: 88%; margin: 0 auto; }
 
 .site-header-inner { width: 1920px; width: 106.66667rem; max-width: 88%; margin: 0 auto; }
 
@@ -976,8 +976,6 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 
 @media only screen and (min-width: 960px) { .entry-header { margin-bottom: 3.62674rem; } }
 
-.entry-header.intro-container { margin-bottom: 0; }
-
 .posts .entry-header { padding-bottom: 1.62rem; margin-bottom: 0; }
 
 @media only screen and (min-width: 680px) { .single-post .entry-header { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-shrink: 1; -ms-flex-negative: 1; flex-shrink: 1; overflow: hidden; }
@@ -991,15 +989,19 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 
 .hide-widget-title .widget-title, .hide-widget-title .widgettitle { display: none; }
 
-.intro { position: absolute; width: 100%; left: 0; bottom: 0; padding: 8% 0 4%; }
+.intro { width: 100%; padding: 8% 0 4%; text-shadow: 0 2px 1px rgba(10, 12, 14, 0.5); }
 
-.intro-container { position: relative; height: 90vh; height: calc( 100vh - 5rem); background-position: 50% 50%; background-size: cover; z-index: 1; }
+.intro-container { position: relative; padding-top: 12%; background-position: 50% 50%; background-size: cover; z-index: 1; }
 
 .intro-title { font-size: 4.25153em; }
 
 .intro-title a { color: inherit; }
 
+.intro .entry-title { margin-bottom: 0; }
+
 .intro-title, .page-summary { max-width: 62%; }
+
+.page-summary { margin-top: 1.62em; }
 
 /* FILE: main/header/_header.scss */
 .site-header { position: relative; z-index: 99; }
@@ -1499,6 +1501,19 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 @media only screen and (min-width: 960px) { .sidebar { width: 30%; width: calc( 38% - 3.24rem); margin-top: 0; } }
 
 .sidebar .widget { padding: 0 1.62rem; margin-top: 3.62674em; }
+
+/* FILE: main/sidebar/__intro.scss */
+.intro-widgets { display: -webkit-flex; display: -ms-flexbox; display: flex; padding-top: 1.62em; padding-bottom: 1.62em; }
+
+@media only screen and (min-width: 680px) { .intro-widgets { padding-top: 2.6244em; padding-bottom: 2.6244em; } }
+
+@media only screen and (min-width: 1200px) { .intro-widgets { padding-top: 3.62674em; padding-bottom: 3.62674em; } }
+
+.intro-widgets-container { width: 100%; }
+
+.intro-widgets .widget { float: left; -webkit-flex-shrink: 1; -ms-flex-negative: 1; flex-shrink: 1; position: relative; width: 33.33333%; margin: 0; }
+
+.intro-widgets .widget + .widget { margin-left: 3.24rem; }
 
 /* FILE: main/sidebar/__footer.scss */
 .footer-widgets { display: -webkit-flex; display: -ms-flexbox; display: flex; }

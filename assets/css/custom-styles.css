@@ -67,7 +67,11 @@ mark, .highlight { /*[*/ box-shadow: 0.382em 0 0 #0a7c3e, -0.382em 0 0 #0a7c3e; 
 
 .mobile-menu-container .current-menu-item { /*[*/ /*]*/ /*// background-color: ___color_navigation_border; //*/ }
 
-.intro { background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 25%, transparent); color: #fafcfe; }
+.intro { background: linear-gradient(to top, rgba(10, 12, 14, 0.5), transparent); color: #fafcfe; }
+
+.intro-widgets-container { background-color: rgba(10, 12, 14, 0.9); color: #aaacae; }
+
+.intro-widgets-container .widget-title { color: #fafcfe; }
 
 /* FILE: custom-styles/_content.scss */
 .site-content { /*[*/ background-color: #fafcfe; color: #6a6c6e; border-color: #caccce; /*]*/ /*// background-color: ___color_content_background; color: ___color_content_text; border-color: ___color_content_border; //*/ }

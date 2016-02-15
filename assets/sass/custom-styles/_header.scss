@@ -217,6 +217,16 @@
 // Intro title
 
 	.intro {
-		background: linear-gradient( to top, rgba(#000, .8) 25%, transparent ); //*
+		background: linear-gradient( to top, rgba(#0a0c0e, .5), transparent ); //*
 		color: #fafcfe; //*
+	}
+
+	.intro-widgets-container {
+		background-color: rgba(#0a0c0e, .9); //*
+		color: #aaacae; //*
+
+		.widget-title {
+			color: #fafcfe;
+		}
+
 	}

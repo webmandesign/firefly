@@ -99,6 +99,10 @@
 							'name'        => esc_html__( 'Sidebar', 'firefly' ),
 							'description' => '',
 						),
+						'intro'   => array(
+							'name'        => esc_html__( 'Intro Widgets', 'firefly' ),
+							'description' => '',
+						),
 						'footer'  => array(
 							'name'        => esc_html__( 'Footer Widgets', 'firefly' ),
 							'description' => '',

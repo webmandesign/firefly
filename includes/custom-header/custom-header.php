@@ -181,6 +181,24 @@
 
 
 	/**
+	 * Intro widgets
+	 *
+	 * @since    1.0
+	 * @version  1.0
+	 */
+	function firefly_intro_widgets() {
+
+		// Output
+
+			get_sidebar( 'intro' );
+
+	} // /firefly_intro_widgets
+
+	add_action( 'wmhook_fn_firefly_post_intro_after', 'firefly_intro_widgets', 10 );
+
+
+
+	/**
 	 * Post/page intro title background
 	 *
 	 * @uses  `wmhook_firefly_esc_css` global hook

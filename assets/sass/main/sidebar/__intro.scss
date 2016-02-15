@@ -1,0 +1,47 @@
+/* FILE: main/sidebar/__intro.scss */
+
+//
+// Intro widgets area
+//
+
+
+
+
+
+.intro-widgets {
+	@extend %content_width;
+	@extend .clearfix; // Flexbox fallback
+	display: flex;
+	padding-top: $golden +em;
+	padding-bottom: $golden +em;
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+		padding-top: power( $golden, 2 ) +em;
+		padding-bottom: power( $golden, 2 ) +em;
+	}
+
+	@include responsive( map_get( $breakpoint, 'xl' ) ) {
+		padding-top: power( $golden_minor + 1, 4 ) +em;
+		padding-bottom: power( $golden_minor + 1, 4 ) +em;
+	}
+
+	&-container {
+		width: 100%;
+	}
+
+	$columns: 3;
+
+	.widget {
+		float: left; // Flexbox fallback
+		flex-shrink: 1; // IE10 required on flex children
+		position: relative;
+		width: percentage( 1 / $columns );
+		margin: 0;
+
+		+ .widget {
+			margin-left: $golden * 2rem;
+		}
+
+	}
+
+}

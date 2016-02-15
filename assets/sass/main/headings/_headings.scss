@@ -33,10 +33,6 @@
 			margin-bottom: power( 1 + $golden_minor, 4 ) +rem;
 		}
 
-		&.intro-container {
-			margin-bottom: 0;
-		}
-
 		.posts & {
 			padding-bottom: $golden * 1rem;
 			margin-bottom: 0;
@@ -124,16 +120,13 @@
 
 	.intro {
 		@extend %font_size_golden_minor;
-		position: absolute;
 		width: 100%;
-		left: 0;
-		bottom: 0;
 		padding: 8% 0 4%;
+		text-shadow: 0 2px 1px rgba(#0a0c0e, .5);
 
 		&-container {
 			position: relative;
-			height: 90vh;
-			height: calc( 100vh - 5rem );
+			padding-top: 12%;
 			background-position: 50% 50%;
 			background-size: cover;
 			z-index: 1;
@@ -154,6 +147,10 @@
 
 		}
 
+		.entry-title {
+			margin-bottom: 0;
+		}
+
 	}
 
 	.intro-title,
@@ -163,6 +160,7 @@
 
 	.page-summary {
 		@extend .weight-300;
+		margin-top: $golden +em;
 	}
 
 	// Hiding default titles when intro title used
