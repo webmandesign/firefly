@@ -36,6 +36,9 @@
 		.posts & {
 			padding-bottom: $golden * 1rem;
 			margin-bottom: 0;
+			margin-left: percentage( ( $single_post_left_padding * -100 / ( 100 - $single_post_left_padding ) ) / 100 );
+			border-bottom: 2px solid;
+			border-color: inherit;
 		}
 
 		@include responsive( map_get( $breakpoint, 'm' ) ) {

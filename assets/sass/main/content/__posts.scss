@@ -24,11 +24,8 @@
 
 	.entry-content {
 
-		.posts .entry-header + &,
-		.hide-media .entry-media + & {
+		.posts & {
 			padding-top: $golden +rem;
-			border-top: 2px solid;
-			border-color: inherit;
 		}
 
 		@include responsive( map_get( $breakpoint, 'm' ) ) {
@@ -61,7 +58,7 @@
 			padding-left: percentage( $single_post_left_padding / 100 );
 
 			+ .hentry {
-				margin-top: power( $golden_minor + 1, 4 ) +em;
+				margin-top: power( $golden, 4 ) +rem;
 			}
 
 		}
@@ -71,6 +68,10 @@
 
 
 // More link
+
+	.more-link {
+		@extend %button_base;
+	}
 
 	.link-more {
 

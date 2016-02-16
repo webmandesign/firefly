@@ -55,7 +55,7 @@
 
 	#{$button_elements},
 	#{$button_elements_beaver_builder},
-	.main-navigation-container .button > a {
+	.more-link {
 		/*[*/
 		background-color: map_get( $colors, "accent_primary_background" );
 		color: map_get( $colors, "accent_primary_text" );

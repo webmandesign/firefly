@@ -16,7 +16,7 @@ button, input, select, textarea, tbody tr:hover td, tbody tr:hover th, code, pre
 
 .pagination a:hover { background-color: rgba(0, 0, 0, 0.1); }
 
-.button, button, input[type="button"], input[type="reset"], input[type="submit"], .fl-builder-content .fl-module .button, .fl-builder-content .fl-module button, .fl-builder-content .fl-module input[type="button"], .fl-builder-content .fl-module input[type="reset"], .fl-builder-content .fl-module input[type="submit"], .main-navigation-container .button > a { /*[*/ background-color: #c25719; color: #fafcfe; box-shadow: inset 0 0 0 4px #c25719, inset 0 0 0 5px; /*]*/ /*// background-color: ___color_accent_primary_background; color: ___color_accent_primary_text; box-shadow: inset 0 0 0 4px ___color_accent_primary_background, inset 0 0 0 5px; //*/ }
+.button, button, input[type="button"], input[type="reset"], input[type="submit"], .fl-builder-content .fl-module .button, .fl-builder-content .fl-module button, .fl-builder-content .fl-module input[type="button"], .fl-builder-content .fl-module input[type="reset"], .fl-builder-content .fl-module input[type="submit"], .more-link { /*[*/ background-color: #c25719; color: #fafcfe; box-shadow: inset 0 0 0 4px #c25719, inset 0 0 0 5px; /*]*/ /*// background-color: ___color_accent_primary_background; color: ___color_accent_primary_text; box-shadow: inset 0 0 0 4px ___color_accent_primary_background, inset 0 0 0 5px; //*/ }
 
 @media only screen and (max-width: 959px) { .active .menu-toggle { /*[*/ background-color: #c25719; color: #fafcfe; /*]*/ /*// background-color: ___color_accent_primary_background; color: ___color_accent_primary_text; //*/ } }
 
@@ -29,13 +29,13 @@ button, input, select, textarea, tbody tr:hover td, tbody tr:hover th, code, pre
 blockquote::before, blockquote::after, blockquote.alignleft::before, blockquote.alignleft::after, blockquote.alignright::before, blockquote.alignright::after, button, input, select, textarea, .main-navigation-container li li, .header-info-widgets .search-field:focus, .entry-meta, .single .entry-meta, .comment-meta, .comment-respond, .comment-list .comment-respond, .pagination, .post-table-of-contents, .post-table-of-contents.top, .widget ul li, .widget .tagcloud a, .inline .widget ul li, div.sharedaddy, .site div#jp-relatedposts, .inline li { border-color: inherit; }
 
 /* FILE: custom-styles/_accent.scss */
-.posts .entry-meta, mark, .highlight, .pagination .current, .bypostauthor > .comment-body .comment-author::before, .comment-navigation a, .widget_calendar tbody a, .widget .tagcloud a:hover, .widget .tagcloud a:focus, .widget .tagcloud a:active, body #infinite-handle span, .hover-color-accent.fl-col:hover .fl-col-content, .site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text), .sidebar::before { /*[*/ background-color: #c25719; /*]*/ /*// background-color: ___color_accent_primary_background; //*/ }
+mark, .highlight, .pagination .current, .bypostauthor > .comment-body .comment-author::before, .comment-navigation a, .widget_calendar tbody a, .widget .tagcloud a:hover, .widget .tagcloud a:focus, .widget .tagcloud a:active, body #infinite-handle span, .site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text), .sidebar::before { /*[*/ background-color: #c25719; /*]*/ /*// background-color: ___color_accent_primary_background; //*/ }
 
 .infinite-loader .spinner > div > div { /*[*/ background-color: #c25719 !important; /*]*/ /*// background-color: ___color_accent_primary_background !important; //*/ }
 
 a, .accent-color, .wm-iconbox-module .image { /*[*/ color: #c25719; /*]*/ /*// color: ___color_accent_primary_background; //*/ }
 
-.posts .entry-meta, mark, .highlight, .pagination .current, .bypostauthor > .comment-body .comment-author::before, .comment-navigation a, .widget_calendar tbody a, .widget .tagcloud a:hover, .widget .tagcloud a:focus, .widget .tagcloud a:active, body #infinite-handle span, .hover-color-accent.fl-col:hover .fl-col-content { /*[*/ color: #fafcfe; /*]*/ /*// color: ___color_accent_primary_text; //*/ }
+mark, .highlight, .pagination .current, .bypostauthor > .comment-body .comment-author::before, .comment-navigation a, .widget_calendar tbody a, .widget .tagcloud a:hover, .widget .tagcloud a:focus, .widget .tagcloud a:active, body #infinite-handle span { /*[*/ color: #fafcfe; /*]*/ /*// color: ___color_accent_primary_text; //*/ }
 
 .site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) { /*[*/ color: #fafcfe !important; /*]*/ /*// color: ___color_accent_primary_text !important; //*/ }
 

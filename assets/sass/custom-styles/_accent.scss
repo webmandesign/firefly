@@ -11,8 +11,6 @@
 // Accent color
 
 	$accent_color_elements: (
-		// Post meta in posts list
-		'.posts .entry-meta',
 		// Marker
 		'mark',
 		'.highlight',
@@ -27,9 +25,7 @@
 		'.widget .tagcloud a:focus',
 		'.widget .tagcloud a:active',
 		// Jetpack
-		'body #infinite-handle span',
-		// Hover color special class
-		'.hover-color-accent.fl-col:hover .fl-col-content'
+		'body #infinite-handle span'
 	);
 
 
