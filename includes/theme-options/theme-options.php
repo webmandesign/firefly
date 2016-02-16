@@ -624,7 +624,7 @@
 									'type'    => 'radio',
 									'id'      => 'layout_site',
 									'label'   => esc_html__( 'Website layout', 'firefly' ),
-									'default' => '',
+									'default' => 'fullwidth',
 									'options' => array(
 											'boxed'     => esc_html__( 'Boxed', 'firefly' ),
 											'fullwidth' => esc_html__( 'Fullwidth', 'firefly' ),
@@ -889,7 +889,7 @@
 
 		// Helper variables
 
-			$layout = $control->manager->get_setting( FIREFLY_OPTION_CUSTOMIZER . '[' . 'layout_site' . ']' );
+			$layout = $control->manager->get_setting( 'layout_site' );
 
 
 		// Output

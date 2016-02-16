@@ -43,13 +43,6 @@
 
 	// Global functions
 
-		/**
-		 * Setup theme framework
-		 */
-
-			// add_filter( 'wmhook_firefly_update_notifier_enabled', '__return_true' ); // Enables update notifier inclusion
-			// add_filter( 'wmhook_firefly_plugins_suggestion_enabled', '__return_false' ); // Disables TGM Plugin Activation script inclusion
-
 		locate_template( 'library/init.php', true );
 
 	// Theme setup

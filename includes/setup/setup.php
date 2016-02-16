@@ -196,7 +196,7 @@
 
 						}
 
-					// Allow filtering the Visual Composer stylesheets
+					// Allow filtering the visual editor stylesheets
 
 						$visual_editor_css = array_filter( (array) apply_filters( 'wmhook_fn_firefly_theme_setup_visual_editor_css', $visual_editor_css ) );
 
