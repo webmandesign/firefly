@@ -75,6 +75,8 @@
 		}
 
 		&.back-to-top {
+			background: none;
+			box-shadow: none;
 
 			&::before {
 				content: '\f435';

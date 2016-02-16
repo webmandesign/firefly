@@ -69,7 +69,9 @@ mark, .highlight { /*[*/ box-shadow: 0.382em 0 0 #c25719, -0.382em 0 0 #c25719; 
 
 .intro { text-shadow: 0 2px 2px rgba(10, 12, 14, 0.65); background: linear-gradient(to top, rgba(10, 12, 14, 0.65), transparent); color: #fafcfe; }
 
-.intro-widgets-container { /*[*/ background-color: rgba(42, 44, 46, 0.85); color: #caccce; border-color: #4a4c4e; /*]*/ /*// background-color: ___color_footer_background|alpha=85; color: ___color_footer_text; border-color: ___color_footer_border; //*/ }
+.intro-widgets-container { /*[*/ color: #caccce; border-color: #4a4c4e; /*]*/ /*// color: ___color_footer_text; border-color: ___color_footer_border; //*/ }
+
+.intro-widgets-container::before { /*[*/ background-color: #2a2c2e; /*]*/ /*// background-color: ___color_footer_background; //*/ }
 
 .intro-widgets-container .widget-title { /*[*/ color: #eaecee; /*]*/ /*// color: ___color_footer_headings; //*/ }
 
