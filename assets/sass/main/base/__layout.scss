@@ -14,6 +14,14 @@ html {
 
 body {
 
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+		padding: 1em;
+	}
+
+	@include responsive( map_get( $breakpoint, 'xl' ) ) {
+		padding: $golden +em;
+	}
+
 	@include responsive_minmax( map_get( $breakpoint, 'm' ), map_get( $breakpoint, 's' ), 'max-width', 'min-height' ) {
 
 		&.has-mobile-bar {
@@ -36,10 +44,6 @@ body {
 
 .site-layout-boxed {
 
-	@include responsive( map_get( $breakpoint, 'm' ) ) {
-		padding: ( $golden_minor + 1rem ) 2%;
-	}
-
 	.site {
 		max-width: $boxed_width +px;
 		max-width: $boxed_width * $px;
@@ -48,9 +52,7 @@ body {
 
 }
 
-.site-layout-fullwidth {
-	padding: 0;
-}
+.site-layout-fullwidth {}
 
 %content_width {
 	// (*) Overriden in `assets/css-generate/custom-styles.php`

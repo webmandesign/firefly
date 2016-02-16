@@ -1,4 +1,4 @@
-/* FILE: main/header/__menu-social.scss */
+/* FILE: main/menu/__menu-social.scss */
 
 //
 // Social links menu (works with Custom Menu widget too)
@@ -9,7 +9,6 @@
 
 
 .social-links {
-	@extend %font_size_golden_minor;
 
 	@include responsive( map_get( $breakpoint, 'xl' ) ) {
 		float: right;
@@ -36,46 +35,26 @@
 
 	li {
 		display: inline-block;
+		margin: 0;
 
 		.widget.widget_nav_menu & {
 			border: 0;
-		}
-
-		.header-info-widgets & {
-			margin-right: 0;
-		}
-
-		.sidebar &,
-		.fl-widget & {
-			margin-right: $golden_minor / 2 +em;
-		}
-
-		.text-right & {
-			margin-left: $golden_minor / 2 +em;
-			margin-right: 0;
-		}
-
-	}
-
-	&:hover {
-
-		a {
-			opacity: .5;
 		}
 
 	}
 
 	a {
 		display: inline-block;
-		padding-left: $golden_minor / 2 +em;
-		padding-right: $golden_minor / 2 +em;
+		padding-left: 1em;
+		padding-right: 1em;
 		margin: 1px; // For focus outline to be visible in whole.
+		line-height: 3rem;
 		color: inherit;
-		transition: opacity .3s;
+		transition: box-shadow .3s;
 
 		&:hover {
 			text-decoration: none;
-			opacity: 1;
+			box-shadow: none;
 		}
 
 		&::before {

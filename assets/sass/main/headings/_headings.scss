@@ -121,12 +121,12 @@
 	.intro {
 		@extend %font_size_golden_minor;
 		width: 100%;
-		padding: 8% 0 4%;
-		text-shadow: 0 2px 1px rgba(#0a0c0e, .5);
+		padding: 8% 0;
 
 		&-container {
 			position: relative;
-			padding-top: 12%;
+			padding-top: 10%;
+			margin: 0;
 			background-position: 50% 50%;
 			background-size: cover;
 			z-index: 1;

@@ -19,15 +19,9 @@
 			@extend %fullhd_width;
 			display: flex;
 			justify-content: space-between;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
 			line-height: 3rem;
-		}
-
-		@include responsive() {
-
-			&-inner {
-				line-height: 5rem;
-			}
-
 		}
 
 		a {
@@ -41,5 +35,3 @@
 // Imports
 
 	@import "_branding";
-
-	@import "_menu";

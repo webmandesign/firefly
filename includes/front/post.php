@@ -2,8 +2,6 @@
 /**
  * Structure: Post
  *
- * @uses  `wmhook_firefly_esc_css` global hook
- *
  * @package    Firefly
  * @copyright  WebMan Design, Oliver Juhas
  *
@@ -18,6 +16,7 @@
  * 30) Other post elements
  * 40) HTML attributes
  * 50) Post media
+ * 60) Pages
  */
 
 
@@ -492,7 +491,7 @@
 
 	} // /firefly_post_title
 
-	add_action( 'tha_entry_top', 'firefly_post_title', 10 );
+	add_action( 'tha_entry_top', 'firefly_post_title', 20 );
 
 
 
@@ -945,7 +944,7 @@
 
 		} // /firefly_post_thumbnail_size
 
-		add_filter( 'tha_entry_top', 'firefly_post_media', 30 );
+		add_action( 'tha_entry_top', 'firefly_post_media', 10 );
 
 
 
@@ -1220,3 +1219,88 @@
 				return $output;
 
 		} // /firefly_post_video
+
+
+
+
+
+/**
+ * 60) Pages
+ */
+
+	/**
+	 * Subpages as features
+	 *
+	 * @since    1.0
+	 * @version  1.0
+	 */
+	function firefly_page_children( $image_size ) {
+
+		// Requirements check
+
+			if ( ! is_page() ) {
+				return;
+			}
+
+
+		// Helper variables
+
+			$output = '';
+
+			$child_pages = array_filter( (array) get_pages( array(
+					'nopaging'     => true,
+					'sort_column'  => 'menu_order',
+					'hierarchical' => false,
+					'parent'       => get_the_ID(),
+				) ) );
+
+
+		// Processing
+
+			if ( ! empty( $child_pages ) ) {
+
+				$output .= '<section class="list-features-container">';
+				$output .= '<div class="list-features">';
+
+				foreach ( $child_pages as $child ) {
+
+					$child_id = absint( $child->ID );
+
+					$output .= '<article role="article" id="post-' . esc_attr( $child_id ) . '" class="feature post-<' . esc_attr( $child_id ) . '">';
+
+					// Featured image
+
+						if ( has_post_thumbnail( $child_id ) ) {
+
+							$output .= wp_get_attachment_image(
+									get_post_thumbnail_id( $child_id ),
+									(string) apply_filters( 'wmhook_fn_firefly_page_children_image_size', 'thumbnail' )
+								);
+
+						}
+
+					// Title
+
+						$output .= '<h2>' . get_the_title( $child_id ) . '</h2>';
+
+					// Content
+
+						$output .= apply_filters( 'the_content', $child->post_content );
+
+					$output .= '</article>';
+
+				} // /foreach
+
+				$output .= '</div>';
+				$output .= '</section>';
+
+			}
+
+
+		// Output
+
+			echo $output;
+
+	} // /firefly_page_children
+
+	add_action( 'tha_content_top', 'firefly_page_children', 20 );

@@ -288,7 +288,7 @@
 					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Background
 					 */
 					add_theme_support( 'custom-background', apply_filters( 'wmhook_fn_firefly_theme_setup_custom_background_args', array(
-							'default-color' => 'fafcfe',
+							'default-color' => '1a1c1e',
 							// 'wp-head-callback' => '__return_null', // This has to be set to callable function name (not just '') to prevent PHP warning! Also, you can still set the `default-color`.
 						) ) );
 

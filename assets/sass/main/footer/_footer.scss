@@ -32,7 +32,7 @@
 
 	.footer-area-site-info {
 		position: relative;
-		line-height: power( $golden, 2 ) +em; // To center child elements vertically
+		line-height: 3rem; // To center child elements vertically, the height of social icons
 		border-top: 1px solid;
 		border-color: inherit;
 		z-index: 1; // Trick to keep pseudo element below child elements

@@ -45,10 +45,6 @@
 					)
 					|| is_404()
 					|| is_page_template( 'templates/no-title.php' )
-					|| (
-						is_single()
-						&& ! is_singular( 'wm_staff' )
-					)
 					|| ! empty( $meta_no_title )
 				) {
 					return '';
@@ -267,28 +263,3 @@
 	} // /firefly_post_intro_background
 
 	add_action( 'wp_enqueue_scripts', 'firefly_post_intro_background', 120 );
-
-
-
-	/**
-	 * Post intro title default header background image forcing
-	 *
-	 * @since    1.0
-	 * @version  1.0
-	 */
-	function firefly_post_intro_default_image( $image_url ) {
-
-		// Processing
-
-			if ( is_singular( 'wm_staff' ) ) {
-				return false;
-			}
-
-
-		// Output
-
-			return $image_url;
-
-	} // /firefly_post_intro_default_image
-
-	add_filter( 'wmhook_fn_firefly_post_intro_background_image_url', 'firefly_post_intro_default_image' );

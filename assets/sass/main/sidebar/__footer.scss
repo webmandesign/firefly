@@ -11,6 +11,7 @@
 .footer-widgets {
 	@extend .clearfix; // Flexbox fallback
 	display: flex;
+	justify-content: space-between;
 
 	&-inner {
 		padding-top: $golden +em;
@@ -26,10 +27,8 @@
 	$columns: 3;
 
 	.widget {
-		float: left; // Flexbox fallback
+		flex: 1;
 		flex-shrink: 1; // IE10 required on flex children
-		position: relative;
-		width: percentage( 1 / $columns );
 		padding: ( $golden +em ) 0;
 		margin: 0;
 

@@ -10,8 +10,8 @@
 
 .intro-widgets {
 	@extend %content_width;
-	@extend .clearfix; // Flexbox fallback
 	display: flex;
+	justify-content: space-between;
 	padding-top: $golden +em;
 	padding-bottom: $golden +em;
 
@@ -32,7 +32,7 @@
 	$columns: 3;
 
 	.widget {
-		float: left; // Flexbox fallback
+		flex: 1;
 		flex-shrink: 1; // IE10 required on flex children
 		position: relative;
 		width: percentage( 1 / $columns );

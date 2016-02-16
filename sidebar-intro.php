@@ -17,7 +17,10 @@
  * Requirements check
  */
 
-	if ( ! is_active_sidebar( 'intro' ) ) {
+	if (
+			! is_active_sidebar( 'intro' )
+			|| ! is_page_template( 'templates/intro.php' )
+		) {
 		return;
 	}
 

@@ -24,13 +24,9 @@
 		//*/
 	}
 
+	// Elements with inner border style (logo style)
 
-
-// Branding
-
-	.type-text {
-
-		&.styled {
+		%inner_border_header {
 			/*[*/
 			background-color: map_get( $colors, "header_text_primary" );
 			box-shadow: inset 0 0 0 4px map_get( $colors, "header_text_primary" ), inset 0 0 0 5px;
@@ -52,6 +48,16 @@
 				//*/
 			}
 
+		}
+
+
+
+// Branding
+
+	.type-text {
+
+		&.styled {
+			@extend %inner_border_header;
 		}
 
 	}
@@ -214,15 +220,28 @@
 
 
 
+// Social links
+
+	.social-links {
+
+		a {
+			@extend %inner_border_header;
+		}
+
+	}
+
+
+
 // Intro title
 
 	.intro {
-		background: linear-gradient( to top, rgba(#0a0c0e, .5), transparent ); //*
+		text-shadow: 0 2px 2px rgba(#0a0c0e, .6); //*
+		background: linear-gradient( to top, rgba(#0a0c0e, .6), transparent ); //*
 		color: #fafcfe; //*
 	}
 
 	.intro-widgets-container {
-		background-color: rgba(#0a0c0e, .9); //*
+		background-color: rgba(#0a0c0e, .8); //*
 		color: #aaacae; //*
 
 		.widget-title {
