@@ -46,8 +46,8 @@
 			/**
 			 * @todo  Set the theme defaults here
 			 */
-			$width_site    = 1800; // Default max boxed site width
-			$width_content = 1200; // Default content width
+			$width_site    = 1760; // Default max boxed site width
+			$width_content = 1180; // Default content width
 
 			// Helper CSS selectors for `preview_js` (the "@" will be replaced with `selector_replace`)
 

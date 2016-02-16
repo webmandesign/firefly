@@ -30,7 +30,7 @@
 		}
 
 		.posts & {
-			margin: 0 ( -$golden +rem ) ( $golden +rem );
+			margin: 0 0 ( $golden +rem ) percentage( ( $single_post_left_padding * -100 / ( 100 - $single_post_left_padding ) ) / 100 );
 		}
 
 		.hide-media & {

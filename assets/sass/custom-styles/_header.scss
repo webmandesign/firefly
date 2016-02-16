@@ -235,17 +235,30 @@
 // Intro title
 
 	.intro {
-		text-shadow: 0 2px 2px rgba(#0a0c0e, .6); //*
-		background: linear-gradient( to top, rgba(#0a0c0e, .6), transparent ); //*
+		text-shadow: 0 2px 2px rgba(#0a0c0e, .65); //*
+		background: linear-gradient( to top, rgba(#0a0c0e, .65), transparent ); //*
 		color: #fafcfe; //*
 	}
 
 	.intro-widgets-container {
-		background-color: rgba(#0a0c0e, .8); //*
-		color: #aaacae; //*
+		/*[*/
+		background-color: rgba( map_get( $colors, "footer_background" ), .85 );
+		color: map_get( $colors, "footer_text" );
+		border-color: map_get( $colors, "footer_border" );
+		/*]*/
+		/*//
+		background-color: ___color_footer_background|alpha=85;
+		color: ___color_footer_text;
+		border-color: ___color_footer_border;
+		//*/
 
 		.widget-title {
-			color: #fafcfe;
+			/*[*/
+			color: map_get( $colors, "footer_headings" );
+			/*]*/
+			/*//
+			color: ___color_footer_headings;
+			//*/
 		}
 
 	}

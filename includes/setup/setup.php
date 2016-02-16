@@ -54,7 +54,7 @@
 			// Set default value if content width is still empty
 
 				if ( empty( $GLOBALS['content_width'] ) ) {
-					$GLOBALS['content_width'] = 1200;
+					$GLOBALS['content_width'] = 1180;
 				}
 
 	} // /firefly_content_width
@@ -1033,10 +1033,6 @@
  * 999) Plugins integration
  */
 
-	// WebMan Amplifier integration
-
-		locate_template( 'includes/plugins/webman-amplifier/webman-amplifier.php', true );
-
 	// Advanced Custom Fields integration
 
 		locate_template( 'includes/plugins/advanced-custom-fields/advanced-custom-fields.php', true );
@@ -1060,7 +1056,3 @@
 	// Subtitles integration
 
 		locate_template( 'includes/plugins/subtitles/subtitles.php', true );
-
-	// WooSidebars integration
-
-		locate_template( 'includes/plugins/woosidebars/woosidebars.php', true );

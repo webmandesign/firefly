@@ -10,38 +10,19 @@
 
 .intro-widgets {
 	@extend %content_width;
-	display: flex;
-	justify-content: space-between;
-	padding-top: $golden +em;
-	padding-bottom: $golden +em;
+	@extend %horizontal_widget_area;
 
-	@include responsive( map_get( $breakpoint, 'm' ) ) {
-		padding-top: power( $golden, 2 ) +em;
-		padding-bottom: power( $golden, 2 ) +em;
-	}
-
-	@include responsive( map_get( $breakpoint, 'xl' ) ) {
-		padding-top: power( $golden_minor + 1, 4 ) +em;
-		padding-bottom: power( $golden_minor + 1, 4 ) +em;
+	&,
+	& * {
+		border-color: inherit;
 	}
 
 	&-container {
 		width: 100%;
 	}
 
-	$columns: 3;
-
-	.widget {
-		flex: 1;
-		flex-shrink: 1; // IE10 required on flex children
-		position: relative;
-		width: percentage( 1 / $columns );
-		margin: 0;
-
-		+ .widget {
-			margin-left: $golden * 2rem;
-		}
-
+	a {
+		color: inherit;
 	}
 
 }

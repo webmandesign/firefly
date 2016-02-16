@@ -48,6 +48,22 @@
 
 
 
+// Basic alignments
+
+	.alignleft,
+	.wp-caption.alignleft,
+	img.alignleft {
+		margin-right: $golden +em;
+	}
+
+	.alignright,
+	.wp-caption.alignright,
+	img.alignright {
+		margin-left: $golden +em;
+	}
+
+
+
 // Dropcaps
 
 	.dropcap-text {

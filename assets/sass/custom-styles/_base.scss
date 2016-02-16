@@ -59,10 +59,12 @@
 		/*[*/
 		background-color: map_get( $colors, "accent_primary_background" );
 		color: map_get( $colors, "accent_primary_text" );
+		box-shadow: inset 0 0 0 4px map_get( $colors, "accent_primary_background" ), inset 0 0 0 5px;
 		/*]*/
 		/*//
 		background-color: ___color_accent_primary_background;
 		color: ___color_accent_primary_text;
+		box-shadow: inset 0 0 0 4px ___color_accent_primary_background, inset 0 0 0 5px;
 		//*/
 	}
 
@@ -168,9 +170,6 @@
 	.pagination,
 	.post-table-of-contents,
 	.post-table-of-contents.top,
-	// Footer
-	.footer-widgets .widget::after,
-	.footer-widgets .widget::before,
 	// Widgets
 	.widget ul li,
 	.widget .tagcloud a,

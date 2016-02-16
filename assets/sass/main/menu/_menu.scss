@@ -30,6 +30,10 @@
 
 	}
 
+	@include responsive( map_get( $breakpoint, 'xl' ) ) {
+		float: right;
+	}
+
 	&-container {
 
 		@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {

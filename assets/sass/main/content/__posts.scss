@@ -58,7 +58,7 @@
 
 		.hentry {
 			position: relative;
-			padding: 0 ( $golden +rem );
+			padding-left: percentage( $single_post_left_padding / 100 );
 
 			+ .hentry {
 				margin-top: power( $golden_minor + 1, 4 ) +em;

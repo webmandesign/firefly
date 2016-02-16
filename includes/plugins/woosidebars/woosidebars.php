@@ -78,7 +78,7 @@
 
 				$params[0]['before_widget'] = sprintf( '<section id="%1$s" class="widget %2$s">', $id, $classname_ );
 				$params[0]['after_widget']  = '</section>';
-				$params[0]['before_title']  = '<h3 class="widget-title">';
+				$params[0]['before_title']  = '<h3 class="widget-title">MUFTY';
 				$params[0]['after_title']   = '</h3>';
 			}
 

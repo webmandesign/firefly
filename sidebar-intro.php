@@ -20,6 +20,7 @@
 	if (
 			! is_active_sidebar( 'intro' )
 			|| ! is_page_template( 'templates/intro.php' )
+			|| is_paged()
 		) {
 		return;
 	}

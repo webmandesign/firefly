@@ -11,14 +11,10 @@
 // Site header
 
 	.site-header {
-		@extend .clearfix;
-		position: relative;
-		z-index: 99;
 
 		&-inner {
 			@extend %fullhd_width;
-			display: flex;
-			justify-content: space-between;
+			@extend .clearfix;
 			padding-top: 1rem;
 			padding-bottom: 1rem;
 			line-height: 3rem;

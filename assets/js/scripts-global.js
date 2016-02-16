@@ -182,39 +182,6 @@ jQuery( function() {
 
 
 
-		/**
-		 * Beaver Builder editor preview refreshed
-		 */
-
-			jQuery( '.fl-builder-content' )
-				.on( 'fl-builder.preview-rendered, fl-builder.layout-rendered', function() {
-
-					// Processing
-
-						// re-Masonry
-
-							if ( jQuery().masonry ) {
-
-								jQuery( '.masonry-this' )
-									.masonry();
-
-							} // /masonry
-
-						// re-Isotope
-
-							if ( jQuery().isotope ) {
-
-								jQuery( '.filter-this' )
-									.isotope( {
-										layoutMode : 'masonry'
-									} );
-
-							} // /isotope
-
-				} );
-
-
-
 
 
 } );

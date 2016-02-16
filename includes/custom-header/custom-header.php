@@ -133,7 +133,7 @@
 
 				$title = '<div class="page-title intro-title">' . sprintf(
 						esc_html__( 'Search Results for: %s', 'firefly' ),
-						'<span>' . firefly_search_results_title_staff_filter() . '</span>'
+						'<span>' . get_search_query() . '</span>'
 					) . Firefly_Theme_Framework::get_the_paginated_suffix( 'small' ) . '</div>';
 
 			} else {

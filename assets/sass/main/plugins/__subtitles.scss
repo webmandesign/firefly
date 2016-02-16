@@ -19,6 +19,11 @@
 		margin-bottom: $golden_major +em;
 	}
 
+	.intro & {
+		@extend .weight-300;
+		margin-top: 0;
+	}
+
 	.posts & {
 		@extend %font_size_1rem;
 	}

@@ -42,7 +42,6 @@
 
 			$stylesheets = array(
 					'global' => ( ! file_exists( $theme_upload_dir . 'global.css' ) ) ? ( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'fallback.css' ) ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_theme_mod( '__url_css' ) ) ),
-					'rtl'    => ( ! file_exists( $theme_upload_dir . 'global-rtl.css' ) ) ? ( '' ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_theme_mod( '__url_css-rtl' ) ) ),
 				);
 
 			if ( ! $stylesheets['global'] ) {
@@ -59,12 +58,10 @@
 			 */
 
 				$register_styles = apply_filters( 'wmhook_fn_firefly_register_assets_register_styles', array(
-						'firefly-google-fonts'          => array( firefly_google_fonts_url() ),
-						'firefly-stylesheet'            => array( 'src' => get_stylesheet_uri(), 'deps' => array( 'firefly-stylesheet-global' ) ),
-						'firefly-stylesheet-global'     => array( $stylesheets['global'] ),
-						'firefly-stylesheet-global-rtl' => array( 'src' => $stylesheets['rtl'], 'deps' => array( 'firefly-stylesheet-global' ) ),
-						'firefly-stylesheet-ie'         => array( 'src' => Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/css/ie.css' ), 'deps' => array( 'firefly-stylesheet-global' ) ),
-						'firefly-stylesheet-print'      => array( 'src' => Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/css/print.css' ), 'media' => 'print' ),
+						'firefly-google-fonts'      => array( firefly_google_fonts_url() ),
+						'firefly-stylesheet'        => array( 'src' => get_stylesheet_uri(), 'deps' => array( 'firefly-stylesheet-global' ) ),
+						'firefly-stylesheet-global' => array( $stylesheets['global'] ),
+						'firefly-stylesheet-print'  => array( 'src' => Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/css/print.css' ), 'media' => 'print' ),
 					), $stylesheets );
 
 				foreach ( $register_styles as $handle => $atts ) {
@@ -81,20 +78,11 @@
 			 */
 
 				$register_scripts = array(
-						'jquery-fitvids'                        => array( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/js/fitvids/jquery.fitvids.js' ) ),
+						'jquery-fitvids'              => array( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/js/fitvids/jquery.fitvids.js' ) ),
 						'firefly-skip-link-focus-fix' => array( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/js/skip-link-focus-fix.js' ) ),
-						'firefly-scripts-breakpoints' => array( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/js/scripts-breakpoints.js' ) ),
 						'firefly-scripts-global'      => array( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/js/scripts-global.js' ) ),
-						'firefly-scripts-masonry'     => array( 'src' => Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/js/scripts-masonry.js' ), 'deps' => array( 'jquery-masonry', 'wm-imagesloaded' ) ),
 						'firefly-scripts-navigation'  => array( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/js/scripts-navigation.js' ) ),
-						'firefly-scripts-sticky'      => array( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/js/scripts-sticky.js' ) ),
 					);
-
-				// If `wm-imagesloaded` is not pre-registered via WebMan Amplifier
-
-					if ( ! wp_script_is( 'wm-imagesloaded', 'registered' ) ) {
-						$register_scripts['wm-imagesloaded'] = array( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/js/imagesloaded/imagesloaded.pkgd.min.js' ) );
-					}
 
 				$register_scripts = apply_filters( 'wmhook_fn_firefly_register_assets_register_scripts', $register_scripts );
 
@@ -165,22 +153,9 @@
 
 					$enqueue_styles[] = 'firefly-stylesheet';
 
-				// RTL
-
-					if ( is_rtl() ) {
-						$enqueue_styles[] = 'firefly-stylesheet-global-rtl';
-					}
-
 				// Print
 
 					$enqueue_styles[] = 'firefly-stylesheet-print';
-
-				// IE specific
-
-					if ( $is_IE ) {
-						wp_enqueue_style( 'firefly-stylesheet-ie' );
-						$wp_styles->add_data( 'firefly-stylesheet-ie', 'conditional', 'lte IE 9' );
-					}
 
 				$enqueue_styles = apply_filters( 'wmhook_fn_firefly_enqueue_assets_enqueue_styles', $enqueue_styles );
 
@@ -199,33 +174,6 @@
 				// Navigation scripts
 
 					$enqueue_scripts[] = 'firefly-scripts-navigation';
-
-				// Not enqueued when building page with Beaver Builder
-
-					if ( ! class_exists( 'FLBuilderModel' ) || ! FLBuilderModel::is_builder_active() ) {
-
-						// Sticky
-
-							if ( in_array( 'do-sticky-header', $body_classes ) ) {
-								$enqueue_scripts[] = 'firefly-scripts-sticky';
-							}
-
-					}
-
-				// Masonry
-
-					if (
-							is_archive()
-							|| is_home()
-							|| is_search()
-							|| (
-								// Masonry footer only if there are more widgets than columns
-								isset( $footer_widgets['footer'] )
-								&& count( $footer_widgets['footer'] ) > absint( apply_filters( 'wmhook_firefly_widgets_columns', 4, 'footer' ) )
-							)
-						) {
-						$enqueue_scripts[] = 'firefly-scripts-masonry';
-					}
 
 				// Skip link focus fix
 

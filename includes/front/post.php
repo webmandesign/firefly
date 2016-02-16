@@ -1247,54 +1247,53 @@
 
 			$output = '';
 
-			$child_pages = array_filter( (array) get_pages( array(
-					'nopaging'     => true,
-					'sort_column'  => 'menu_order',
-					'hierarchical' => false,
-					'parent'       => get_the_ID(),
-				) ) );
-
 
 		// Processing
 
-			if ( ! empty( $child_pages ) ) {
+			$child_pages = new WP_Query( array(
+					'post_type'      => 'page',
+					'orderby'        => 'menu_order',
+					'order'          => 'ASC',
+					'post_parent'    => get_the_ID(),
+					'posts_per_page' => 8,
+					'no_found_rows'  => true,
+				) );
+
+			if ( ! empty( $child_pages->have_posts() ) ) {
 
 				$output .= '<section class="list-features-container">';
 				$output .= '<div class="list-features">';
 
-				foreach ( $child_pages as $child ) {
+				while ( $child_pages->have_posts() ) {
 
-					$child_id = absint( $child->ID );
+					$child_pages->the_post();
 
-					$output .= '<article role="article" id="post-' . esc_attr( $child_id ) . '" class="feature post-<' . esc_attr( $child_id ) . '">';
+					$output .= '<article role="article" id="post-' . esc_attr( get_the_ID() ) . '" class="feature post-<' . esc_attr( get_the_ID() ) . '">';
 
 					// Featured image
 
-						if ( has_post_thumbnail( $child_id ) ) {
-
-							$output .= '<div class="feature-image">' . wp_get_attachment_image(
-									get_post_thumbnail_id( $child_id ),
-									(string) apply_filters( 'wmhook_fn_firefly_page_children_image_size', 'thumbnail' )
-								) . '</div>';
-
+						if ( has_post_thumbnail() ) {
+							$output .= '<div class="feature-image">' . get_the_post_thumbnail( null, 'thumbnail' ) . '</div>';
 						}
 
 					// Title
 
-						$output .= '<h2 class="feature-title">' . get_the_title( $child_id ) . '</h2>';
+						$output .= '<h2 class="feature-title">' . get_the_title() . '</h2>';
 
 					// Content
 
-						$output .= '<div class="feature-content">' . apply_filters( 'the_content', $child->post_content ) . '</div>';
+						$output .= '<div class="feature-content">' . get_the_content() . '</div>';
 
 					$output .= '</article>';
 
-				} // /foreach
+				} // /while
 
 				$output .= '</div>';
 				$output .= '</section>';
 
 			}
+
+			wp_reset_postdata();
 
 
 		// Output

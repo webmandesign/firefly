@@ -14,17 +14,17 @@
 		@extend %content_width;
 		display: flex;
 		justify-content: space-between;
+		padding-top: $golden +em;
+		padding-bottom: $golden +em;
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
 
 		&-container {
 			position: relative;
-			padding: ( power( $golden, 2 ) +rem ) 0;
 			z-index: 1; // Trick to keep pseudo element below child elements
-
-
-			@include responsive( map_get( $breakpoint, 'l' ) ) {
-				padding-top: power( $golden, 4 ) +rem;
-				padding-bottom: power( $golden, 4 ) +rem;
-			}
 
 			&::before {
 				content: '';
@@ -45,14 +45,27 @@
 	.feature {
 		flex: 1;
 		flex-shrink: 1; // IE10 required on flex children
-		text-align: center;
+		padding: ( $golden +em ) 0;
+		margin: 0;
 
 		+ .feature {
 			margin-left: $golden * 2rem;
 		}
 
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			padding: ( power( $golden, 2 ) +em ) 0;
+		}
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			padding: ( power( $golden, 3 ) +em ) 0;
+		}
+
+		$feature_title_setup: map_get( $h_tags_setup, "h3, .h3" );
+
 		&-title {
-			@extend %font_size_golden_minor;
+			font-size: nth( $feature_title_setup, 1 ) +em;
+			line-height: nth( $feature_title_setup, 2 );
+			margin: ( $golden +rem ) 0;
 		}
 
 	}

@@ -9,46 +9,5 @@
 
 
 .footer-widgets {
-	@extend .clearfix; // Flexbox fallback
-	display: flex;
-	justify-content: space-between;
-
-	&-inner {
-		padding-top: $golden +em;
-		padding-bottom: $golden +em;
-
-		@include responsive( map_get( $breakpoint, 'm' ) ) {
-			padding-top: 0;
-			padding-bottom: 0;
-		}
-
-	}
-
-	$columns: 3;
-
-	.widget {
-		flex: 1;
-		flex-shrink: 1; // IE10 required on flex children
-		padding: ( $golden +em ) 0;
-		margin: 0;
-
-		+ .widget {
-			margin-left: $golden * 2rem;
-		}
-
-		@include responsive( map_get( $breakpoint, 'm' ) ) {
-			padding: ( power( $golden, 2 ) +em ) 0;
-		}
-
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
-			padding: ( power( $golden, 3 ) +em ) 0;
-		}
-
-		li,
-		table {
-			border-color: inherit;
-		}
-
-	}
-
+	@extend %horizontal_widget_area;
 }

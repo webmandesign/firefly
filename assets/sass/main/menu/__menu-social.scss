@@ -10,8 +10,18 @@
 
 .social-links {
 
+	.site-header & {
+		margin-left: power( $golden, 2 ) +em;
+	}
+
 	@include responsive( map_get( $breakpoint, 'xl' ) ) {
 		float: right;
+
+		.site-header & {
+			float: left;
+			margin: 0 ( power( $golden_minor + 1, 4 ) +em );
+		}
+
 	}
 
 	.site-footer & {
@@ -45,10 +55,10 @@
 
 	a {
 		display: inline-block;
-		padding-left: 1em;
-		padding-right: 1em;
+		padding-left: $golden_major +em;
+		padding-right: $golden_major +em;
 		margin: 1px; // For focus outline to be visible in whole.
-		line-height: 3rem;
+		line-height: 3rem - 2 * $golden_minor;
 		color: inherit;
 		transition: box-shadow .3s;
 
