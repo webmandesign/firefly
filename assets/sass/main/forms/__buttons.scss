@@ -15,10 +15,9 @@
 	margin-top: 2px; // Allow some breathing when stacked
 	margin-bottom: 2px; // Allow some breathing when stacked
 	border: 0;
+	border-radius: 0;
 	cursor: pointer;
-	border-radius: $golden_minor / 2 +rem;
-	box-shadow: 0 3px 6px -2px rgba( #000, .4 );
-	transition: background .3s, color .3s, box-shadow .3s, opacity .3s;
+	transition: background .3s, color .3s, opacity .3s;
 
 	form & {
 		// No need for stacked breathing in forms...
@@ -38,7 +37,6 @@
 	&:focus,
 	&:active {
 		text-decoration: none;
-		box-shadow: 0 5px 10px -2px rgba( #000, .26 );
 	}
 
 	&:hover {
@@ -52,7 +50,6 @@
 	&:active {
 		outline: 0;
 		opacity: .9;
-		box-shadow: inset 0 1px 3px rgba( #000, .13 );
 	}
 
 }

@@ -358,7 +358,7 @@ blockquote cite, code, pre, small, .small, .font-size-s, .wp-caption .wp-caption
 
 .post-table-of-contents a::before { font-size: 1.19em; }
 
-blockquote, .font-size-l, .comments-title, .posts .entry-title, .posts .page-title, .intro, .post-navigation a, .widget-recent-entries-list .entry-title { font-size: 1.38em; }
+blockquote, .font-size-l, .comments-title, .posts .entry-title, .posts .page-title, .intro, .post-navigation a, .feature-title, .widget-recent-entries-list .entry-title { font-size: 1.38em; }
 
 .font-size-xl, .mobile-menu-container i, .widget-recent-entries-list .entry-date { font-size: 1.62em; }
 
@@ -910,7 +910,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .intro-title { font-family
 @media only screen and (min-width: 960px) { .display-4 { font-size: 5em; } }
 
 /* FILE: main/forms/_forms.scss */
-button, input, select, textarea { border-width: 1px; border-radius: 0.19rem; }
+button, input, select, textarea { border-width: 1px; }
 
 input:focus, select:focus, textarea:focus { border-color: initial; box-shadow: 0 0 0 1px; }
 
@@ -919,7 +919,7 @@ select { padding: calc( 0.62em - 2px); }
 .site .fullwidth input[type], .site .fullwidth select, .site .fullwidth textarea { width: 100%; max-width: 100%; }
 
 /* FILE: main/forms/__buttons.scss */
-.button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a { padding: 0.62em 1.38em; margin-top: 2px; margin-bottom: 2px; border: 0; cursor: pointer; border-radius: 0.19rem; box-shadow: 0 3px 6px -2px rgba(0, 0, 0, 0.4); transition: background .3s, color .3s, box-shadow .3s, opacity .3s; }
+.button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a { padding: 0.62em 1.38em; margin-top: 2px; margin-bottom: 2px; border: 0; border-radius: 0; cursor: pointer; transition: background .3s, color .3s, opacity .3s; }
 
 form .button, form button, form input[type="button"], form input[type="reset"], form input[type="submit"], form .main-navigation-container .button > a, .main-navigation-container form .button > a { margin-top: 0; margin-bottom: 0; }
 
@@ -927,13 +927,13 @@ div[class*="hover-color-"] .button, div[class*="hover-color-"] button, div[class
 
 @media only screen and (min-width: 960px) { .button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a { line-height: inherit; } }
 
-.button:hover, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .main-navigation-container .button > a:hover, .button:focus, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, .main-navigation-container .button > a:focus, .button:active, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .main-navigation-container .button > a:active { text-decoration: none; box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.26); }
+.button:hover, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .main-navigation-container .button > a:hover, .button:focus, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, .main-navigation-container .button > a:focus, .button:active, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .main-navigation-container .button > a:active { text-decoration: none; }
 
 .button:hover, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .main-navigation-container .button > a:hover { outline: 0; }
 
 .button:focus, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, .main-navigation-container .button > a:focus { outline: thin dashed; }
 
-.button:active, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .main-navigation-container .button > a:active { outline: 0; opacity: .9; box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.13); }
+.button:active, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .main-navigation-container .button > a:active { outline: 0; opacity: .9; }
 
 /* FILE: main/forms/__search.scss */
 .search-form { position: relative; }

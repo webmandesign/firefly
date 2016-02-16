@@ -1272,20 +1272,20 @@
 
 						if ( has_post_thumbnail( $child_id ) ) {
 
-							$output .= wp_get_attachment_image(
+							$output .= '<div class="feature-image">' . wp_get_attachment_image(
 									get_post_thumbnail_id( $child_id ),
 									(string) apply_filters( 'wmhook_fn_firefly_page_children_image_size', 'thumbnail' )
-								);
+								) . '</div>';
 
 						}
 
 					// Title
 
-						$output .= '<h2>' . get_the_title( $child_id ) . '</h2>';
+						$output .= '<h2 class="feature-title">' . get_the_title( $child_id ) . '</h2>';
 
 					// Content
 
-						$output .= apply_filters( 'the_content', $child->post_content );
+						$output .= '<div class="feature-content">' . apply_filters( 'the_content', $child->post_content ) . '</div>';
 
 					$output .= '</article>';
 

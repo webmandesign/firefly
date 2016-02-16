@@ -45,6 +45,7 @@
 					)
 					|| is_404()
 					|| is_page_template( 'templates/no-title.php' )
+					|| is_single()
 					|| ! empty( $meta_no_title )
 				) {
 					return '';

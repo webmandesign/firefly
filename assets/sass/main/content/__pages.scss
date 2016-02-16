@@ -51,6 +51,10 @@
 			margin-left: $golden * 2rem;
 		}
 
+		&-title {
+			@extend %font_size_golden_minor;
+		}
+
 	}
 
 

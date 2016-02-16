@@ -34,7 +34,8 @@
 		//*/
 	}
 
-	.site {
+	.site,
+	.site-content {
 		@extend %site_content_colors;
 	}
 
