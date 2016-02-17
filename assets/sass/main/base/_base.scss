@@ -53,6 +53,11 @@
 
 	blockquote {
 		@extend %line_height_golden;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
 	}
 
 	mark,
@@ -76,7 +81,7 @@
 	hr {
 		height: 0;
 		margin: ( power( 1 + $golden_minor, 4 ) +em ) 0;
-		border-bottom: 1px solid;
+		border-bottom: 2px solid;
 		border-color: inherit;
 	}
 

@@ -10,6 +10,30 @@
 
 .entry-meta {
 
+	.posts & {
+		@extend %font_size_small;
+		position: relative;
+		padding: 1em;
+		margin: 0;
+		margin-left: percentage( ( $single_post_left_padding * -100 / ( 100 - $single_post_left_padding ) ) / 100 );
+		text-transform: uppercase;
+		border: 0;
+		z-index: 1; // Trick to keep pseudo element below child elements
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background-color: currentColor;
+			opacity: .1;
+			z-index: -1; // Trick to keep pseudo element below child elements
+		}
+
+	}
+
 	.single & {
 		margin-top: power( $golden, 2 ) +rem;
 		margin-bottom: 0;
@@ -24,40 +48,6 @@
 	&-description {
 		@extend %screen_reader_hiding;
 	}
-
-	// Date styling
-
-		.entry-date {
-			text-transform: uppercase;
-
-			.posts & {
-				padding: 0 0 1em;
-				line-height: 1 + $golden_minor / 2;
-
-				span {
-					display: block;
-				}
-
-				&::before {
-					display: block;
-					margin: 0;
-				}
-
-				.day {
-					font-size: 2em - $golden_minor / 2;
-				}
-
-				.month {
-					font-size: 1em + $golden_minor / 2;
-				}
-
-				.year {
-					@extend %font_size_smaller;
-				}
-
-			}
-
-		}
 
 	@include responsive( map_get( $breakpoint, 'm' ) ) {
 
@@ -81,26 +71,13 @@
 					border: 0;
 				}
 
-				.entry-date ~ .entry-meta-element {
-					border-style: dashed;
-					opacity: .66;
-				}
-
-				&:hover {
-
-					.entry-date ~ .entry-meta-element {
-						border-style: solid;
-						opacity: 1;
-					}
-
-				}
-
 				// Date styling
 
 				.entry-date {
 					padding-top: $golden_major +em;
 					padding-bottom: 1em;
 					line-height: 1;
+					text-transform: uppercase;
 					border-style: solid;
 					opacity: 1;
 
@@ -162,8 +139,12 @@
 				@extend %genericon;
 				content: $char;
 				margin-top: 0;
-				line-height: 1;
 				vertical-align: top;
+
+				.single & {
+					line-height: 1;
+				}
+
 			}
 
 		}

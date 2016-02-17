@@ -56,9 +56,10 @@
 		.hentry {
 			position: relative;
 			padding-left: percentage( $single_post_left_padding / 100 );
+			margin-top: power( $golden, 4 ) +em;
 
-			+ .hentry {
-				margin-top: power( $golden, 4 ) +rem;
+			&:first-child {
+				margin-top: 0;
 			}
 
 		}
@@ -76,7 +77,7 @@
 	.link-more {
 
 		.entry-summary + & {
-			margin-top: 1rem;
+			margin-top: $golden +em;
 		}
 
 	}

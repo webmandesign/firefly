@@ -48,105 +48,56 @@
 
 		// Processing
 
-			// Intro heading section
+			// Register metabox
 
 				register_field_group( array(
-					'id' => 'acf_intro-heading-section',
-					'title' => esc_html__( 'Intro heading section', 'firefly' ),
+					'id'     => 'firefly_page_options',
+					'title'  => esc_html__( 'Page options', 'firefly' ),
 					'fields' => array (
-						array (
-							'key' => 'field_5617c1ad72650',
-							'label' => esc_html__( 'Intro title section', 'firefly' ),
-							'name' => 'no_title',
-							'type' => 'checkbox',
-							'choices' => array (
-								esc_html__( 'Disable intro title section', 'firefly' ) => esc_html__( 'Disable intro title section for this page', 'firefly' ),
+
+						// Hide subpages list
+
+							array (
+								'key'           => 'firefly_hide_children',
+								'label'         => esc_html__( 'Do not display child pages', 'firefly' ),
+								'name'          => 'hide_children',
+								'type'          => 'checkbox',
+								'default_value' => 0,
+								'layout'        => 'vertical',
+								'choices'       => array (
+									esc_html__( 'Do not display child pages', 'firefly' ) => esc_html__( 'In case you set up some child pages for this page (use this page as a parent page), you can hide the child pages list with this option.', 'firefly' ),
+								),
 							),
-							'default_value' => 0,
-							'layout' => 'vertical',
-						),
+
+						// Subpages list setup
+
+							array (
+								'key'           => 'firefly_show_intro_widgets',
+								'label'         => esc_html__( 'Show intro widgets', 'firefly' ),
+								'name'          => 'show_intro_widgets',
+								'type'          => 'checkbox',
+								'default_value' => 0,
+								'layout'        => 'vertical',
+								'choices'       => array (
+									esc_html__( 'Show intro widgets', 'firefly' ) => esc_html__( 'Even if you are not using "With intro widgets" page template, you can display intro widgets in this page intro title by enabling this option.', 'firefly' ),
+								),
+							),
+
 					),
 					'location' => array (
 						array (
 							array (
-								'param' => 'post_type',
+								'param'    => 'post_type',
 								'operator' => '==',
-								'value' => 'page',
-								'order_no' => 0,
-								'group_no' => 0,
-							),
-						),
-						array (
-							array (
-								'param' => 'post_type',
-								'operator' => '==',
-								'value' => 'wm_staff',
-								'order_no' => 0,
-								'group_no' => 1,
-							),
-						),
-					),
-					'options' => array (
-						'position' => 'normal',
-						'layout' => 'default',
-						'hide_on_screen' => array (
-							0 => 'custom_fields',
-						),
-					),
-					'menu_order' => 0,
-				) );
-
-			// Subpages list setup
-
-				register_field_group( array(
-					'id' => 'acf_subpages-list-setup',
-					'title' => esc_html__( 'Subpages list setup', 'firefly' ),
-					'fields' => array (
-						array (
-							'key' => 'field_5617caf386563',
-							'label' => esc_html__( 'Instructions', 'firefly' ),
-							'name' => '',
-							'type' => 'message',
-							'message' => esc_html__( 'These settings will modify the page display in the list of subpages. The page needs to be nested under a parent page and you need to set up the parent page with "List subpages" page template assigned.', 'firefly' ),
-						),
-						array (
-							'key' => 'field_5617c4bff40f2',
-							'label' => esc_html__( 'Page icon class', 'firefly' ),
-							'name' => 'custom_icon',
-							'type' => 'text',
-							'instructions' => esc_html__( 'Icon class can be found in Appearance > Icon Font', 'firefly' ),
-							'default_value' => '',
-							'placeholder' => 'icon-phone',
-							'prepend' => '',
-							'append' => '',
-							'formatting' => 'none',
-							'maxlength' => '',
-						),
-						array (
-							'key' => 'field_5617c27d72651',
-							'label' => esc_html__( 'Featured image in list of subpages', 'firefly' ),
-							'name' => 'custom_image_url',
-							'type' => 'image',
-							'instructions' => esc_html__( 'Set this if you wish to override the display of the page featured image', 'firefly' ),
-							'save_format' => 'id',
-							'preview_size' => 'admin-thumbnail',
-							'library' => 'all',
-						),
-					),
-					'location' => array (
-						array (
-							array (
-								'param' => 'post_type',
-								'operator' => '==',
-								'value' => 'page',
+								'value'    => 'page',
 								'order_no' => 0,
 								'group_no' => 0,
 							),
 						),
 					),
 					'options' => array (
-						'position' => 'normal',
-						'layout' => 'default',
+						'position'       => 'normal',
+						'layout'         => 'default',
 						'hide_on_screen' => array (
 							0 => 'custom_fields',
 						),

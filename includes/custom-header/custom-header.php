@@ -117,24 +117,26 @@
 
 			$posts_page = get_option( 'page_for_posts' );
 
+			$intro_title_tag = ( is_page() ) ? ( 'h1' ) : ( 'div' );
+
 			$title_paginated_url = ( is_home() && $posts_page ) ? ( get_permalink( $posts_page ) ) : ( get_permalink() );
 
 			$title = ( ! Firefly_Theme_Framework::get_the_paginated_suffix() ) ? ( single_post_title( '', false ) ) : ( '<a href="' . esc_url( $title_paginated_url ) . '">' . single_post_title( '', false ) . '</a>' );
-			$title = '<div class="entry-title intro-title">' . $title . '</div>';
+			$title = '<' . tag_escape( $intro_title_tag ) . ' class="entry-title intro-title">' . $title . '</' . tag_escape( $intro_title_tag ) . '>';
 
 
 		// Processing
 
 			if ( is_archive() ) { // For archive pages.
 
-				$title = '<div class="page-title intro-title">' . get_the_archive_title() . Firefly_Theme_Framework::get_the_paginated_suffix( 'small' ) . '</div>';
+				$title = '<' . tag_escape( $intro_title_tag ) . ' class="page-title intro-title">' . get_the_archive_title() . Firefly_Theme_Framework::get_the_paginated_suffix( 'small' ) . '</' . tag_escape( $intro_title_tag ) . '>';
 
 			} elseif ( is_search() ) { // For search results.
 
-				$title = '<div class="page-title intro-title">' . sprintf(
+				$title = '<' . tag_escape( $intro_title_tag ) . ' class="page-title intro-title">' . sprintf(
 						esc_html__( 'Search Results for: %s', 'firefly' ),
 						'<span>' . get_search_query() . '</span>'
-					) . Firefly_Theme_Framework::get_the_paginated_suffix( 'small' ) . '</div>';
+					) . Firefly_Theme_Framework::get_the_paginated_suffix( 'small' ) . '</' . tag_escape( $intro_title_tag ) . '>';
 
 			} else {
 

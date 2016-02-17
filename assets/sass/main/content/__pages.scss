@@ -11,18 +11,16 @@
 // Subpages (features) list
 
 	.list-features {
-		@extend %content_width;
 		display: flex;
 		justify-content: space-between;
-		padding-top: $golden +em;
-		padding-bottom: $golden +em;
+		padding-bottom: power( $golden, 2 ) +em;
+		margin: 0 ( -$golden +em );
 
-		@include responsive( map_get( $breakpoint, 'm' ) ) {
-			padding-top: 0;
-			padding-bottom: 0;
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			padding-bottom: power( $golden, 3 ) +em;
 		}
 
-		&-container {
+		&-section {
 			position: relative;
 			z-index: 1; // Trick to keep pseudo element below child elements
 
@@ -40,24 +38,20 @@
 
 		}
 
+		&-container {
+			@extend %content_width;
+		}
+
 	}
 
 	.feature {
 		flex: 1;
 		flex-shrink: 1; // IE10 required on flex children
-		padding: ( $golden +em ) 0;
-		margin: 0;
-
-		+ .feature {
-			margin-left: $golden * 2rem;
-		}
-
-		@include responsive( map_get( $breakpoint, 'm' ) ) {
-			padding: ( power( $golden, 2 ) +em ) 0;
-		}
+		padding: ( power( $golden, 2 ) +em ) 0 0;
+		margin: 0 ( $golden +em );
 
 		@include responsive( map_get( $breakpoint, 'l' ) ) {
-			padding: ( power( $golden, 3 ) +em ) 0;
+			padding-top: power( $golden, 3 ) +em;
 		}
 
 		$feature_title_setup: map_get( $h_tags_setup, "h3, .h3" );
@@ -66,6 +60,58 @@
 			font-size: nth( $feature_title_setup, 1 ) +em;
 			line-height: nth( $feature_title_setup, 2 );
 			margin: ( $golden +rem ) 0;
+		}
+
+		.more-link {
+			display: block;
+			margin-top: $golden +em;
+			text-align: center;
+		}
+
+	}
+
+	%list_features_wrap {
+		flex-wrap: wrap;
+	}
+
+	%feature_columns_3 {
+		min-width: percentage( 1 / 3 );
+		min-width: calc( #{ percentage( 1 / 3 ) } - #{ $golden * 2rem } ); // Column width minus horizontal margins
+	}
+
+	%feature_columns_4 {
+		min-width: percentage( 1 / 4 );
+		min-width: calc( #{ percentage( 1 / 4 ) } - #{ $golden * 2rem } ); // Column width minus horizontal margins
+	}
+
+	//
+	// Helper function to check if number is odd
+	//
+	@function isOdd( $value ) {
+
+		@if ( 0 == $value % 2 ) {
+			@return false;
+		} @else {
+			@return true;
+		}
+
+	} // /isOdd
+
+	@for $i from 5 through 12 {
+
+		.count-features-#{$i} {
+			@extend %list_features_wrap;
+
+			.feature {
+
+				@if ( 0 == $i % 3 ) or ( ( 2 == $i % 3 ) and isOdd( $i % 4 ) ) {
+					@extend %feature_columns_3;
+				} @else {
+					@extend %feature_columns_4;
+				}
+
+			}
+
 		}
 
 	}

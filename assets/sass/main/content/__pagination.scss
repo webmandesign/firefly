@@ -10,12 +10,12 @@
 
 .pagination {
 	@extend .overflow-hidden;
-	margin-top: $golden +rem;
+	margin-top: power( $golden, 2 ) +em;
 	text-align: center;
 	border: 1px solid;
 
 	@include responsive( map_get( $breakpoint, 'l' ) ) {
-		margin-top: power( $golden, 2 ) +rem;
+		margin-top: power( $golden, 3 ) +em;
 	}
 
 	a,

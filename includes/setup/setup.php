@@ -1049,6 +1049,10 @@
 
 		locate_template( 'includes/plugins/jetpack/jetpack.php', true );
 
+	// Pods integration
+
+		locate_template( 'includes/plugins/pods/pods.php', true );
+
 	// Smart Slider 3 integration
 
 		locate_template( 'includes/plugins/smart-slider/smart-slider.php', true );

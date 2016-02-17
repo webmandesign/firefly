@@ -19,8 +19,11 @@
 
 	if (
 			! is_active_sidebar( 'intro' )
-			|| ! is_page_template( 'templates/intro.php' )
 			|| is_paged()
+			|| (
+				! is_page_template( 'templates/intro.php' )
+				&& empty( get_post_meta( get_the_ID(), 'show_intro_widgets', true ) )
+			)
 		) {
 		return;
 	}

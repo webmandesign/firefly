@@ -20,7 +20,7 @@
 
 	#{$h_tags},
 	.post-navigation,
-	.posts .page-icon {
+	.dropcap-text::first-letter {
 		@extend %site_content_headings_colors;
 	}
 

@@ -71,10 +71,9 @@
 		&::first-letter {
 			float: left;
 			display: block;
-			padding: 0 ( $golden_minor / 2 +em ) 0 0;
+			margin: 0 ( $golden_major / 2 +em ) 0 0;
 			line-height: 1;
-			font-size: power( $golden, 2 ) +em;
-			color: inherit;
+			font-size: power( $golden, 3 ) +em;
 		}
 
 	}

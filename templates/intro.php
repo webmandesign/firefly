@@ -2,7 +2,7 @@
 /**
  * Custom page template
  *
- * Template Name: With intro
+ * Template Name: With intro widgets
  *
  * Displays page intro title with "Intro widgets" sidebar. Other than that it is normal page.
  *
@@ -14,7 +14,7 @@
  */
 
 /* translators: Custom page template name. */
-__( 'With intro', 'firefly' );
+__( 'With intro widgets', 'firefly' );
 
 
 

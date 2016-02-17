@@ -496,23 +496,41 @@
 
 
 	/**
+	 * Post meta top
+	 *
+	 * @since    1.0
+	 * @version  1.0
+	 */
+	function firefly_post_meta_top() {
+
+		// Output
+
+			if ( in_array( get_post_type(), (array) apply_filters( 'wmhook_fn_firefly_post_meta_top_post_type', array( 'post' ) ) ) ) {
+
+				if ( ! is_single() ) {
+
+					Firefly_Theme_Framework::the_post_meta_info( apply_filters( 'wmhook_fn_firefly_post_meta_top_args', array(
+							'container' => 'footer',
+							'meta'      => array( 'date', 'comments', 'likes' ),
+						) ) );
+
+				}
+
+			}
+
+	} // /firefly_post_meta_top
+
+	add_action( 'tha_entry_top', 'firefly_post_meta_top', 5 );
+
+
+
+	/**
 	 * Post meta bottom
 	 *
 	 * @since    1.0
 	 * @version  1.0
 	 */
 	function firefly_post_meta_bottom() {
-
-		// Helper variables
-
-			$time_html = '<span class="{class}"{attributes}>{description}'
-			             . '<time datetime="' . esc_attr( get_the_date( 'c' ) ) . '" class="published" title="' . esc_attr( get_the_date() ) . ' | ' . esc_attr( get_the_time( '' ) ) . '"' . firefly_schema_org( '   datePublished' ) . '>'
-			             . '<span class="day">' . esc_html( get_the_date( 'd' ) ) . '</span> '
-			             . '<span class="month">' . esc_html( get_the_date( 'M' ) ) . '</span> '
-			             . '<span class="year">' . esc_html( get_the_date( 'Y' ) ) . '</span>'
-			             . '</time>'
-			             . '</span>';
-
 
 		// Output
 
@@ -528,14 +546,6 @@
 					Firefly_Theme_Framework::the_post_meta_info( apply_filters( 'wmhook_fn_firefly_post_meta_top_args', $args ) );
 
 					echo '<div class="clear"></div>'; // Required to clear floats for special blog post layout
-
-				} else {
-
-					Firefly_Theme_Framework::the_post_meta_info( apply_filters( 'wmhook_fn_firefly_post_meta_bottom_args', array(
-							'container'   => 'footer',
-							'meta'        => array( 'date', 'comments', 'likes' ),
-							'html_custom' => array( 'date' => $time_html ),
-						) ) );
 
 				}
 
@@ -1238,7 +1248,10 @@
 
 		// Requirements check
 
-			if ( ! is_page() ) {
+			if (
+					! is_page()
+					|| get_post_meta( get_the_ID(), 'hide_children', true )
+				) {
 				return;
 			}
 
@@ -1255,20 +1268,23 @@
 					'orderby'        => 'menu_order',
 					'order'          => 'ASC',
 					'post_parent'    => get_the_ID(),
-					'posts_per_page' => 8,
+					'posts_per_page' => 12,
 					'no_found_rows'  => true,
 				) );
 
 			if ( ! empty( $child_pages->have_posts() ) ) {
 
-				$output .= '<section class="list-features-container">';
-				$output .= '<div class="list-features">';
+				$output .= '<section id="list-features-section" class="list-features-section">';
+				$output .= '<div class="list-features-container">';
+				$output .= '<div class="list-features count-features-' . absint( $child_pages->post_count ) . '">';
+
+				$i = 0;
 
 				while ( $child_pages->have_posts() ) {
 
 					$child_pages->the_post();
 
-					$output .= '<article role="article" id="post-' . esc_attr( get_the_ID() ) . '" class="feature post-<' . esc_attr( get_the_ID() ) . '">';
+					$output .= '<article role="article" id="post-' . esc_attr( get_the_ID() ) . '" class="feature feature-' . esc_attr( ++$i ) . ' post-<' . esc_attr( get_the_ID() ) . '">';
 
 					// Featured image
 
@@ -1278,16 +1294,22 @@
 
 					// Title
 
-						$output .= '<h2 class="feature-title">' . get_the_title() . '</h2>';
+						$title_class = ( 'no-title.php' == basename( get_page_template() ) ) ? ( 'feature-title screen-reader-text' ) : ( 'feature-title' );
+
+						$output .= '<h2 class="' . esc_attr( $title_class ) . '">' . get_the_title() . '</h2>';
 
 					// Content
 
-						$output .= '<div class="feature-content">' . get_the_content() . '</div>';
+						$content = get_the_content( strip_tags( apply_filters( 'wmhook_fn_firefly_excerpt_continue_reading', '' ), '<span>' ) );
+						$content = str_replace( '#more-' . get_the_ID(), '', $content ); // Removing more link hash to prevent page jumping
+
+						$output .= '<div class="feature-content">' . $content . '</div>';
 
 					$output .= '</article>';
 
 				} // /while
 
+				$output .= '</div>';
 				$output .= '</div>';
 				$output .= '</section>';
 
@@ -1303,3 +1325,30 @@
 	} // /firefly_page_children
 
 	add_action( 'tha_content_top', 'firefly_page_children', 20 );
+
+
+
+	/**
+	 * Disable title when intro title displayed
+	 *
+	 * @since    1.0
+	 * @version  1.0
+	 *
+	 * @param  mixed $pre
+	 */
+	function firefly_disable_post_title_when_intro( $pre ) {
+
+		// Processing
+
+			if ( is_page() ) {
+				return '';
+			}
+
+
+		// Output
+
+			return $pre;
+
+	} // /firefly_disable_post_title_when_intro
+
+	add_filter( 'wmhook_fn_firefly_post_title_pre', 'firefly_disable_post_title_when_intro', 10 );
