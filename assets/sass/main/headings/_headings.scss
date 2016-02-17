@@ -157,7 +157,8 @@
 
 	.intro-title,
 	.page-summary {
-		max-width: percentage( $golden_major );
+		max-width: percentage( 2 / 3 );
+		max-width: calc( #{ percentage( 2 / 3 ) } - #{ $golden +em } );
 	}
 
 	.page-summary {

@@ -1269,7 +1269,14 @@
 
 					// Featured image
 
-						if ( has_post_thumbnail() ) {
+						$page_thumbnail = wp_get_attachment_image(
+								absint( get_post_meta( get_the_ID(), 'custom_thumbnail_id', true ) ),
+								'thumbnail'
+							);
+
+						if ( $page_thumbnail ) {
+							$output .= '<div class="feature-image">' . $page_thumbnail . '</div>';
+						} elseif ( has_post_thumbnail() ) {
 							$output .= '<div class="feature-image">' . get_the_post_thumbnail( null, 'thumbnail' ) . '</div>';
 						}
 

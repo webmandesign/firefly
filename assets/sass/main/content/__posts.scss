@@ -71,7 +71,11 @@
 // More link
 
 	.more-link {
-		@extend %button_base;
+
+		.site-content & {
+			@extend %button_base;
+		}
+
 	}
 
 	.link-more {

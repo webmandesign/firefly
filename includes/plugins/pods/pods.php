@@ -83,7 +83,7 @@
 						)
 					);
 
-				// Intro widgets display
+				// Show intro widgets
 
 					pods_register_field(
 						'firefly_page_options',
@@ -98,6 +98,33 @@
 							'boolean_no_label'    => esc_html__( 'No', 'firefly' ),
 						)
 					);
+
+				// Custom thumbnail
+
+					pods_register_field(
+						'firefly_page_options',
+						'custom_thumbnail_id',
+						array(
+							'label'                   => esc_html__( 'Custom thumbnail', 'firefly' ),
+							'description'             => esc_html__( 'In case this is a child page and it is being displayed in the list on the parent page, the image you set here will override the featured image usually displayed in child pages list.', 'firefly' ),
+							'type'                    => 'file',
+							'weight'                  => 2,
+							'pick_object'             => 'custom-simple',
+							'file_format_type'        => 'single',
+							'file_uploader'           => 'attachment',
+							'file_attachment_tab'     => 'upload',
+							'file_edit_title'         => '1',
+							// 'file_linked'             => '0',
+							// 'file_limit'              => '0',
+							// 'file_restrict_filesize'  => '10MB',
+							'file_type'               => 'images',
+							'file_add_button'         => esc_html__( 'Add custom thumbnail', 'firefly' ),
+							'file_modal_title'        => esc_html__( 'Attach custom thumbnail', 'firefly' ),
+							'file_modal_add_button'   => esc_html__( 'Add custom thumbnail', 'firefly' ),
+						)
+					);
+
+
 
 	} // firefly_pods_register_custom_fields
 

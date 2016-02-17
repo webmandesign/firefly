@@ -364,7 +364,7 @@ blockquote, .font-size-l, .comments-title, .posts .entry-title, .posts .page-tit
 
 .weight-800 { font-weight: 800; }
 
-.weight-700, dt, th, tfoot td, .comment-form label, .link-more, .pagination .current, .widget_calendar caption, .widget .current-menu-item > a, .widget .current_page_item > a, abbr, .button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .more-link, .entry-title, .page-title, .widget-title, .site-title, .current-menu-item > a, .current-menu-ancestor > a, .menu-toggle-bar-container, .post-table-of-contents a::before, .post-navigation a, .post-navigation .taxonomy-staff_position, .comments-title, .footer-area-site-info a, .widget-recent-entries-list .day, .breadcrumbs-title, div#jp-relatedposts .jp-relatedposts-headline, div.sharedaddy .sd-title { font-weight: 700; }
+.weight-700, dt, th, tfoot td, .comment-form label, .link-more, .pagination .current, .widget_calendar caption, .widget .current-menu-item > a, .widget .current_page_item > a, abbr, .button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .site-content .more-link, .entry-title, .page-title, .widget-title, .site-title, .current-menu-item > a, .current-menu-ancestor > a, .menu-toggle-bar-container, .post-table-of-contents a::before, .post-navigation a, .post-navigation .taxonomy-staff_position, .feature .more-link, .comments-title, .footer-area-site-info a, .widget-recent-entries-list .day, .breadcrumbs-title, div#jp-relatedposts .jp-relatedposts-headline, div.sharedaddy .sd-title { font-weight: 700; }
 
 .weight-600 { font-weight: 600; }
 
@@ -386,7 +386,7 @@ html, .line-height-m, .form-allowed-tags, .sidebar, .tagcloud, blockquote { line
 
 blockquote, table, .line-height-s, .wp-caption .wp-caption-text, .gallery-caption, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .main-navigation-container li ul a { line-height: 1.38; }
 
-.line-height-xs, .button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .more-link { line-height: 1; }
+.line-height-xs, .button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .site-content .more-link { line-height: 1; }
 
 /* FILE: starter/content/_content.scss */
 /* FILE: starter/wp/_wp.scss */
@@ -925,21 +925,21 @@ select { padding: calc( 0.62em - 2px); }
 .site .fullwidth input[type], .site .fullwidth select, .site .fullwidth textarea { width: 100%; max-width: 100%; }
 
 /* FILE: main/forms/__buttons.scss */
-.button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .more-link { padding: 0.62em 1.38em; margin-top: 2px; margin-bottom: 2px; border: 0; border-radius: 0; cursor: pointer; transition: background .3s, color .3s, box-shadow .3s; }
+.button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .site-content .more-link { padding: 0.62em 1.38em; margin-top: 2px; margin-bottom: 2px; border: 0; border-radius: 0; cursor: pointer; transition: background .3s, color .3s, box-shadow .3s; }
 
-form .button, form button, form input[type="button"], form input[type="reset"], form input[type="submit"], form .main-navigation-container .button > a, .main-navigation-container form .button > a, form .more-link { margin-top: 0; margin-bottom: 0; }
+form .button, form button, form input[type="button"], form input[type="reset"], form input[type="submit"], form .main-navigation-container .button > a, .main-navigation-container form .button > a, form .site-content .more-link, .site-content form .more-link { margin-top: 0; margin-bottom: 0; }
 
-div[class*="hover-color-"] .button, div[class*="hover-color-"] button, div[class*="hover-color-"] input[type="button"], div[class*="hover-color-"] input[type="reset"], div[class*="hover-color-"] input[type="submit"], div[class*="hover-color-"] .main-navigation-container .button > a, .main-navigation-container div[class*="hover-color-"] .button > a, div[class*="hover-color-"] .more-link { transition: none; }
+div[class*="hover-color-"] .button, div[class*="hover-color-"] button, div[class*="hover-color-"] input[type="button"], div[class*="hover-color-"] input[type="reset"], div[class*="hover-color-"] input[type="submit"], div[class*="hover-color-"] .main-navigation-container .button > a, .main-navigation-container div[class*="hover-color-"] .button > a, div[class*="hover-color-"] .site-content .more-link, .site-content div[class*="hover-color-"] .more-link { transition: none; }
 
-@media only screen and (min-width: 960px) { .button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .more-link { line-height: inherit; } }
+@media only screen and (min-width: 960px) { .button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .site-content .more-link { line-height: inherit; } }
 
-.button:hover, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .main-navigation-container .button > a:hover, .more-link:hover, .button:focus, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, .main-navigation-container .button > a:focus, .more-link:focus, .button:active, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .main-navigation-container .button > a:active, .more-link:active { text-decoration: none; box-shadow: none; }
+.button:hover, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .main-navigation-container .button > a:hover, .site-content .more-link:hover, .button:focus, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, .main-navigation-container .button > a:focus, .site-content .more-link:focus, .button:active, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .main-navigation-container .button > a:active, .site-content .more-link:active { text-decoration: none; box-shadow: none; }
 
-.button:hover, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .main-navigation-container .button > a:hover, .more-link:hover { outline: 0; }
+.button:hover, button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .main-navigation-container .button > a:hover, .site-content .more-link:hover { outline: 0; }
 
-.button:focus, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, .main-navigation-container .button > a:focus, .more-link:focus { outline: thin dashed; }
+.button:focus, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, .main-navigation-container .button > a:focus, .site-content .more-link:focus { outline: thin dashed; }
 
-.button:active, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .main-navigation-container .button > a:active, .more-link:active { outline: 0; }
+.button:active, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .main-navigation-container .button > a:active, .site-content .more-link:active { outline: 0; }
 
 /* FILE: main/forms/__search.scss */
 .search-form { position: relative; }
@@ -1003,7 +1003,7 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 
 .intro-title a { color: inherit; }
 
-.intro-title, .page-summary { max-width: 62%; }
+.intro-title, .page-summary { max-width: 66.66667%; max-width: calc( 66.66667% - 1.62em); }
 
 .page-summary { margin-top: 1.62em; }
 
@@ -1460,7 +1460,7 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 
 .feature-title { font-size: 1.62em; line-height: 1.38; margin: 1.62rem 0; }
 
-.feature .more-link { display: block; margin-top: 1.62em; text-align: center; }
+.feature .more-link { display: block; margin-top: 1.62em; }
 
 .count-features-5, .count-features-6, .count-features-7, .count-features-8, .count-features-9, .count-features-10, .count-features-11, .count-features-12 { -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 

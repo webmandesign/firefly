@@ -69,7 +69,7 @@
 								),
 							),
 
-						// Subpages list setup
+						// Show intro widgets
 
 							array (
 								'key'           => 'firefly_show_intro_widgets',
@@ -81,6 +81,21 @@
 								'choices'       => array (
 									esc_html__( 'Show intro widgets', 'firefly' ) => esc_html__( 'Even if you are not using "With intro widgets" page template, you can display intro widgets in this page intro title by enabling this option.', 'firefly' ),
 								),
+							),
+
+						// Custom thumbnail
+
+							array (
+								'key'           => 'firefly_custom_thumbnail_id',
+								'label'         => esc_html__( 'Custom thumbnail', 'firefly' ),
+								'name'          => 'custom_thumbnail_id',
+								'type'          => 'image',
+								'default_value' => 0,
+								'layout'        => 'vertical',
+								'instructions'  => esc_html__( 'In case this is a child page and it is being displayed in the list on the parent page, the image you set here will override the featured image usually displayed in child pages list.', 'firefly' ),
+								'save_format'   => 'id',
+								'preview_size'  => 'thumbnail',
+								'library'       => 'all',
 							),
 
 					),
@@ -96,11 +111,8 @@
 						),
 					),
 					'options' => array (
-						'position'       => 'normal',
-						'layout'         => 'default',
-						'hide_on_screen' => array (
-							0 => 'custom_fields',
-						),
+						'position' => 'normal',
+						'layout'   => 'default',
 					),
 					'menu_order' => 0,
 				) );

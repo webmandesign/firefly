@@ -63,9 +63,9 @@
 		}
 
 		.more-link {
+			@extend .weight-700;
 			display: block;
 			margin-top: $golden +em;
-			text-align: center;
 		}
 
 	}
