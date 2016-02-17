@@ -13,13 +13,19 @@
 
 
 
+// Helper variables
+
+	$firefly_social_menu_id = rand( 10, 99 );
+
+
+
 if ( has_nav_menu( 'social' ) ) :
 
 	?>
 
-	<nav class="social-links" role="navigation" aria-labelledby="social-links-label">
+	<nav class="social-links" role="navigation" aria-labelledby="social-links-label-<?php echo absint( $firefly_social_menu_id ); ?>">
 
-		<h2 class="screen-reader-text" id="social-links-label"><?php esc_html_e( 'Social Menu', 'firefly' ); ?></h2>
+		<h2 class="screen-reader-text" id="social-links-label-<?php echo absint( $firefly_social_menu_id ); ?>"><?php esc_html_e( 'Social Menu', 'firefly' ); ?></h2>
 
 		<?php
 

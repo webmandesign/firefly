@@ -435,7 +435,7 @@
 					if ( is_singular( 'post' ) ) {
 
 						$time_html = '<span class="{class}"{attributes}>{description}'
-						             . '<time datetime="' . esc_attr( get_the_date( 'c' ) ) . '" class="published" title="' . esc_attr( get_the_date() ) . ' | ' . esc_attr( get_the_time( '' ) ) . '"' . firefly_schema_org( '   datePublished' ) . '>'
+						             . '<time datetime="' . esc_attr( get_the_date( 'c' ) ) . '" class="published" title="' . esc_attr( get_the_date() ) . ' | ' . esc_attr( get_the_time( '' ) ) . '"' . firefly_schema_org( 'datePublished' ) . '>'
 						             . '<span class="day">' . esc_html( get_the_date( 'd' ) ) . '</span> '
 						             . '<span class="month">' . esc_html( get_the_date( 'M' ) ) . '</span> '
 						             . '<span class="year">' . esc_html( get_the_date( 'Y' ) ) . '</span>'
