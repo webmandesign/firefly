@@ -838,7 +838,7 @@ html { min-width: 320px; }
 
 .site { position: relative; width: 100%; margin: 0 auto; }
 
-.site-layout-boxed .site { max-width: 1760px; max-width: 97.77778rem; box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); }
+.site-layout-boxed .site { max-width: 1560px; max-width: 86.66667rem; box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); }
 
 .intro-inner, .content-area, .list-features-container, .site-footer-area-inner, .intro-widgets, .breadcrumbs { width: 1180px; width: 65.55556rem; max-width: 88%; margin: 0 auto; }
 

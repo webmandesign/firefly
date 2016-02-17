@@ -277,7 +277,7 @@
 							'default-image' => Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/images/header.jpg' ),
 							'header-text'   => false,
 							'width'         => ( isset( $image_sizes['large'] ) ) ? ( $image_sizes['large'][0] ) : ( 1500 ),
-							'height'        => ( isset( $image_sizes['large'] ) ) ? ( $image_sizes['large'][1] ) : ( 500 ),
+							'height'        => ( isset( $image_sizes['large'] ) ) ? ( absint( $image_sizes['large'][0] * 9 / 16 ) ) : ( 500 ),
 							'flex-height'   => true,
 							'flex-width'    => true,
 						) ) );
@@ -480,7 +480,7 @@
 						$banner_width = absint( get_theme_mod( 'layout_width_site' ) );
 
 						if ( 1000 > $banner_width ) {
-							$banner_width = 1760;
+							$banner_width = 1560;
 						}
 
 					} else {
