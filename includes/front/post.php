@@ -413,25 +413,6 @@
 					'title'           => '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $title . '</a>',
 				) ) );
 
-			// Screen reader enabled title only
-
-				$screen_reader_only = array( 'link', 'quote', 'status' );
-
-				if (
-						! is_single()
-						&& has_excerpt()
-					) {
-					$screen_reader_only[] = 'image';
-				}
-
-				if (
-						in_array( get_post_format(), $screen_reader_only )
-						|| is_page( get_the_ID() )
-						|| is_singular( 'wm_staff' )
-					) {
-					$args['class_container'] .= ' screen-reader-text';
-				}
-
 			// Singular title (no link applied)
 
 				if (

@@ -112,6 +112,14 @@
 
 }
 
+.comment-navigation {
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+		margin-left: percentage( $single_post_left_padding / 100 );
+	}
+
+}
+
 .comment-respond {
 	border-top: 0;
 

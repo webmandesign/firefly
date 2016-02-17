@@ -139,10 +139,11 @@
 				@extend %genericon;
 				content: $char;
 				margin-top: 0;
-				vertical-align: top;
+				vertical-align: middle;
 
 				.single & {
 					line-height: 1;
+					vertical-align: top;
 				}
 
 			}

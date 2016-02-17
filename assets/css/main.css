@@ -808,9 +808,9 @@ ul { list-style: square; }
 
 .entry-content ol ol { margin-left: 1.38em; }
 
-.entry-content ol li { display: block; }
+.entry-content ol > li { display: block; }
 
-.entry-content ol li::before { counter-increment: orderedList; content: counters(orderedList, ".") ") "; margin-right: 0.62em; font-weight: 700; }
+.entry-content ol > li::before { counter-increment: orderedList; content: counters(orderedList, ".") ") "; margin-right: 0.62em; font-weight: 700; }
 
 abbr[title] { border: 0; }
 
@@ -1280,9 +1280,7 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 
 @media only screen and (min-width: 960px) { .entry-media { margin-bottom: 3.62674rem; } }
 
-.single-wm_staff .entry-media { float: left; width: 38%; margin: 0 1.62em 1em 0; }
-
-.single-wm_staff .entry-media img { cursor: -webkit-zoom-in; cursor: zoom-in; }
+.type-page .entry-media img { width: auto; }
 
 .posts .entry-media { margin: 0 0 1.62rem -30.82156%; }
 
@@ -1377,37 +1375,37 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 
 .entry-meta a { text-decoration: none; }
 
-.entry-meta .author::before { content: ""; margin-top: 0; vertical-align: top; }
+.entry-meta .author::before { content: ""; margin-top: 0; vertical-align: middle; }
 
-.single .entry-meta .author::before { line-height: 1; }
+.single .entry-meta .author::before { line-height: 1; vertical-align: top; }
 
-.entry-meta .cat-links::before { content: ""; margin-top: 0; vertical-align: top; }
+.entry-meta .cat-links::before { content: ""; margin-top: 0; vertical-align: middle; }
 
-.single .entry-meta .cat-links::before { line-height: 1; }
+.single .entry-meta .cat-links::before { line-height: 1; vertical-align: top; }
 
-.entry-meta .comments-link a::before { content: ""; margin-top: 0; vertical-align: top; }
+.entry-meta .comments-link a::before { content: ""; margin-top: 0; vertical-align: middle; }
 
-.single .entry-meta .comments-link a::before { line-height: 1; }
+.single .entry-meta .comments-link a::before { line-height: 1; vertical-align: top; }
 
-.entry-meta .entry-date::before { content: ""; margin-top: 0; vertical-align: top; }
+.entry-meta .entry-date::before { content: ""; margin-top: 0; vertical-align: middle; }
 
-.single .entry-meta .entry-date::before { line-height: 1; }
+.single .entry-meta .entry-date::before { line-height: 1; vertical-align: top; }
 
-.entry-meta .tags-links::before { content: ""; margin-top: 0; vertical-align: top; }
+.entry-meta .tags-links::before { content: ""; margin-top: 0; vertical-align: middle; }
 
-.single .entry-meta .tags-links::before { line-height: 1; }
+.single .entry-meta .tags-links::before { line-height: 1; vertical-align: top; }
 
-.entry-meta .entry-likes a::before { content: ""; margin-top: 0; vertical-align: top; }
+.entry-meta .entry-likes a::before { content: ""; margin-top: 0; vertical-align: middle; }
 
-.single .entry-meta .entry-likes a::before { line-height: 1; }
+.single .entry-meta .entry-likes a::before { line-height: 1; vertical-align: top; }
 
-.entry-meta .entry-views::before { content: ""; margin-top: 0; vertical-align: top; }
+.entry-meta .entry-views::before { content: ""; margin-top: 0; vertical-align: middle; }
 
-.single .entry-meta .entry-views::before { line-height: 1; }
+.single .entry-meta .entry-views::before { line-height: 1; vertical-align: top; }
 
-.entry-meta .entry-edit::before { content: ""; margin-top: 0; vertical-align: top; }
+.entry-meta .entry-edit::before { content: ""; margin-top: 0; vertical-align: middle; }
 
-.single .entry-meta .entry-edit::before { line-height: 1; }
+.single .entry-meta .entry-edit::before { line-height: 1; vertical-align: top; }
 
 /* FILE: main/content/__formats.scss */
 .posts .format-audio .entry-media iframe { max-height: 182px; }
@@ -1500,6 +1498,8 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 .comment-edit-link::before, .comment-reply-link::before { content: '\f467'; margin-right: 0.19em; font-size: 1.38em; vertical-align: middle; }
 
 .comment-edit-link::before { content: '\f411'; }
+
+@media only screen and (min-width: 680px) { .comment-navigation { margin-left: 23.56%; } }
 
 .comment-respond { border-top: 0; }
 

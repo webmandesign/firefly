@@ -17,14 +17,10 @@
 			margin-bottom: power( 1 + $golden_minor, 4 ) +rem;
 		}
 
-		.single-wm_staff & {
-			float: left;
-			width: percentage( $golden_minor );
-			margin: 0 ( $golden +em ) 1em 0;
+		.type-page & {
 
 			img {
-				@extend %photo;
-				cursor: zoom-in;
+				width: auto;
 			}
 
 		}
@@ -66,7 +62,6 @@
 		.post-thumbnail {
 
 			img {
-				@extend %photo;
 				cursor: zoom-in;
 			}
 
