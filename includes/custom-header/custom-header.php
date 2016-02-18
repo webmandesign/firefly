@@ -124,6 +124,27 @@
 			$title = ( ! Firefly_Theme_Framework::get_the_paginated_suffix() ) ? ( single_post_title( '', false ) ) : ( '<a href="' . esc_url( $title_paginated_url ) . '">' . single_post_title( '', false ) . '</a>' );
 			$title = '<' . tag_escape( $intro_title_tag ) . ' class="entry-title intro-title">' . $title . '</' . tag_escape( $intro_title_tag ) . '>';
 
+			$page_summary = '';
+
+			if ( is_page() && has_excerpt() ) {
+
+				$page_summary = get_the_excerpt();
+
+			} elseif ( ! is_paged() ) {
+
+				if ( is_home() && $posts_page ) {
+
+					$page_for_posts = get_post( absint( $posts_page ) );
+					$page_summary = apply_filters( 'get_the_excerpt', $page_for_posts->post_excerpt );
+
+				} elseif ( is_archive() ) {
+
+					$page_summary = get_the_archive_description();
+
+				}
+
+			}
+
 
 		// Processing
 
@@ -161,8 +182,8 @@
 
 					echo $title;
 
-					if ( is_page() && has_excerpt() ) {
-						echo '<div class="page-summary">' . get_the_excerpt() . '</div>';
+					if ( $page_summary ) {
+						echo '<div class="page-summary">' . $page_summary . '</div>';
 					}
 
 					do_action( 'wmhook_fn_firefly_post_intro_bottom' );

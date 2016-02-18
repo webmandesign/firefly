@@ -840,9 +840,9 @@ html { min-width: 320px; }
 
 .site-layout-boxed .site { max-width: 1560px; max-width: 86.66667rem; box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); }
 
-.intro-inner, .content-area, .list-features-container, .site-footer-area-inner, .intro-widgets, .breadcrumbs { width: 1180px; width: 65.55556rem; max-width: 88%; margin: 0 auto; }
+.intro-inner, .content-area, .list-features-container, .site-footer-area-inner, .intro-widgets, .site .fl-row-fixed-width, .breadcrumbs { width: 88%; max-width: 1180px; max-width: 65.55556rem; margin: 0 auto; }
 
-.site-header-inner { width: 1920px; width: 106.66667rem; max-width: 88%; margin: 0 auto; }
+.site-header-inner { width: 88%; max-width: 1920px; max-width: 106.66667rem; margin: 0 auto; }
 
 /* FILE: main/base/__classes.scss */
 @media only screen and (min-width: 960px) { .no-wrap { white-space: nowrap; } }
@@ -1000,6 +1000,8 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 .intro-container { position: relative; padding-top: 10%; margin: 0; background-position: 50% 50%; background-size: cover; z-index: 1; }
 
 .intro-title { font-size: 4.25153em; margin: 0; color: inherit; }
+
+.blog .intro-title, .archive .intro-title, .search .intro-title { font-size: 2.6244em; }
 
 .intro-title a { color: inherit; }
 
@@ -1670,15 +1672,9 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
   .site .fl-row .fl-row-content-wrap { padding: 0; }
   .custom-row-background.fl-row-fixed-width .fl-row-content-wrap { padding-left: 1.62rem !important; padding-right: 1.62rem !important; } }
 
-.site .fl-row-fixed-width { max-width: 1180px; max-width: 65.55556rem; }
+.single-post .site .fl-row-fixed-width, .page-template-sidebar .site .fl-row-fixed-width { width: 100%; max-width: 100%; }
 
-.single-post .site .fl-row-fixed-width, .page-template-sidebar .site .fl-row-fixed-width { max-width: 100%; }
-
-@media only screen and (max-width: 1340px) { .site .fl-row-fixed-width { max-width: 88%; } }
-
-@media only screen and (max-width: 1396px) { .site-layout-boxed .fl-row-fixed-width { max-width: 88%; } }
-
-.site .fl-row-fixed-width .fl-row-fixed-width { max-width: 100%; }
+.site .fl-row-fixed-width .fl-row-fixed-width { width: 100%; max-width: 100%; }
 
 .fl-col.center-vertically, .center-vertically .fl-col { vertical-align: middle; }
 

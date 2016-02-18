@@ -101,13 +101,27 @@
 					),
 					'location' => array (
 						array (
-							array (
-								'param'    => 'post_type',
-								'operator' => '==',
-								'value'    => 'page',
-								'order_no' => 0,
-								'group_no' => 0,
-							),
+
+							// Display on Pages
+
+								array (
+									'param'    => 'post_type',
+									'operator' => '==',
+									'value'    => 'page',
+									'order_no' => 0,
+									'group_no' => 0,
+								),
+
+							// Don't display on blog Page
+
+								array (
+									'param'    => 'page_type',
+									'operator' => '!=',
+									'value'    => 'posts_page',
+									'order_no' => 0,
+									'group_no' => 1,
+								),
+
 						),
 					),
 					'options' => array (

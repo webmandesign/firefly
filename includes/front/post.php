@@ -1286,10 +1286,14 @@
 
 						$output .= '<h2 class="' . esc_attr( $title_class ) . '">' . get_the_title() . '</h2>';
 
-					// Content
+					// Content/excerpt
 
 						$content = get_the_content( strip_tags( apply_filters( 'wmhook_fn_firefly_excerpt_continue_reading', '' ), '<span>' ) );
 						$content = str_replace( '#more-' . get_the_ID(), '', $content ); // Removing more link hash to prevent page jumping
+
+						if ( has_excerpt() ) {
+							$content = get_the_excerpt();
+						}
 
 						$output .= '<div class="feature-content">' . $content . '</div>';
 
