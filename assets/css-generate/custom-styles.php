@@ -144,71 +144,13 @@ function firefly_custom_styles( $visual_editor = false ) {
 										'.content-area',
 										'.breadcrumbs',
 										'.site-footer-area-inner',
+										'.site ' . '.fl-row-fixed-width',
 									) ),
 								'styles'   => array(
-									'width|1' => $helper['layout_width_content'] . 'px',
-									'width|2' => ( $helper['layout_width_content'] / $helper['fonts_size_html'] ) . 'rem',
-								)
-							),
-
-							'layout-width-beaver-builder' => array(
-								'condition' => class_exists( 'FLBuilder' ),
-								'selector'  => '.site ' . '.fl-row-fixed-width', // Override global width for Beaver Builder plugin
-								'styles'    => array(
 									'max-width|1' => $helper['layout_width_content'] . 'px',
 									'max-width|2' => ( $helper['layout_width_content'] / $helper['fonts_size_html'] ) . 'rem',
 								)
 							),
-
-							/**
-							 * Fullwidth layout specific
-							 *
-							 * Content max width is $content_width px. It starts shrinking under X px screen width.
-							 *
-							 * X = $content_width / 88%_of_max_content_width
-							 */
-							'layout-fullwidth-media-query-open' => array(
-									'condition' => class_exists( 'FLBuilder' ),
-									'custom'    => "\t" . '@media only screen and (max-width: ' . absint( $helper['layout_width_content'] / .88 ) . 'px) {'
-								),
-
-								'layout-fullwidth-fl-row-max-width' => array(
-									'condition' => class_exists( 'FLBuilder' ),
-									'selector'  => '.site ' . '.fl-row-fixed-width',
-									'styles'    => array(
-										'max-width' => '88%',
-									)
-								),
-
-							'layout-fullwidth-media-query-close' => array(
-									'condition' => class_exists( 'FLBuilder' ),
-									'custom'    => "\t" . '}'
-								),
-
-							/**
-							 * Boxed layout specific
-							 *
-							 * Content max width is $content_width px. It starts shrinking under X px screen width.
-							 *
-							 * X = $content_width / 88%_of_max_content_width / ( 100 - BODY_padding-left - BODY_padding-right )%
-							 */
-							'layout-boxed-media-query-open' => array(
-									'condition' => class_exists( 'FLBuilder' ),
-									'custom'    => "\t" . '@media only screen and (max-width: ' . absint( $helper['layout_width_content'] / .88 / .96 ) . 'px) {'
-								),
-
-								'layout-boxed-fl-row-max-width' => array(
-									'condition' => class_exists( 'FLBuilder' ),
-									'selector'  => '.site-layout-boxed ' . '.fl-row-fixed-width',
-									'styles'    => array(
-										'max-width' => '88%',
-									)
-								),
-
-							'layout-boxed-media-query-close' => array(
-									'condition' => class_exists( 'FLBuilder' ),
-									'custom' => "\t" . '}'
-								),
 
 
 

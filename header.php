@@ -42,7 +42,7 @@
 </head>
 
 
-<body id="top" <?php body_class(); echo firefly_schema_org( 'WebPage' ); ?>>
+<body <?php body_class(); echo firefly_schema_org( 'WebPage' ); ?>>
 
 <?php
 

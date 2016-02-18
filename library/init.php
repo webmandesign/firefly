@@ -22,6 +22,7 @@
  * @uses  `wmhook_firefly_custom_styles`
  *
  * Used development prefixes:
+ * - theme_slug
  * - prefix_constant
  * - prefix_var
  * - prefix_class

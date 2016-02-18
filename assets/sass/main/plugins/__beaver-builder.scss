@@ -74,43 +74,20 @@
 	&-fixed-width {
 
 		.site & {
-			max-width: $content_width +px;
-			max-width: $content_width * $px;
+			@extend %content_width;
 
 			.single-post &,
 			.page-template-sidebar & {
+				width: 100%;
 				max-width: 100%;
 			}
 
 		}
 
-		// Default fullwidth site layout responsive styles
-		//
-		// This will get overriden via custom CSS.
-
-			@include responsive( round( $content_width / .88 ), 'max-width' ) {
-
-				.site & {
-					max-width: 88%;
-				}
-
-			}
-
-		// Default boxed site layout responsive styles
-		//
-		// This will get overriden via custom CSS.
-
-			@include responsive( round( $content_width / .88 / .96 ), 'max-width' ) {
-
-				.site-layout-boxed & {
-					max-width: 88%;
-				}
-
-			}
-
 		& .fl-row-fixed-width {
 
 			.site & {
+				width: 100%;
 				max-width: 100%;
 			}
 

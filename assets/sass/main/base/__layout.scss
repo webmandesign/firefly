@@ -56,15 +56,15 @@ body {
 
 %content_width {
 	// (*) Overriden in `assets/css-generate/custom-styles.php`
-	width: $content_width +px;
-	width: $content_width * $px;
-	max-width: 88%;
+	width: 88%;
+	max-width: $content_width +px;
+	max-width: $content_width * $px;
 	margin: 0 auto;
 }
 
 %fullhd_width {
-	width: 1920px;
-	width: 1920 * $px;
-	max-width: 88%;
+	width: 88%;
+	max-width: 1920px;
+	max-width: 1920 * $px;
 	margin: 0 auto;
 }

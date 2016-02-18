@@ -392,10 +392,7 @@
 							'step'        => 20,
 							'preview_js'  => array(
 									'css' => array(
-											'.site-header-inner, .intro-inner, .content-area, .breadcrumbs, .site-footer-area-inner' => array(
-													array( 'width', 'px' )
-												),
-											'.site .fl-row-fixed-width' => array(
+											'.site-header-inner, .intro-inner, .content-area, .breadcrumbs, .site-footer-area-inner, .site .fl-row-fixed-width' => array(
 													array( 'max-width', 'px' )
 												),
 										),

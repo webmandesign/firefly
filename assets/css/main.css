@@ -1003,7 +1003,7 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 
 .intro-title a { color: inherit; }
 
-.intro-title, .page-summary { max-width: 66.66667%; max-width: calc( 66.66667% - 1.62em); }
+.intro-title, .page-summary { max-width: 66.66667%; max-width: calc( 66.66667% - 1.62rem); }
 
 .page-summary { margin-top: 1.62em; }
 

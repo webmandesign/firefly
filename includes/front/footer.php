@@ -88,7 +88,7 @@
 								'<a href="' . esc_url( wp_get_theme( $theme )->get( 'AuthorURI' ) ) . '">' . wp_get_theme( $theme )->get( 'Author' ) . '</a>'
 							)
 						. '<span class="sep"> | </span>'
-						. '<a href="#top" id="back-to-top" class="back-to-top">' . esc_html__( 'Back to top &uarr;', 'firefly' ) . '</a>';
+						. '<a href="#" id="back-to-top" class="back-to-top">' . esc_html__( 'Back to top &uarr;', 'firefly' ) . '</a>';
 
 			}
 
