@@ -400,15 +400,15 @@ function firefly_custom_styles( $visual_editor = false ) {
 			if ( ! $visual_editor ) {
 
 				ob_start();
-				locate_template( 'assets/css/custom-styles.css', true );
-				locate_template( 'assets/css/custom-styles-addon.css', true ); // Use these to override custom-styles.css via child theme instead of redefining the whole file again
+				locate_template( 'assets/css/custom-styles.css', true ); // Can be overridden via child theme
+				locate_template( 'assets/css/custom-styles-addon.css', true ); // Use these to override custom-styles.css via child theme instead of redefining the whole file again if not needed
 				$output .= "\r\n\r\n" . Firefly_Theme_Framework::custom_styles( ob_get_clean() );
 
 			} else {
 
 				ob_start();
-				locate_template( 'assets/css/custom-styles-ve.css', true );
-				locate_template( 'assets/css/custom-styles-addon-ve.css', true ); // Use these to override custom-styles.css via child theme instead of redefining the whole file again
+				locate_template( 'assets/css/custom-styles-ve.css', true ); // Can be overridden via child theme
+				locate_template( 'assets/css/custom-styles-addon-ve.css', true ); // Use these to override custom-styles.css via child theme instead of redefining the whole file again if not needed
 				$output .= "\r\n\r\n" . Firefly_Theme_Framework::custom_styles( ob_get_clean() );
 
 			}

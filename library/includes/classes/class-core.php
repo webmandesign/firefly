@@ -9,7 +9,7 @@
  * @subpackage  Core
  *
  * @since    1.0
- * @version  1.0.15
+ * @version  1.1
  */
 
 
@@ -144,14 +144,14 @@ final class Firefly_Theme_Framework {
 		 * Do action on theme version change
 		 *
 		 * @since    1.0
-		 * @version  1.0
+		 * @version  1.1
 		 */
 		public static function theme_upgrade() {
 
 			// Helper variables
 
-				$current_theme_version = get_transient( FIREFLY_THEME_SLUG . '_version' );
-				$new_theme_version     = wp_get_theme( FIREFLY_THEME_SLUG )->get( 'Version' );
+				$current_theme_version = get_transient( 'firefly_version' );
+				$new_theme_version     = wp_get_theme( 'firefly' )->get( 'Version' );
 
 
 			// Processing
@@ -163,7 +163,7 @@ final class Firefly_Theme_Framework {
 
 					do_action( 'wmhook_firefly_tf_theme_upgrade', $current_theme_version, $new_theme_version );
 
-					set_transient( FIREFLY_THEME_SLUG . '_version', $new_theme_version );
+					set_transient( 'firefly_version', $new_theme_version );
 
 				}
 
@@ -442,7 +442,7 @@ final class Firefly_Theme_Framework {
 		 * Supports Post Views Count plugin. @link https://wordpress.org/plugins/baw-post-views-count/
 		 *
 		 * @since    1.0
-		 * @version  1.0.15
+		 * @version  1.1
 		 *
 		 * @param  array $args
 		 */
@@ -560,7 +560,7 @@ final class Firefly_Theme_Framework {
 											'{attributes}'  => '',
 											'{class}'       => esc_attr( 'entry-date entry-meta-element' ),
 											'{description}' => '<span class="entry-meta-description">' . esc_html_x( 'Posted on:', 'Post meta info description: publish date.', 'firefly' ) . ' </span>',
-											'{content}'     => '<time datetime="' . esc_attr( get_the_date( 'c' ) ) . '" class="published" title="' . esc_attr( get_the_date() ) . ' | ' . esc_attr( get_the_time( '', $args['post_id'] ) ) . '"' . $helper . '>' . esc_html( get_the_date( $args['date_format'] ) ) . '</time>',
+											'{content}'     => '<a href="' . esc_url( get_permalink( $args['post_id'] ) ) . '" rel="bookmark"><time datetime="' . esc_attr( get_the_date( 'c' ) ) . '" class="published" title="' . esc_attr( get_the_date() ) . ' | ' . esc_attr( get_the_time( '', $args['post_id'] ) ) . '"' . $helper . '>' . esc_html( get_the_date( $args['date_format'] ) ) . '</time></a>',
 										);
 								}
 
@@ -1141,14 +1141,14 @@ final class Firefly_Theme_Framework {
 		 * Then just use a '___customizer_option_id' tags in your custom CSS
 		 * styles string where the specific option value should be used.
 		 *
-		 * Caching $replacement into 'FIREFLY_THEME_SLUG . _customizer_values' transient.
-		 * Caching $output into 'FIREFLY_THEME_SLUG . _custom_css' transient.
+		 * Caching $replacement into 'firefly_customizer_values' transient.
+		 * Caching $output into 'firefly_custom_css' transient.
 		 *
 		 * @uses  `wmhook_firefly_theme_options` global hook
 		 * @uses  `wmhook_firefly_custom_styles` global hook
 		 *
 		 * @since    1.0
-		 * @version  1.0
+		 * @version  1.1
 		 *
 		 * @param  bool $set_cache  Determines whether the results should be cached or not.
 		 * @param  bool $return     Whether to return a value or just run the process.
@@ -1176,7 +1176,7 @@ final class Firefly_Theme_Framework {
 				$theme_options = (array) apply_filters( 'wmhook_firefly_theme_options', array() );
 				$alphas        = array_filter( (array) apply_filters( 'wmhook_firefly_tf_custom_styles_alphas', array() ) );
 
-				$replacements  = array_unique( array_filter( (array) get_transient( FIREFLY_THEME_SLUG . '_customizer_values' ) ) ); //There have to be values (defaults) set!
+				$replacements  = array_unique( array_filter( (array) get_transient( 'firefly_customizer_values' ) ) ); //There have to be values (defaults) set!
 
 				/**
 				 * Force caching during the first theme display when no cache set (default
@@ -1330,19 +1330,19 @@ final class Firefly_Theme_Framework {
 								$set_cache
 								&& ! empty( $replacements )
 							) {
-							set_transient( FIREFLY_THEME_SLUG . '_customizer_values', $replacements );
+							set_transient( 'firefly_customizer_values', $replacements );
 						}
 
 					}
 
 				// Prepare output and cache
 
-					$output_cached = (string) get_transient( FIREFLY_THEME_SLUG . '_custom_css' );
+					$output_cached = (string) get_transient( 'firefly_custom_css' );
 
 					// Debugging set (via "debug" URL parameter)
 
 						if ( isset( $_GET['debug'] ) ) {
-							$output_cached = (string) get_transient( FIREFLY_THEME_SLUG . '_custom_css_debug' );
+							$output_cached = (string) get_transient( 'firefly_custom_css_debug' );
 						}
 
 					if (
@@ -1355,8 +1355,8 @@ final class Firefly_Theme_Framework {
 							$output = strtr( $output, $replacements );
 
 						if ( $set_cache ) {
-							set_transient( FIREFLY_THEME_SLUG . '_custom_css_debug', apply_filters( 'wmhook_firefly_tf_custom_styles_output_cache_debug', $output ) );
-							set_transient( FIREFLY_THEME_SLUG . '_custom_css', apply_filters( 'wmhook_firefly_tf_custom_styles_output_cache', $output ) );
+							set_transient( 'firefly_custom_css_debug', apply_filters( 'wmhook_firefly_tf_custom_styles_output_cache_debug', $output ) );
+							set_transient( 'firefly_custom_css', apply_filters( 'wmhook_firefly_tf_custom_styles_output_cache', $output ) );
 						}
 
 					} else {
@@ -1380,15 +1380,15 @@ final class Firefly_Theme_Framework {
 			 * Flush out the transients used in `custom_styles`
 			 *
 			 * @since    1.0
-			 * @version  1.0
+			 * @version  1.1
 			 */
 			public static function custom_styles_transient_flusher() {
 
 				// Processing
 
-					delete_transient( FIREFLY_THEME_SLUG . '_customizer_values' );
-					delete_transient( FIREFLY_THEME_SLUG . '_custom_css_debug' );
-					delete_transient( FIREFLY_THEME_SLUG . '_custom_css' );
+					delete_transient( 'firefly_customizer_values' );
+					delete_transient( 'firefly_custom_css_debug' );
+					delete_transient( 'firefly_custom_css' );
 
 			} // /custom_styles_transient_flusher
 

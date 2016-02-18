@@ -43,8 +43,8 @@
 
 	// Global functions
 
-		locate_template( 'library/init.php', true );
+		require_once( get_template_directory() . '/library/init.php' );
 
 	// Theme setup
 
-		locate_template( 'includes/setup/setup.php', true );
+		require_once( get_template_directory() . '/includes/setup/setup.php' );

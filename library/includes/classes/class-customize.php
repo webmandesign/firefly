@@ -8,7 +8,7 @@
  * @subpackage  Customize
  *
  * @since    1.0
- * @version  1.0.16
+ * @version  1.1
  */
 
 
@@ -360,7 +360,7 @@ final class Firefly_Theme_Framework_Customize {
 		 * @uses  `wmhook_firefly_theme_options` global hook
 		 *
 		 * @since    1.0
-		 * @version  1.0.16
+		 * @version  1.1
 		 *
 		 * @param  object $wp_customize WP customizer object.
 		 */
@@ -409,7 +409,7 @@ final class Firefly_Theme_Framework_Customize {
 				// Default section name in case not set (should be overwritten anyway)
 
 					$customizer_panel   = '';
-					$customizer_section = FIREFLY_THEME_SLUG;
+					$customizer_section = 'firefly';
 
 
 				/**
@@ -444,10 +444,10 @@ final class Firefly_Theme_Framework_Customize {
 					 * @link  http://ottopress.com/2012/making-a-custom-control-for-the-theme-customizer/
 					 */
 
-					locate_template( FIREFLY_LIBRARY_DIR . 'includes/classes/controls/class-control-hidden.php',      true );
-					locate_template( FIREFLY_LIBRARY_DIR . 'includes/classes/controls/class-control-html.php',        true );
-					locate_template( FIREFLY_LIBRARY_DIR . 'includes/classes/controls/class-control-multiselect.php', true );
-					locate_template( FIREFLY_LIBRARY_DIR . 'includes/classes/controls/class-control-select.php',      true );
+					require_once( trailingslashit( get_template_directory() ) . FIREFLY_LIBRARY_DIR . 'includes/classes/controls/class-control-hidden.php' );
+					require_once( trailingslashit( get_template_directory() ) . FIREFLY_LIBRARY_DIR . 'includes/classes/controls/class-control-html.php' );
+					require_once( trailingslashit( get_template_directory() ) . FIREFLY_LIBRARY_DIR . 'includes/classes/controls/class-control-multiselect.php' );
+					require_once( trailingslashit( get_template_directory() ) . FIREFLY_LIBRARY_DIR . 'includes/classes/controls/class-control-select.php' );
 
 					do_action( 'wmhook_firefly_tf_customize_load_controls', $wp_customize );
 

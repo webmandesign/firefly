@@ -6,7 +6,7 @@
  * @subpackage  Customize
  *
  * @since    1.0
- * @version  1.0.16
+ * @version  1.1
  *
  * Contents:
  *
@@ -24,7 +24,7 @@
 
 	// Customizer class
 
-		locate_template( FIREFLY_LIBRARY_DIR . 'includes/classes/class-customize.php', true );
+		require_once( trailingslashit( get_template_directory() ) . FIREFLY_LIBRARY_DIR . 'includes/classes/class-customize.php' );
 
 
 

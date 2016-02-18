@@ -23,8 +23,8 @@
 	$output = '';
 
 	$firefly_theme_css_files = array(
-			10 => 'assets/css/main.css',
-			20 => 'assets/css/editor-style.css',
+			10 => '/assets/css/main.css',
+			20 => '/assets/css/editor-style.css',
 		);
 
 
@@ -52,7 +52,7 @@
 		// Start including files and editing output
 
 			foreach ( $firefly_theme_css_files as $css_file_name ) {
-				locate_template( $css_file_name, true, false ); // Switch off the $require_once
+				require( get_template_directory() . $css_file_name );
 			}
 
 		$output = ob_get_clean();
@@ -64,8 +64,8 @@
 /**
  * Customizer styles
  *
- * No need to use locate_template( 'assets/css-generate/custom-styles.php', true ); as the file
- * was already loaded once while generating main stylesheet.
+ * No need to load the 'assets/css-generate/custom-styles.php' as the file was already loaded
+ * once while generating main stylesheet.
  * Use `firefly_custom_styles( true )` to generate Visual Editor Customizer styles only.
  */
 

@@ -410,7 +410,7 @@
 						set_transient(
 								'firefly_admin_notice',
 								array(
-									'<strong>' . sprintf( esc_html__( 'Thank you for installing the %s theme!', 'firefly' ), wp_get_theme( $theme )->get( 'Name' ) ) . ' <a href="' . esc_url( admin_url( 'themes.php?page=' . FIREFLY_THEME_SLUG . '-about' ) ) . '">' . esc_html__( 'Please read the information about the theme.', 'firefly' ) . '</a></strong>',
+									'<strong>' . sprintf( esc_html__( 'Thank you for installing the %s theme!', 'firefly' ), wp_get_theme( $theme )->get( 'Name' ) ) . ' <a href="' . esc_url( admin_url( 'themes.php?page=firefly-about' ) ) . '">' . esc_html__( 'Please read the information about the theme.', 'firefly' ) . '</a></strong>',
 									'',
 									'switch_themes',
 									3
@@ -899,7 +899,7 @@
 						|| isset( $_GET['fl_builder'] )
 					) {
 
-					locate_template( FIREFLY_LIBRARY_DIR . 'includes/visual-editor.php', true );
+					require_once( get_template_directory() . '/library/includes/visual-editor.php' );
 
 				}
 
@@ -917,31 +917,31 @@
 
 	// Theme Hook Alliance
 
-		locate_template( 'includes/front/tha.php', true );
+		require_once( get_template_directory() . '/includes/front/tha.php' );
 
 	// Header
 
-		locate_template( 'includes/front/header.php', true );
+		require_once( get_template_directory() . '/includes/front/header.php' );
 
 	// Menu
 
-		locate_template( 'includes/front/menu.php', true );
+		require_once( get_template_directory() . '/includes/front/menu.php' );
 
 	// Content
 
-		locate_template( 'includes/front/content.php', true );
+		require_once( get_template_directory() . '/includes/front/content.php' );
 
 	// Loop
 
-		locate_template( 'includes/front/loop.php', true );
+		require_once( get_template_directory() . '/includes/front/loop.php' );
 
 	// Post
 
-		locate_template( 'includes/front/post.php', true );
+		require_once( get_template_directory() . '/includes/front/post.php' );
 
 	// Footer
 
-		locate_template( 'includes/front/footer.php', true );
+		require_once( get_template_directory() . '/includes/front/footer.php' );
 
 
 
@@ -953,15 +953,15 @@
 
 	// Theme options arrays
 
-		locate_template( 'includes/theme-options/theme-options.php', true );
+		require_once( get_template_directory() . '/includes/theme-options/theme-options.php' );
 
 	// Custom Header (Banner)
 
-		locate_template( 'includes/custom-header/custom-header.php', true );
+		require_once( get_template_directory() . '/includes/custom-header/custom-header.php' );
 
 	// Post formats support
 
-		locate_template( 'includes/post-formats/class-post-formats.php', true );
+		require_once( get_template_directory() . '/includes/post-formats/class-post-formats.php' );
 
 
 
@@ -1035,28 +1035,28 @@
 
 	// Advanced Custom Fields integration
 
-		locate_template( 'includes/plugins/advanced-custom-fields/advanced-custom-fields.php', true );
+		require_once( get_template_directory() . '/includes/plugins/advanced-custom-fields/advanced-custom-fields.php' );
 
 	// Beaver Builder integration
 
-		locate_template( 'includes/plugins/beaver-builder/beaver-builder.php', true );
+		require_once( get_template_directory() . '/includes/plugins/beaver-builder/beaver-builder.php' );
 
 	// Breadcrumb NavXT integration
 
-		locate_template( 'includes/plugins/breadcrumb-navxt/breadcrumb-navxt.php', true );
+		require_once( get_template_directory() . '/includes/plugins/breadcrumb-navxt/breadcrumb-navxt.php' );
 
 	// Jetpack integration
 
-		locate_template( 'includes/plugins/jetpack/jetpack.php', true );
+		require_once( get_template_directory() . '/includes/plugins/jetpack/jetpack.php' );
 
 	// Pods integration
 
-		locate_template( 'includes/plugins/pods/pods.php', true );
+		require_once( get_template_directory() . '/includes/plugins/pods/pods.php' );
 
 	// Smart Slider 3 integration
 
-		locate_template( 'includes/plugins/smart-slider/smart-slider.php', true );
+		require_once( get_template_directory() . '/includes/plugins/smart-slider/smart-slider.php' );
 
 	// Subtitles integration
 
-		locate_template( 'includes/plugins/subtitles/subtitles.php', true );
+		require_once( get_template_directory() . '/includes/plugins/subtitles/subtitles.php' );

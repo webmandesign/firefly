@@ -23,8 +23,8 @@
 	$output = '';
 
 	$firefly_theme_css_files = array(
-			10 => 'assets/css/main.css',
-			20 => 'assets/css/shortcodes.css',
+			10 => '/assets/css/main.css',
+			20 => '/assets/css/shortcodes.css',
 		);
 
 
@@ -52,7 +52,7 @@
 		// Start including files and editing output
 
 			foreach ( $firefly_theme_css_files as $css_file_name ) {
-				locate_template( $css_file_name, true );
+				require_once( get_template_directory() . $css_file_name );
 			}
 
 		$output = ob_get_clean();
@@ -65,7 +65,7 @@
  * Customizer styles
  */
 
-	locate_template( 'assets/css-generate/custom-styles.php', true );
+	require_once( get_template_directory() . '/assets/css-generate/custom-styles.php' );
 
 	$output .= "\r\n\r\n\r\n/**\r\n * Customize styles\r\n */\r\n\r\n" . firefly_custom_styles();
 

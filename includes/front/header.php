@@ -207,7 +207,7 @@
 
 		// Required files
 
-			locate_template( 'assets/css-generate/custom-styles.php', true );
+			require_once( get_template_directory() . '/assets/css-generate/custom-styles.php' );
 
 
 		// Helper variables

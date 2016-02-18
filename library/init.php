@@ -38,7 +38,7 @@
  * @package     WebMan WordPress Theme Framework (Simple)
  * @subpackage  Core
  *
- * @version  1.0.16
+ * @version  1.1
  *
  * Contents:
  *
@@ -55,10 +55,6 @@
  * 0) Constants
  */
 
-	// Basic constants
-
-		if ( ! defined( 'FIREFLY_THEME_SLUG' ) ) define( 'FIREFLY_THEME_SLUG', str_replace( array( '-lite', '-plus' ), '', get_template() ) );
-
 	// Dir constants
 
 		if ( ! defined( 'FIREFLY_LIBRARY_DIR' ) ) define( 'FIREFLY_LIBRARY_DIR', trailingslashit( 'library' ) );
@@ -74,11 +70,11 @@
 
 	// Customize (has to be frontend accessible, otherwise it hides theme settings)
 
-		locate_template( FIREFLY_LIBRARY_DIR . 'includes/customize.php', true );
+		require_once( trailingslashit( get_template_directory() ) . FIREFLY_LIBRARY_DIR . 'includes/customize.php' );
 
 	// Core class
 
-		locate_template( FIREFLY_LIBRARY_DIR . 'includes/classes/class-core.php', true );
+		require_once( trailingslashit( get_template_directory() ) . FIREFLY_LIBRARY_DIR . 'includes/classes/class-core.php' );
 
 
 

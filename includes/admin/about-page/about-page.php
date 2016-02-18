@@ -96,7 +96,7 @@
 					// $capability
 					'switch_themes',
 					// $menu_slug
-					FIREFLY_THEME_SLUG . '-about',
+					'firefly-about',
 					// $function
 					'firefly_about_screen'
 				);
