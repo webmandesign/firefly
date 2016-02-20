@@ -12,7 +12,7 @@
 	position: fixed;
 	width: 100%;
 	left: 0;
-	top: 0; // Has to be on top to prevent hiding when mobile browser address bar shows/hides
+	bottom: 0;
 	line-height: 1 + $golden_minor / 2;
 	font-size: 13px;
 	text-align: center;
@@ -100,7 +100,7 @@
 		@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
 			position: fixed;
 			right: 0;
-			top: 0;
+			bottom: 0;
 			padding: ( $golden_major +em ) 1em;
 			line-height: 1 + $golden_minor;
 			text-align: center;

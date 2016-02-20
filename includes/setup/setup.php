@@ -399,10 +399,6 @@
 
 			// Processing
 
-				// Generate the custom stylesheet
-
-					// Firefly_Theme_Framework::generate_all_css();
-
 				// Display admin notice for "About" page
 
 					if ( ! get_theme_mod( 'others_about_disable' ) ) {
@@ -411,23 +407,22 @@
 								'firefly_admin_notice',
 								array(
 									'<strong>' . sprintf( esc_html__( 'Thank you for installing the %s theme!', 'firefly' ), wp_get_theme( $theme )->get( 'Name' ) ) . ' <a href="' . esc_url( admin_url( 'themes.php?page=firefly-about' ) ) . '">' . esc_html__( 'Please read the information about the theme.', 'firefly' ) . '</a></strong>',
-									'',
+									'notice-info',
 									'switch_themes',
-									3
+									1
 								),
 								( 60 * 60 * 48 )
 							);
 
 					}
 
-				// Set Beaver Builder post types on theme's first activation
-				// This is required here as the Beaver Builder plugin might not be active yet
-
-					update_option( '_fl_builder_post_types', array( 'post', 'page' ) );
-
 				// Other theme installation actions
 
 					do_action( 'wmhook_fn_firefly_theme_installation' );
+
+				// Theme is installed now
+
+					set_theme_mod( '__theme_installed', true );
 
 		} // /firefly_theme_installation
 
@@ -1048,10 +1043,6 @@
 	// Jetpack integration
 
 		require_once( get_template_directory() . '/includes/plugins/jetpack/jetpack.php' );
-
-	// Pods integration
-
-		require_once( get_template_directory() . '/includes/plugins/pods/pods.php' );
 
 	// Smart Slider 3 integration
 

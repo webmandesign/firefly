@@ -22,12 +22,12 @@
  */
 
 	/**
-	 * Content top
+	 * Content opening
 	 *
 	 * @since    1.0
 	 * @version  1.0
 	 */
-	function firefly_content_top() {
+	function firefly_content_open() {
 
 		// Helper variables
 
@@ -40,19 +40,19 @@
 
 			echo $output;
 
-	} // /firefly_content_top
+	} // /firefly_content_open
 
-	add_action( 'tha_content_top', 'firefly_content_top', 100 );
+	add_action( 'tha_content_top', 'firefly_content_open', 100 );
 
 
 
 	/**
-	 * Content bottom
+	 * Content closing
 	 *
 	 * @since    1.0
 	 * @version  1.0
 	 */
-	function firefly_content_bottom() {
+	function firefly_content_close() {
 
 		// Helper variables
 
@@ -65,6 +65,6 @@
 
 			echo $output;
 
-	} // /firefly_content_bottom
+	} // /firefly_content_close
 
-	add_action( 'tha_content_bottom', 'firefly_content_bottom', 100 );
+	add_action( 'tha_content_bottom', 'firefly_content_close', 100 );

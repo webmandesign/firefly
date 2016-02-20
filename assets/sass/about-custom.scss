@@ -38,6 +38,25 @@
 		.about-wrap {
 			padding-left: 40px;
 			margin-left: 0;
+
+			h3 {
+				margin-top: 0;
+			}
+
+			.feature-section {
+
+				.col {
+					margin-top: 3.62em;
+					margin-bottom: 3.62em;
+				}
+
+			}
+
+		}
+
+		.changelog {
+			margin-top: 3.62em;
+			border-top: 1px solid #ccc;
 		}
 
 	}
@@ -48,16 +67,6 @@
 
 	.about-wrap {
 
-		.dropcap {
-			float: none;
-			display: inline-block;
-			padding: .75em;
-			font-size: 24px;
-			background: #3b5998;
-			color: #fff;
-			border-radius: 0;
-		}
-
 		.wm-notes {
 			padding: 2.62em 999em 2.62em 40px;
 			margin: 40px -999em 1.62em -40px;
@@ -65,12 +74,6 @@
 			border-bottom: 1px solid #ccc;
 			border-radius: 0;
 			box-shadow: none;
-
-			.dropcap {
-				display: inline-block;
-				float: none;
-				margin-bottom: 1em;
-			}
 
 			&.special {
 				font-size: 1.28em;

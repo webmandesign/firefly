@@ -174,15 +174,11 @@
 
 					<!-- Quickstart steps -->
 
-						<hr />
-
 						<h2 class="screen-reader-text"><?php esc_html_e( 'Quickstart Guide', 'firefly' ); ?></h2>
 
 						<div class="feature-section three-col">
 
 							<div class="first-feature col">
-
-								<span class="dropcap">1</span>
 
 								<h3><?php esc_html_e( 'WebMan Amplifier', 'firefly' ); ?></h3>
 
@@ -191,13 +187,9 @@
 									<?php esc_html_e( 'Please, install and activate this plugin to provide the additional functionality.', 'firefly' ); ?>
 								</p>
 
-								<a href="<?php echo esc_url( admin_url( 'themes.php?page=tgmpa-install-plugins' ) ); ?>" class="button button-hero"><?php printf( esc_html_x( 'Install %s &raquo;', '%s: plugin name.', 'firefly' ), '<strong>WebMan Amplifier</strong>' ); ?></a>
-
 							</div>
 
 							<div class="feature col">
-
-								<span class="dropcap">2</span>
 
 								<h3><?php esc_html_e( 'The WordPress settings', 'firefly' ); ?></h3>
 
@@ -205,13 +197,9 @@
 									<?php esc_html_e( 'Do not forget to set up your WordPress in "Settings" section of the main WordPress admin menu. Please go through all the subsections and options.', 'firefly' ); ?>
 								</p>
 
-								<a class="button button-hero" href="<?php echo esc_url( admin_url( 'options-general.php' ) ); ?>"><?php esc_html_e( 'Set up WordPress &raquo;', 'firefly' ); ?></a>
-
 							</div>
 
 							<div class="last-feature col">
-
-								<span class="dropcap">3</span>
 
 								<h3><?php esc_html_e( 'Customize the theme', 'firefly' ); ?></h3>
 
@@ -219,31 +207,44 @@
 									<?php esc_html_e( 'You can customize the theme using live-preview editor. Apply a design changes with no fear of them affecting your website front-end - nothing is going live until you save the changes!', 'firefly' ); ?>
 								</p>
 
-								<a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-primary button-hero"><?php esc_html_e( 'Customize the Theme &raquo;', 'firefly' ); ?></a>
-
 							</div>
 
 						</div>
 
-					<!-- Filesystem notice -->
+						<div class="feature-section three-col">
 
-						<hr />
+							<div class="first-feature col">
 
-						<h3>
-							<em>
-								<strong>
-									<?php esc_html_e( 'Important:', 'firefly' ); ?>
-								</strong>
-							</em>
-						</h3>
+								<h3><?php esc_html_e( 'WebMan Amplifier', 'firefly' ); ?></h3>
 
-						<p>
-							<em>
-								<?php esc_html_e( 'For the best performance, the theme generates a single CSS stylesheet file using WordPress native filesystem API. The file is being generated after saving theme customizer settings.', 'firefly' ); ?>
-								<?php esc_html_e( 'If you notice an error message in WordPress dashboard after leaving the theme customizer, please check whether you should set up the FTP credentials in your "wp-config.php" file.', 'firefly' ); ?>
-								<a href="http://codex.wordpress.org/Editing_wp-config.php#WordPress_Upgrade_Constants" target="_blank"><?php esc_html_e( 'Please read the instructions.', 'firefly' ); ?></a>
-							</em>
-						</p>
+								<p>
+									<?php printf( esc_html_x( 'To make the theme highly flexible, open and future-proof, it uses the %s plugin.', '%s: plugin name.', 'firefly' ), '<strong>WebMan Amplifier</strong>' ); ?>
+									<?php esc_html_e( 'Please, install and activate this plugin to provide the additional functionality.', 'firefly' ); ?>
+								</p>
+
+							</div>
+
+							<div class="feature col">
+
+								<h3><?php esc_html_e( 'The WordPress settings', 'firefly' ); ?></h3>
+
+								<p>
+									<?php esc_html_e( 'Do not forget to set up your WordPress in "Settings" section of the main WordPress admin menu. Please go through all the subsections and options.', 'firefly' ); ?>
+								</p>
+
+							</div>
+
+							<div class="last-feature col">
+
+								<h3><?php esc_html_e( 'Customize the theme', 'firefly' ); ?></h3>
+
+								<p>
+									<?php esc_html_e( 'You can customize the theme using live-preview editor. Apply a design changes with no fear of them affecting your website front-end - nothing is going live until you save the changes!', 'firefly' ); ?>
+								</p>
+
+							</div>
+
+						</div>
 
 					<!-- Special note -->
 
@@ -266,10 +267,6 @@
 						</div>
 
 					</div>
-
-				<!-- Footer note -->
-
-					<p><small><em><?php esc_html_e( 'You can disable this page in Appearance &raquo; Customize &raquo; Theme &raquo; Others.', 'firefly' ); ?></em></small></p>
 
 			</div>
 

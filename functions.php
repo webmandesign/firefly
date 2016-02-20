@@ -19,6 +19,8 @@
  * @uses  `wmhook_firefly_generate_css_replacements`
  * @uses  `wmhook_firefly_esc_css`
  *
+ * Requires at least:  4.2
+ *
  * @package    Firefly
  * @copyright  WebMan Design, Oliver Juhas
  * @license    GPL-3.0, http://www.gnu.org/licenses/gpl-3.0.html

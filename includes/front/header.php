@@ -438,12 +438,12 @@
 
 
 	/**
-	 * Body top
+	 * Body opening
 	 *
 	 * @since    1.0
 	 * @version  1.0
 	 */
-	function firefly_body_top() {
+	function firefly_body_open() {
 
 		// Processing
 
@@ -455,9 +455,9 @@
 
 			echo $output;
 
-	} // /firefly_body_top
+	} // /firefly_body_open
 
-	add_action( 'tha_body_top', 'firefly_body_top', 10 );
+	add_action( 'tha_body_top', 'firefly_body_open', 10 );
 
 
 
@@ -548,38 +548,38 @@
  */
 
 	/**
-	 * Header top
+	 * Header opening
 	 *
 	 * @since    1.0
 	 * @version  1.0
 	 */
-	function firefly_header_top() {
+	function firefly_header_open() {
 
 		// Output
 
 			echo "\r\n\r\n" . '<header id="masthead" class="site-header" role="banner"' . firefly_schema_org( 'WPHeader' ) . '>' . "\r\n\r\n";
 
-	} // /firefly_header_top
+	} // /firefly_header_open
 
-	add_action( 'tha_header_top', 'firefly_header_top', 100 );
+	add_action( 'tha_header_top', 'firefly_header_open', 100 );
 
 
 
 	/**
-	 * Header inner wrap
+	 * Header inner wrap opening
 	 *
 	 * @since    1.0
 	 * @version  1.0
 	 */
-	function firefly_header_inner_wrap() {
+	function firefly_header_inner_wrap_open() {
 
 		// Output
 
 			echo "\r\n\r\n" . '<div class="site-header-inner">' . "\r\n\r\n";
 
-	} // /firefly_header_inner_wrap
+	} // /firefly_header_inner_wrap_open
 
-	add_action( 'tha_header_top', 'firefly_header_inner_wrap', 110 );
+	add_action( 'tha_header_top', 'firefly_header_inner_wrap_open', 110 );
 
 
 
@@ -636,17 +636,17 @@
 
 
 	/**
-	 * Header bottom
+	 * Header closing
 	 *
 	 * @since    1.0
 	 * @version  1.0
 	 */
-	function firefly_header_bottom() {
+	function firefly_header_close() {
 
 		// Output
 
 			echo "\r\n\r\n" . '</header>' . "\r\n\r\n";
 
-	} // /firefly_header_bottom
+	} // /firefly_header_close
 
-	add_action( 'tha_header_bottom', 'firefly_header_bottom', 100 );
+	add_action( 'tha_header_bottom', 'firefly_header_close', 100 );

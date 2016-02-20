@@ -25,11 +25,7 @@ body {
 	@include responsive_minmax( map_get( $breakpoint, 'm' ), map_get( $breakpoint, 's' ), 'max-width', 'min-height' ) {
 
 		&.has-mobile-bar {
-			padding-top: ( 2 + ( 1 + $golden_minor / 2 ) * ( 1 + $golden ) ) * 13px; // Mobile menu bar height
-		}
-
-		&.admin-bar.has-mobile-bar {
-			margin-top: -46px; // Compensating for top margin on HTML applied with WordPress admin bar styling
+			padding-bottom: ( 2 + ( 1 + $golden_minor / 2 ) * ( 1 + $golden ) ) * 13px; // Mobile menu bar height
 		}
 
 	}
@@ -54,17 +50,20 @@ body {
 
 .site-layout-fullwidth {}
 
-%content_width {
-	// (*) Overriden in `assets/css-generate/custom-styles.php`
+%basic_width {
 	width: 88%;
-	max-width: $content_width +px;
-	max-width: $content_width * $px;
 	margin: 0 auto;
 }
 
-%fullhd_width {
-	width: 88%;
+%content_width {
+	@extend %basic_width;
+	// (*) Overriden in `assets/css-generate/custom-styles.php`
+	max-width: $content_width +px;
+	max-width: $content_width * $px;
+}
+
+%full_width {
+	@extend %basic_width;
 	max-width: 1920px;
 	max-width: 1920 * $px;
-	margin: 0 auto;
 }

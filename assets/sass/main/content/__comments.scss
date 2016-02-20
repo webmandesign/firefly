@@ -25,9 +25,8 @@
 	@extend .weight-700;
 
 	.add-comment-link {
-		float: none;
-		display: block;
-		margin-top: $golden_major +em;
+		@extend .screen-reader-text;
+		@extend .focus-position-static;
 	}
 
 	span {

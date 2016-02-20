@@ -1,10 +1,11 @@
 # Firefly
 
-* **Theme URI:**    http://www.webmandesign.eu/firefly-wordpress-theme/
-* **Author:**       WebMan Design
-* **Author URI:**   http://www.webmandesign.eu/
-* **License:**      GNU General Public License v3
-* **License URI:**  http://www.gnu.org/licenses/gpl-3.0.html
+* **Theme URI:**          http://www.webmandesign.eu/firefly-wordpress-theme/
+* **Author:**             WebMan Design
+* **Author URI:**         http://www.webmandesign.eu/
+* **License:**            GNU General Public License v3
+* **License URI:**        http://www.gnu.org/licenses/gpl-3.0.html
+* **Requires at least:**  4.2
 
 ## Description
 

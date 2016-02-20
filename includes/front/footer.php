@@ -23,20 +23,20 @@
  */
 
 	/**
-	 * Footer top
+	 * Footer opening
 	 *
 	 * @since    1.0
 	 * @version  1.0
 	 */
-	function firefly_footer_top() {
+	function firefly_footer_open() {
 
 		// Output
 
 			echo "\r\n\r\n" . '<footer id="colophon" class="site-footer" role="contentinfo"' . firefly_schema_org( 'WPFooter' ) . '>' . "\r\n\r\n";
 
-	} // /firefly_footer_top
+	} // /firefly_footer_open
 
-	add_action( 'tha_footer_top', 'firefly_footer_top', 100 );
+	add_action( 'tha_footer_top', 'firefly_footer_open', 100 );
 
 
 
@@ -120,20 +120,20 @@
 
 
 	/**
-	 * Footer bottom
+	 * Footer closing
 	 *
 	 * @since    1.0
 	 * @version  1.0
 	 */
-	function firefly_footer_bottom() {
+	function firefly_footer_close() {
 
 		// Output
 
 			echo "\r\n\r\n" . '</footer>' . "\r\n\r\n";
 
-	} // /firefly_footer_bottom
+	} // /firefly_footer_close
 
-	add_action( 'tha_footer_bottom', 'firefly_footer_bottom', 100 );
+	add_action( 'tha_footer_bottom', 'firefly_footer_close', 100 );
 
 
 
@@ -144,12 +144,12 @@
  */
 
 	/**
-	 * Body bottom
+	 * Body closing
 	 *
 	 * @since    1.0
 	 * @version  1.0
 	 */
-	function firefly_body_bottom() {
+	function firefly_body_close() {
 
 		// Helper variables
 
@@ -161,6 +161,6 @@
 
 			echo $output;
 
-	} // /firefly_body_bottom
+	} // /firefly_body_close
 
-	add_action( 'tha_body_bottom', 'firefly_body_bottom', 100 );
+	add_action( 'tha_body_bottom', 'firefly_body_close', 100 );

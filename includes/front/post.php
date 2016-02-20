@@ -1297,6 +1297,15 @@
 
 						$output .= '<div class="feature-content">' . $content . '</div>';
 
+					// Continue reading link (only if excerpt set as when using content only, you should use more tag)
+
+						if (
+								has_excerpt()
+								&& get_post_meta( get_the_ID(), 'display_more_link', true )
+							) {
+							$output .= apply_filters( 'wmhook_fn_firefly_excerpt_continue_reading', '' );
+						}
+
 					$output .= '</article>';
 
 				} // /while

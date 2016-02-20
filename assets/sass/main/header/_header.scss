@@ -13,7 +13,7 @@
 	.site-header {
 
 		&-inner {
-			@extend %fullhd_width;
+			@extend %full_width;
 			@extend .clearfix;
 			padding-top: 1rem;
 			padding-bottom: 1rem;

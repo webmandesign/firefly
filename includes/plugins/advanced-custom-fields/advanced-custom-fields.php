@@ -92,17 +92,32 @@
 								'type'          => 'image',
 								'default_value' => 0,
 								'layout'        => 'vertical',
-								'instructions'  => esc_html__( 'In case this is a child page and it is being displayed in the list on the parent page, the image you set here will override the featured image usually displayed in child pages list.', 'firefly' ),
+								'instructions'  => esc_html__( 'If this is a child page, you can set its image displayed in the subpages list on the parent page.', 'firefly' ) . ' ' . esc_html__( 'Otherwise the page featured image will be used (or no image at all).', 'firefly' ),
 								'save_format'   => 'id',
 								'preview_size'  => 'thumbnail',
 								'library'       => 'all',
 							),
 
+						// More link
+
+							array (
+								'key'           => 'firefly_display_more_link',
+								'label'         => esc_html__( 'Display more link', 'firefly' ),
+								'name'          => 'display_more_link',
+								'type'          => 'checkbox',
+								'default_value' => 0,
+								'layout'        => 'vertical',
+								'choices'       => array (
+									esc_html__( 'Display more link', 'firefly' ) => esc_html__( 'If this is a child page, you can display its more link in subpages list on the parent page.', 'firefly' ) . ' ' . esc_html__( 'You need to set a page excerpt first.', 'firefly' ),
+								),
+							),
+
 					),
 					'location' => array (
-						array (
 
-							// Display on Pages
+						// Display on Pages
+
+							array (
 
 								array (
 									'param'    => 'post_type',
@@ -112,21 +127,23 @@
 									'group_no' => 0,
 								),
 
-							// Don't display on blog Page
+								// But don't display on blog Page
 
-								array (
-									'param'    => 'page_type',
-									'operator' => '!=',
-									'value'    => 'posts_page',
-									'order_no' => 0,
-									'group_no' => 1,
-								),
+									array (
+										'param'    => 'page_type',
+										'operator' => '!=',
+										'value'    => 'posts_page',
+										'order_no' => 0,
+										'group_no' => 1,
+									),
 
-						),
+							),
+
 					),
 					'options' => array (
-						'position' => 'normal',
-						'layout'   => 'default',
+						'position'       => 'normal',
+						'layout'         => 'default',
+						'hide_on_screen' => array(),
 					),
 					'menu_order' => 0,
 				) );
