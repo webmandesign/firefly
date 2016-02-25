@@ -60,7 +60,7 @@
 		margin: 1px; // For focus outline to be visible in whole.
 		line-height: 3rem - 2 * $golden_minor;
 		color: inherit;
-		transition: box-shadow .3s;
+		transition: box-shadow .2s linear;
 
 		&:hover {
 			text-decoration: none;

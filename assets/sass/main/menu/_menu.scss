@@ -37,7 +37,6 @@
 	&-container {
 
 		@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
-			direction: rtl; // Hack to reposition scrollbar to left
 			position: fixed;
 			display: none; // This is required for skipping the menu with TAB key for accessibility
 			width: 100%;
@@ -57,7 +56,6 @@
 			}
 
 			.menu {
-				direction: ltr; // Reset back to normal after applying the scrollbar position hack
 				position: relative;
 				height: 100%;
 
@@ -132,7 +130,7 @@
 									padding: 0 1em;
 									margin: 0;
 									font-weight: 700;
-									transition: box-shadow .3s, background .3s, color .3s;
+									transition: background .3s, color .3s, box-shadow .2s linear;
 
 									.menu-item-description {
 										display: none;

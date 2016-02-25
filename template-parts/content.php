@@ -27,6 +27,8 @@
 
 	<div class="entry-content"<?php echo firefly_schema_org( 'entry_body' ); ?>>
 
+		<?php do_action( 'tha_entry_content_before', $args ); ?>
+
 		<?php
 
 		if ( is_single() ) {
@@ -40,6 +42,8 @@
 		}
 
 		?>
+
+		<?php do_action( 'tha_entry_content_after', $args ); ?>
 
 	</div>
 

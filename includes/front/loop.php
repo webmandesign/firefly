@@ -67,7 +67,7 @@
 
 	} // /firefly_pagination
 
-	add_action( 'tha_postslist_after', 'firefly_pagination', 10 );
+	add_action( 'wmhook_firefly_postslist_after', 'firefly_pagination', 10 );
 
 
 

@@ -15,7 +15,7 @@
 
 if ( have_posts() ) :
 
-	do_action( 'tha_postslist_before' );
+	do_action( 'wmhook_firefly_postslist_before' );
 
 	?>
 
@@ -23,7 +23,7 @@ if ( have_posts() ) :
 
 		<?php
 
-		do_action( 'tha_postslist_top' );
+		do_action( 'tha_content_while_before' );
 
 		while ( have_posts() ) : the_post();
 
@@ -38,7 +38,7 @@ if ( have_posts() ) :
 
 		endwhile;
 
-		do_action( 'tha_postslist_bottom' );
+		do_action( 'tha_content_while_after' );
 
 		?>
 
@@ -46,7 +46,7 @@ if ( have_posts() ) :
 
 	<?php
 
-	do_action( 'tha_postslist_after' );
+	do_action( 'wmhook_firefly_postslist_after' );
 
 else :
 

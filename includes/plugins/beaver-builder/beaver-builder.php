@@ -40,10 +40,10 @@
 
 	// Make sure to load layout styles after the theme stylesheet
 
-		remove_action( 'wp_enqueue_scripts', 'FLBuilder::layout_styles_scripts' );
-		remove_action( 'wp_enqueue_scripts', 'FLBuilder::styles_scripts' );
-		add_action( 'wp_enqueue_scripts', 'FLBuilder::layout_styles_scripts', 198 );
-		add_action( 'wp_enqueue_scripts', 'FLBuilder::styles_scripts', 198 );
+		remove_action( 'wp_enqueue_scripts', 'FLBuilder::enqueue_layout_styles_scripts' );
+		remove_action( 'wp_enqueue_scripts', 'FLBuilder::enqueue_ui_styles_scripts' );
+		add_action( 'wp_enqueue_scripts', 'FLBuilder::enqueue_layout_styles_scripts', 198 );
+		add_action( 'wp_enqueue_scripts', 'FLBuilder::enqueue_ui_styles_scripts', 198 );
 
 
 

@@ -926,7 +926,7 @@ select { padding: calc( 0.62em - 2px); }
 .site .fullwidth input[type], .site .fullwidth select, .site .fullwidth textarea { width: 100%; max-width: 100%; }
 
 /* FILE: main/forms/__buttons.scss */
-.button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .site-content .more-link { padding: 0.62em 1.38em; margin-top: 2px; margin-bottom: 2px; border: 0; border-radius: 0; cursor: pointer; transition: background .3s, color .3s, box-shadow .3s; }
+.button, button, input[type="button"], input[type="reset"], input[type="submit"], .main-navigation-container .button > a, .site-content .more-link { padding: 0.62em 1.38em; margin-top: 2px; margin-bottom: 2px; border: 0; border-radius: 0; cursor: pointer; transition: background .3s, color .3s, box-shadow .2s linear; }
 
 form .button, form button, form input[type="button"], form input[type="reset"], form input[type="submit"], form .main-navigation-container .button > a, .main-navigation-container form .button > a, form .site-content .more-link, .site-content form .more-link { margin-top: 0; margin-bottom: 0; }
 
@@ -1036,9 +1036,9 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 
 @media only screen and (min-width: 1200px) { .main-navigation { float: right; } }
 
-@media only screen and (max-width: 959px) { .main-navigation-container { direction: rtl; position: fixed; display: none; width: 100%; height: 100%; right: 100%; top: 0; line-height: 1.38em; background: inherit; color: inherit; border-color: inherit; overflow-y: auto; z-index: 995; }
+@media only screen and (max-width: 959px) { .main-navigation-container { position: fixed; display: none; width: 100%; height: 100%; right: 100%; top: 0; line-height: 1.38em; background: inherit; color: inherit; border-color: inherit; overflow-y: auto; z-index: 995; }
   .active .main-navigation-container { display: block; right: 0; }
-  .main-navigation-container .menu { direction: ltr; position: relative; height: 100%; }
+  .main-navigation-container .menu { position: relative; height: 100%; }
   .main-navigation-container .menu > ul { max-width: 23.33333rem; padding: 2.6244rem 1.62rem 5.87153rem; margin-left: auto; margin-right: auto; }
   .main-navigation-container .menu > ul > li > a { font-weight: 700; }
   .main-navigation-container li { border-top: 1px solid; border-color: inherit; }
@@ -1050,7 +1050,7 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 @media only screen and (min-width: 680px) { .main-navigation-container .menu { margin-top: 0; } }
 
 @media only screen and (min-width: 960px) { .main-navigation-container .menu > ul > li { margin-left: 1px; margin-right: 1px; }
-  .main-navigation-container .menu > ul > li > a { padding: 0 1em; margin: 0; font-weight: 700; transition: box-shadow .3s, background .3s, color .3s; }
+  .main-navigation-container .menu > ul > li > a { padding: 0 1em; margin: 0; font-weight: 700; transition: background .3s, color .3s, box-shadow .2s linear; }
   .main-navigation-container .menu > ul > li > a .menu-item-description { display: none; }
   .main-navigation-container .menu > ul > li.menu-item-has-children > a { padding-right: 2.5em; padding-right: calc( 1.25em + 16px); }
   .no-js .main-navigation-container .menu > ul > li.menu-item-has-children:hover > a, .main-navigation-container .menu > ul > li.focus > a { border-bottom-right-radius: 0; border-bottom-left-radius: 0; box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.1); } }
@@ -1186,7 +1186,7 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 
 .widget.widget_nav_menu .social-links li { border: 0; }
 
-.social-links a { display: inline-block; padding-left: 0.62em; padding-right: 0.62em; margin: 1px; line-height: 2.24rem; color: inherit; transition: box-shadow .3s; }
+.social-links a { display: inline-block; padding-left: 0.62em; padding-right: 0.62em; margin: 1px; line-height: 2.24rem; color: inherit; transition: box-shadow .2s linear; }
 
 .social-links a:hover { text-decoration: none; box-shadow: none; }
 

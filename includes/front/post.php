@@ -586,6 +586,13 @@
 	 */
 	function firefly_skip_links_entry_bottom() {
 
+		// Requirements check
+
+			if ( ! is_singular() ) {
+				return;
+			}
+
+
 		// Processing
 
 			$output = Firefly_Theme_Framework::link_skip_to( 'site-navigation', __( 'Skip back to navigation', 'firefly' ), 'focus-position-static' );

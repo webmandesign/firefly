@@ -27,6 +27,8 @@
 
 	<div class="entry-content"<?php echo firefly_schema_org( 'itemprop="description"' ); ?>>
 
+		<?php do_action( 'tha_entry_content_before' ); ?>
+
 		<table>
 
 			<caption><?php echo esc_html_x( 'Image info', 'Attachment page image info table caption.', 'firefly' ); ?></caption>
@@ -57,6 +59,8 @@
 		</table>
 
 		<?php the_excerpt(); ?>
+
+		<?php do_action( 'tha_entry_content_after' ); ?>
 
 	</div>
 
