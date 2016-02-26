@@ -213,7 +213,6 @@
 					register_nav_menus( array(
 							'primary' => esc_html__( 'Primary Menu', 'firefly' ),
 							'social'  => esc_html__( 'Social Links Menu', 'firefly' ),
-							'mobile'  => esc_html__( 'Mobile Bar (max 4 links)', 'firefly' ),
 						) );
 
 				// Visual editor styles

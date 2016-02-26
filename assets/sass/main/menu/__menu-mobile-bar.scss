@@ -109,18 +109,8 @@
 			border-radius: 0;
 			z-index: 999;
 
-			.has-mobile-bar & {
-				display: none;
-			}
-
 			.active & {
 				width: 100%;
-
-				.has-mobile-bar & {
-					display: block;
-					border: 0;
-				}
-
 			}
 
 		}

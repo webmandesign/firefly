@@ -22,14 +22,6 @@ body {
 		padding: $golden +em;
 	}
 
-	@include responsive_minmax( map_get( $breakpoint, 'm' ), map_get( $breakpoint, 's' ), 'max-width', 'min-height' ) {
-
-		&.has-mobile-bar {
-			padding-bottom: ( 2 + ( 1 + $golden_minor / 2 ) * ( 1 + $golden ) ) * 13px; // Mobile menu bar height
-		}
-
-	}
-
 }
 
 .site {

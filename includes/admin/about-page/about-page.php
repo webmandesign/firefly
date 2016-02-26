@@ -162,9 +162,9 @@
 
 						<p class="wm-actions">
 
-							<a href="<?php echo esc_url( 'http://www.webmandesign.eu/manual/firefly/' ); ?>" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'User Manual', 'firefly' ); ?></a>
+							<a href="<?php echo esc_url( 'http://www.webmandesign.eu/manual/firefly/' ); ?>" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Documentation', 'firefly' ); ?></a>
 
-							<a href="<?php echo esc_url( 'http://support.webmandesign.eu' ); ?>" class="button button-hero" target="_blank"><?php esc_html_e( 'Support Center', 'firefly' ); ?></a>
+							<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/firefly/' ); ?>" class="button button-hero" target="_blank"><?php esc_html_e( 'Support Center', 'firefly' ); ?></a>
 
 						</p>
 
@@ -178,33 +178,50 @@
 
 						<div class="feature-section three-col">
 
-							<div class="first-feature col">
+							<div class="last-feature col">
 
-								<h3><?php esc_html_e( 'WebMan Amplifier', 'firefly' ); ?></h3>
+								<h3><?php esc_html_e( 'Responsive, high resolution', 'firefly' ); ?></h3>
 
 								<p>
-									<?php printf( esc_html_x( 'To make the theme highly flexible, open and future-proof, it uses the %s plugin.', '%s: plugin name.', 'firefly' ), '<strong>WebMan Amplifier</strong>' ); ?>
-									<?php esc_html_e( 'Please, install and activate this plugin to provide the additional functionality.', 'firefly' ); ?>
+									<?php esc_html_e( 'Your website will look stunning on any screen and any device with this theme.', 'firefly' ); ?>
+								</p>
+
+								<p>
+									<?php esc_html_e( 'Mobile first approach assures your website visitors will have a great experience browsing your website on their phones too.', 'firefly' ); ?>
+								</p>
+
+							</div>
+
+							<div class="first-feature col">
+
+								<img src="<?php echo esc_url( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/images/nested-pages-child-pages.gif' ) ); ?>" alt="<?php esc_html_e( 'Toggling child pages with Nested Pages plugin', 'firefly' ); ?>" title="<?php esc_html_e( 'Toggling child pages with Nested Pages plugin', 'firefly' ); ?>" />
+
+								<h3><?php esc_html_e( 'List of subpages', 'firefly' ); ?></h3>
+
+								<p>
+									<?php esc_html_e( 'If you set some child pages for a particular page, it will display a list of these subpages.', 'firefly' ); ?> <a href="https://codex.wordpress.org/Pages#To_create_a_subpage" target="_blank"><em><?php esc_html_e( '(How to create a child page?)', 'firefly' ); ?></em></a>
+								</p>
+
+								<p>
+									<?php esc_html_e( 'You can use "more tag", or more conveniently set a page excerpt for your child pages.', 'firefly' ); ?>
+									<?php printf( esc_html_x( 'Try using the %s plugin for better experience setting the excerpts.', '%s: plugin name with link to plugin page.', 'firefly' ), '<a href="https://wordpress.org/plugins/rich-text-excerpts/" target="_blank"><strong>' . esc_html_x( 'Rich Text Excerpts', 'Plugin name.', 'firefly' ) . '</strong></a>' ); ?>
 								</p>
 
 							</div>
 
 							<div class="feature col">
 
-								<h3><?php esc_html_e( 'The WordPress settings', 'firefly' ); ?></h3>
+								<img src="<?php echo esc_url( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/images/page-options.jpg' ) ); ?>" alt="<?php esc_html_e( 'Page options metabox displayed by Advanced Custom Fields plugin', 'firefly' ); ?>" title="<?php esc_html_e( 'Page options metabox displayed by Advanced Custom Fields plugin', 'firefly' ); ?>" />
+
+								<h3><?php esc_html_e( 'Page options', 'firefly' ); ?></h3>
 
 								<p>
-									<?php esc_html_e( 'Do not forget to set up your WordPress in "Settings" section of the main WordPress admin menu. Please go through all the subsections and options.', 'firefly' ); ?>
+									<?php esc_html_e( 'There is a handful of useful page options available, too.', 'firefly' ); ?>
+									<?php printf( esc_html_x( 'Install and activate the %s plugin to enable better page options management, or refer to theme documentation for more info.', '%s: plugin name with link to plugin page.', 'firefly' ), '<a href="https://wordpress.org/plugins/advanced-custom-fields/" target="_blank"><strong>' . esc_html_x( 'Advanced Custom Fields', 'Plugin name.', 'firefly' ) . '</strong></a>' ); ?>
 								</p>
 
-							</div>
-
-							<div class="last-feature col">
-
-								<h3><?php esc_html_e( 'Customize the theme', 'firefly' ); ?></h3>
-
 								<p>
-									<?php esc_html_e( 'You can customize the theme using live-preview editor. Apply a design changes with no fear of them affecting your website front-end - nothing is going live until you save the changes!', 'firefly' ); ?>
+									<?php printf( esc_html_x( 'For easier management of your website pages you can use a great %s plugin.', '%s: plugin name with link to plugin page.', 'firefly' ), '<a href="https://wordpress.org/plugins/wp-nested-pages/" target="_blank"><strong>' . esc_html_x( 'Nested Pages', 'Plugin name.', 'firefly' ) . '</strong></a>' ); ?>
 								</p>
 
 							</div>
@@ -213,34 +230,51 @@
 
 						<div class="feature-section three-col">
 
-							<div class="first-feature col">
+							<div class="last-feature col">
 
-								<h3><?php esc_html_e( 'WebMan Amplifier', 'firefly' ); ?></h3>
+								<img src="<?php echo esc_url( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/images/beaver-builder.jpg' ) ); ?>" alt="<?php esc_html_e( 'Using Beaver Builder page builder', 'firefly' ); ?>" title="<?php esc_html_e( 'Using Beaver Builder page builder', 'firefly' ); ?>" />
+
+								<h3><?php esc_html_e( 'Page builder', 'firefly' ); ?></h3>
 
 								<p>
-									<?php printf( esc_html_x( 'To make the theme highly flexible, open and future-proof, it uses the %s plugin.', '%s: plugin name.', 'firefly' ), '<strong>WebMan Amplifier</strong>' ); ?>
-									<?php esc_html_e( 'Please, install and activate this plugin to provide the additional functionality.', 'firefly' ); ?>
+									<?php esc_html_e( 'Simple page layout is not for you?', 'firefly' ); ?>
+									<?php printf( esc_html_x( 'Well, for this case the theme fully supports the amazing front-end page builder plugin, the %s.', '%s: plugin name with link to plugin page.', 'firefly' ), '<a href="https://wordpress.org/plugins/beaver-builder-lite-version/" target="_blank"><strong>' . esc_html_x( 'Beaver Builder', 'Plugin name.', 'firefly' ) . '</strong></a>' ); ?>
+								</p>
+
+								<p>
+									<?php esc_html_e( 'Word of warning: this page builder plugin is very addicting, and you might fall in love with it very quickly!', 'firefly' ); ?>
+								</p>
+
+							</div>
+
+							<div class="first-feature col">
+
+								<img src="<?php echo esc_url( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/images/intro-widgets.jpg' ) ); ?>" alt="<?php esc_html_e( 'Page intro widgets area', 'firefly' ); ?>" title="<?php esc_html_e( 'Page intro widgets area', 'firefly' ); ?>" />
+
+								<h3><?php esc_html_e( 'Intro widgets', 'firefly' ); ?></h3>
+
+								<p>
+									<?php esc_html_e( 'In your page title area you can conveniently display a special Intro Widgets area when using a dedicated "With intro widgets" page template (or a special page option).', 'firefly' ); ?>
+								</p>
+
+								<p>
+									<?php printf( esc_html_x( 'For easy overriding of what should be displayed in this widgets try using the %s plugin.', '%s: plugin name with link to plugin page.', 'firefly' ), '<a href="https://wordpress.org/plugins/woosidebars/" target="_blank"><strong>' . esc_html_x( 'WooSidebars', 'Plugin name.', 'firefly' ) . '</strong></a>' ); ?>
 								</p>
 
 							</div>
 
 							<div class="feature col">
 
-								<h3><?php esc_html_e( 'The WordPress settings', 'firefly' ); ?></h3>
-
-								<p>
-									<?php esc_html_e( 'Do not forget to set up your WordPress in "Settings" section of the main WordPress admin menu. Please go through all the subsections and options.', 'firefly' ); ?>
-								</p>
-
-							</div>
-
-							<div class="last-feature col">
+								<img src="<?php echo esc_url( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/images/customizer.jpg' ) ); ?>" alt="<?php esc_html_e( 'Using theme customizer', 'firefly' ); ?>" title="<?php esc_html_e( 'Using theme customizer', 'firefly' ); ?>" />
 
 								<h3><?php esc_html_e( 'Customize the theme', 'firefly' ); ?></h3>
 
 								<p>
-									<?php esc_html_e( 'You can customize the theme using live-preview editor. Apply a design changes with no fear of them affecting your website front-end - nothing is going live until you save the changes!', 'firefly' ); ?>
+									<?php esc_html_e( 'You can find all theme options integrated directly into WordPress theme customizer.', 'firefly' ); ?>
+									<?php esc_html_e( 'Edit your website appearance with immediate preview of your changes before you actually apply them live.', 'firefly' ); ?>
 								</p>
+
+								<a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-primary button-hero"><?php esc_html_e( 'Customize the Theme &raquo;', 'firefly' ); ?></a>
 
 							</div>
 
@@ -253,7 +287,7 @@
 							<h2 class="mt0"><strong><?php esc_html_e( 'Installing the theme demo content', 'firefly' ); ?></strong></h2>
 
 							<p>
-								<?php esc_html_e( 'You can obtain the most recent theme demo content file in the theme on-line user manual. Please click the button below to obtain the file and read the short instructions on how to install the demo content.', 'firefly' ); ?>
+								<?php esc_html_e( '', 'firefly' ); ?>
 							</p>
 
 							<p>

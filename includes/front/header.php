@@ -435,40 +435,10 @@
 					$body_classes[ esc_attr( 'site-layout-fullwidth' ) ] = ++$i; // Default theme layout
 				}
 
-			// Mobile bar enabled?
-
-				if ( has_nav_menu( 'mobile' ) ) {
-					$body_classes['has-mobile-bar'] = ++$i;
-				}
-
-			// Is not front page?
-
-				if ( ! is_front_page() ) {
-					$body_classes['not-front-page'] = ++$i;
-				}
-
 			// Singular?
 
 				if ( is_singular() ) {
 					$body_classes['is-singular'] = ++$i;
-				}
-
-			// Has featured image?
-
-				if ( is_singular() && has_post_thumbnail() ) {
-					$body_classes['has-post-thumbnail'] = ++$i;
-				}
-
-			// Is posts list?
-
-				if ( is_archive() || is_search() ) {
-					$body_classes['is-posts-list'] = ++$i;
-				}
-
-			// Sticky header enabled?
-
-				if ( get_theme_mod( 'layout_header_sticky' ) ) {
-					$body_classes['do-sticky-header'] = ++$i;
 				}
 
 

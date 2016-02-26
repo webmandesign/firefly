@@ -837,8 +837,6 @@ html { min-width: 320px; }
 
 @media only screen and (min-width: 1200px) { body { padding: 1.62em; } }
 
-@media only screen and (max-width: 679px) and (min-height: 420px) { body.has-mobile-bar { padding-bottom: 66.5314px; } }
-
 .site { position: relative; width: 100%; margin: 0 auto; }
 
 .site-layout-boxed .site { max-width: 1560px; max-width: 86.66667rem; box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); }
@@ -1152,9 +1150,7 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 .menu-toggle, .menu-toggle:hover, .menu-toggle:focus, .menu-toggle:active { box-shadow: 0 0 1.62rem rgba(0, 0, 0, 0.33); }
 
 @media only screen and (max-width: 679px) { .menu-toggle { position: fixed; right: 0; bottom: 0; padding: 0.62em 1em; line-height: 1.38; text-align: center; font-weight: 700; border: 1px solid; border-radius: 0; z-index: 999; }
-  .has-mobile-bar .menu-toggle { display: none; }
-  .active .menu-toggle { width: 100%; }
-  .has-mobile-bar .active .menu-toggle { display: block; border: 0; } }
+  .active .menu-toggle { width: 100%; } }
 
 @media only screen and (min-width: 680px) and (max-width: 959px) { .active .menu-toggle { position: fixed; top: 1.62rem; right: 1.62rem; border: 1px solid; border-color: inherit; z-index: 999; box-shadow: none; } }
 
