@@ -41,7 +41,7 @@ mark, .highlight, .pagination .current, .bypostauthor > .comment-body .comment-a
 
 .widget .tagcloud a:hover, .widget .tagcloud a:focus, .widget .tagcloud a:active { /*[*/ border-color: #986F3A; /*]*/ /*// border-color: ___color_accent_primary_background; //*/ }
 
-mark, .highlight { /*[*/ box-shadow: 0.382em 0 0 #986F3A, -0.382em 0 0 #986F3A; /*]*/ /*// box-shadow: .382em 0 0 ___color_accent_primary_background, -.382em 0 0 ___color_accent_primary_background; //*/ }
+mark, .highlight { /*[*/ box-shadow: 0.38em 0 0 #986F3A, -0.38em 0 0 #986F3A; /*]*/ /*// box-shadow: ( $golden_minor +em ) 0 0 ___color_accent_primary_background, ( -$golden_minor +em ) 0 0 ___color_accent_primary_background; //*/ }
 
 @media only screen and (max-width: 679px) { .pagination a { /*[*/ background-color: #986F3A; color: #fff; /*]*/ /*// background-color: ___color_accent_primary_background; color: ___color_accent_primary_text; //*/ } }
 

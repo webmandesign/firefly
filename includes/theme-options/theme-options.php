@@ -3,7 +3,6 @@
  * Theme options
  *
  * @uses  `wmhook_firefly_theme_options` global hook
- * @uses  `wmhook_firefly_generate_css_replacements` global hook
  *
  * @package    Firefly
  * @copyright  WebMan Design, Oliver Juhas
@@ -28,7 +27,6 @@
 	 * Set theme options array
 	 *
 	 * @uses  `wmhook_firefly_theme_options` global hook
-	 * @uses  `wmhook_firefly_generate_css_replacements` global hook
 	 *
 	 * @since    1.0
 	 * @version  1.0
@@ -544,18 +542,18 @@
 
 
 	/**
-	 * CSS generator replacements
+	 * CSS generator default replacements
 	 *
 	 * @since    1.0
 	 * @version  1.0
 	 *
 	 * @param  array $replacements
 	 */
-	function firefly_generate_css_replacements( $replacements = array() ) {
+	function firefly_generate_css_default_replacements( $replacements = array() ) {
 
-		// Processing
+		// Helper variables
 
-			$replacements = array(
+			$helpers = array(
 					'/* End of file */'               => "\r\n\r\n",
 					'/*[*/'                           => '/** ', // Open a comment
 					'/*]*/'                           => ' **/', // Close a comment
@@ -570,8 +568,8 @@
 
 		// Output
 
-			return $replacements;
+			return array_merge( $helpers, $replacements );
 
-	} // /firefly_generate_css_replacements
+	} // /firefly_generate_css_default_replacements
 
-	add_filter( 'wmhook_firefly_generate_css_replacements', 'firefly_generate_css_replacements', 10 );
+	add_filter( 'wmhook_firefly_tf_custom_styles_replacements', 'firefly_generate_css_default_replacements', 10 );

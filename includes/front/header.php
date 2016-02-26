@@ -33,22 +33,8 @@
 
 		// Helper variables
 
-			$theme = Firefly_Theme_Framework::get_theme_slug();
-
-			$wp_upload_dir    = wp_upload_dir();
-			$theme_upload_dir = trailingslashit( $wp_upload_dir['basedir'] . get_theme_mod( '__path_theme_generated_files' ) );
-			$dev_suffix       = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? ( '.dev' ) : ( '' );
-			$version          = esc_attr( trim( wp_get_theme( $theme )->get( 'Version' ) ) );
-
-			$stylesheets = array(
-					'global' => ( ! file_exists( $theme_upload_dir . 'global.css' ) ) ? ( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'fallback.css' ) ) : ( str_replace( array( 'http:', 'https:', '.css' ), array( '', '', $dev_suffix . '.css' ), get_theme_mod( '__url_css' ) ) ),
-				);
-
-			if ( ! $stylesheets['global'] ) {
-				$stylesheets['global'] = get_stylesheet_uri();
-			}
-
-			$stylesheets = apply_filters( 'wmhook_fn_firefly_register_assets_stylesheets', $stylesheets );
+			$theme   = Firefly_Theme_Framework::get_theme_slug();
+			$version = esc_attr( trim( wp_get_theme( $theme )->get( 'Version' ) ) );
 
 
 		// Processing
@@ -58,11 +44,11 @@
 			 */
 
 				$register_styles = apply_filters( 'wmhook_fn_firefly_register_assets_register_styles', array(
-						'firefly-google-fonts'      => array( firefly_google_fonts_url() ),
-						'firefly-stylesheet'        => array( 'src' => get_stylesheet_uri(), 'deps' => array( 'firefly-stylesheet-global' ) ),
-						'firefly-stylesheet-global' => array( $stylesheets['global'] ),
-						'firefly-stylesheet-print'  => array( 'src' => Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/css/print.css' ), 'media' => 'print' ),
-					), $stylesheets );
+						'firefly-google-fonts'     => array( firefly_google_fonts_url() ),
+						'firefly-stylesheet'       => array( 'src' => get_stylesheet_uri(), 'deps' => array( 'firefly-stylesheet-main' ) ),
+						'firefly-stylesheet-main'  => array( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/css/main.css' ) ),
+						'firefly-stylesheet-print' => array( 'src' => Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/css/print.css' ), 'media' => 'print' ),
+					) );
 
 				foreach ( $register_styles as $handle => $atts ) {
 					$src   = ( isset( $atts['src'] )   ) ? ( $atts['src']   ) : ( $atts[0] );
@@ -120,28 +106,14 @@
 
 			$theme = Firefly_Theme_Framework::get_theme_slug();
 
+			$custom_styles = Firefly_Theme_Framework::custom_styles();
+
 
 		// Processing
 
 			/**
 			 * Styles
 			 */
-
-				// SASS debugging - enqueue default (fallback) stylesheet
-
-					if ( defined( 'FIREFLY_DEBUG_SASS' ) && FIREFLY_DEBUG_SASS ) {
-
-						wp_deregister_style( 'firefly-stylesheet-global' ); // Must deregister to register again with new URL
-
-						wp_register_style(
-								'firefly-stylesheet-global',
-								Firefly_Theme_Framework::get_stylesheet_directory_uri( 'fallback.css' ),
-								false,
-								esc_attr( trim( wp_get_theme( $theme )->get( 'Version' ) ) ),
-								'screen'
-							);
-
-					}
 
 				// Google Fonts
 
@@ -151,7 +123,7 @@
 
 				// Main
 
-					$enqueue_styles[] = 'firefly-stylesheet';
+					$enqueue_styles[] = 'firefly-stylesheet-main'; // No need for `style.css`, actually...
 
 				// Print
 
@@ -162,6 +134,21 @@
 				foreach ( $enqueue_styles as $handle ) {
 					wp_enqueue_style( $handle );
 				}
+
+			/**
+			 * Styles - inline
+			 */
+
+				// Custom styles
+
+					if ( $custom_styles ) {
+
+						wp_add_inline_style(
+								'firefly-stylesheet-main',
+								"\r\n" . apply_filters( 'wmhook_firefly_esc_css', $custom_styles ) . "\r\n"
+							);
+
+					}
 
 			/**
 			 * Scripts
@@ -192,66 +179,26 @@
 
 
 	/**
-	 * Customizer preview assets enqueue
-	 *
-	 * @uses  firefly_custom_styles()
-	 * @uses  `wmhook_firefly_esc_css` global hook
-	 * @uses  `wmhook_firefly_generate_css_replacements` global hook
-	 *
-	 * @see  assets/css-generate/custom-styles.php
+	 * Get custom styles in string for processing
 	 *
 	 * @since    1.0
 	 * @version  1.0
 	 */
-	function firefly_customizer_preview_enqueue_assets() {
+	function firefly_get_custom_styles() {
 
-		// Required files
+		// Processing
 
-			require_once( get_template_directory() . '/assets/css-generate/custom-styles.php' );
+			ob_start();
 
+			locate_template( 'assets/css/custom-styles.css', true );
 
-		// Helper variables
+		// Output
 
-			$theme = Firefly_Theme_Framework::get_theme_slug();
+			return ob_get_clean();
 
-			$output = (string) apply_filters( 'wmhook_fn_firefly_customizer_preview_enqueue_assets_inline_styles', firefly_custom_styles() );
+	} // /firefly_get_custom_styles
 
-
-		/**
-		 * Styles
-		 */
-
-			if ( ! empty( $output ) ) {
-
-				$replacements = (array) apply_filters( 'wmhook_firefly_generate_css_replacements', array() );
-
-				if ( ! empty( $replacements ) ) {
-					$output = strtr( $output, $replacements );
-				}
-
-				wp_add_inline_style(
-						'firefly-stylesheet-global',
-						apply_filters( 'wmhook_firefly_esc_css', $output )
-					);
-
-			}
-
-
-		/**
-		 * Scripts
-		 */
-
-			wp_enqueue_script(
-					'firefly-customize-preview',
-					Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/js/customize-preview.js' ),
-					array( 'jquery', 'customize-preview' ),
-					esc_attr( trim( wp_get_theme( $theme )->get( 'Version' ) ) ),
-					true
-				);
-
-	} // /firefly_customizer_preview_enqueue_assets
-
-	add_action( 'customize_preview_init', 'firefly_customizer_preview_enqueue_assets', 10 );
+	add_action( 'wmhook_firefly_custom_styles', 'firefly_get_custom_styles', 10 );
 
 
 

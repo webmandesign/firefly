@@ -69,16 +69,6 @@
 				//*/
 			}
 
-			mark,
-			.highlight {
-				/*[*/
-				box-shadow: 0.382em 0 0 map_get( $colors, "footer_accent" ), -0.382em 0 0 map_get( $colors, "footer_accent" );
-				/*]*/
-				/*//
-				box-shadow: 0.382em 0 0 ___color_footer_accent, -0.382em 0 0 ___color_footer_accent;
-				//*/
-			}
-
 			input:focus,
 			select:focus,
 			textarea:focus,

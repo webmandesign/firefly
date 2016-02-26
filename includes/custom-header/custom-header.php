@@ -281,7 +281,7 @@
 		// Output
 
 			if ( $image_url ) {
-				wp_add_inline_style( 'firefly-stylesheet', apply_filters( 'wmhook_firefly_esc_css', $output ) );
+				wp_add_inline_style( 'firefly-stylesheet-main', apply_filters( 'wmhook_firefly_esc_css', $output ) );
 			}
 
 	} // /firefly_post_intro_background

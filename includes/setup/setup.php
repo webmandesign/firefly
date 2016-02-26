@@ -158,43 +158,30 @@
 
 			// Helper variables
 
-				$theme = Firefly_Theme_Framework::get_theme_slug();
-
 				$image_sizes = array_filter( apply_filters( 'wmhook_fn_firefly_theme_setup_image_sizes', array() ) );
 
 				// WordPress visual editor CSS stylesheets
 
-					$wp_upload_dir     = wp_upload_dir();
-					$theme_upload_dir  = trailingslashit( $wp_upload_dir['basedir'] . get_theme_mod( '__path_theme_generated_files' ) );
-					$dev_suffix        = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? ( '.dev' ) : ( '' );
 					$visual_editor_css = array();
+
+					$theme   = Firefly_Theme_Framework::get_theme_slug();
+					$version = wp_get_theme( $theme )->get( 'Version' );
 
 					// Enqueue Google Fonts stylesheet
 
 						$visual_editor_css[] = str_replace( ',', '%2C', firefly_google_fonts_url() );
 
-					// Enqueue custom generated Visual Editor stylesheet if exists, or load fallback
+					// Enqueue Visual Editor stylesheet
 
-						if ( ! file_exists( $theme_upload_dir . 'global-ve.css' ) ) {
+						$visual_editor_css[] = esc_url( add_query_arg( array(
+								'ver' => $version,
+								Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/css/editor-style.css' ),
+							) ) );
 
-							// Fallback stylesheet
-
-								$visual_editor_css[] = esc_url( add_query_arg( array(
-										'ver' => wp_get_theme( $theme )->get( 'Version' ) ),
-										Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/css/editor-style.css' )
-									) );
-
-						} else {
-
-							// The actual custom generated stylesheet
-
-								$visual_editor_css[] = str_replace(
-										array( 'http:', 'https:', '.css' ),
-										array( '', '', $dev_suffix . '.css' ),
-										get_theme_mod( '__url_css-ve' )
-									);
-
-						}
+						$visual_editor_css[] = esc_url( add_query_arg( array(
+								'ver' => $version,
+								Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/css/custom-styles-ve.css' ),
+							) ) );
 
 					// Allow filtering the visual editor stylesheets
 

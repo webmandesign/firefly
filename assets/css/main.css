@@ -814,6 +814,10 @@ ul { list-style: square; }
 
 abbr[title] { border: 0; }
 
+blockquote { padding: 0; text-align: inherit; }
+
+blockquote::after, blockquote::before { display: none; }
+
 blockquote:first-child { margin-top: 0; }
 
 mark, ins, .highlight { padding: 0; }
@@ -1261,6 +1265,15 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { t
 .site-header .social-links .back-to-top-link { display: none; }
 
 /* FILE: main/content/_content.scss */
+/* FILE: main/content/__wp.scss */
+blockquote.alignleft, blockquote.alignright { padding: 0; }
+
+@media only screen and (min-width: 420px) { blockquote.alignleft, blockquote.alignright { width: 35%; } }
+
+blockquote.alignleft { margin-left: 0; }
+
+blockquote.alignright { margin-right: 0; }
+
 /* FILE: main/content/__content-area.scss */
 .site-content { padding: 2.6244rem 0; }
 

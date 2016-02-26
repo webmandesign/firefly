@@ -53,6 +53,13 @@
 
 	blockquote {
 		@extend %line_height_golden;
+		padding: 0;
+		text-align: inherit;
+
+		&::after,
+		&::before {
+			display: none;
+		}
 
 		&:first-child {
 			margin-top: 0;

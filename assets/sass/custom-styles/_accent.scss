@@ -107,10 +107,10 @@
 	mark,
 	.highlight {
 		/*[*/
-		box-shadow: .382em 0 0 map_get( $colors, "accent_primary_background" ), -.382em 0 0 map_get( $colors, "accent_primary_background" );
+		box-shadow: ( $golden_minor +em ) 0 0 map_get( $colors, "accent_primary_background" ), ( -$golden_minor +em ) 0 0 map_get( $colors, "accent_primary_background" );
 		/*]*/
 		/*//
-		box-shadow: .382em 0 0 ___color_accent_primary_background, -.382em 0 0 ___color_accent_primary_background;
+		box-shadow: ( $golden_minor +em ) 0 0 ___color_accent_primary_background, ( -$golden_minor +em ) 0 0 ___color_accent_primary_background;
 		//*/
 	}
 
