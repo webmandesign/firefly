@@ -155,16 +155,16 @@
 
 						?>
 						<br />
-						<?php esc_html_e( 'Please take time to read the steps below to set your website up.', 'firefly' ); ?>
+						<?php esc_html_e( 'Please take time to read the information below on how to use your theme.', 'firefly' ); ?>
 					</div>
 
 					<!-- Action links / buttons -->
 
 						<p class="wm-actions">
 
-							<a href="<?php echo esc_url( 'http://www.webmandesign.eu/manual/firefly/' ); ?>" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Documentation', 'firefly' ); ?></a>
+							<a href="<?php echo esc_url( 'http://www.webmandesign.eu/manual/firefly/' ); ?>" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Documentation &raquo;', 'firefly' ); ?></a>
 
-							<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/firefly/' ); ?>" class="button button-hero" target="_blank"><?php esc_html_e( 'Support Center', 'firefly' ); ?></a>
+							<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/firefly/' ); ?>" class="button button-hero" target="_blank"><?php esc_html_e( 'Support Center &raquo;', 'firefly' ); ?></a>
 
 						</p>
 
@@ -176,23 +176,9 @@
 
 						<h2 class="screen-reader-text"><?php esc_html_e( 'Quickstart Guide', 'firefly' ); ?></h2>
 
-						<div class="feature-section three-col">
+						<div class="feature-section two-col">
 
-							<div class="last-feature col">
-
-								<h3><?php esc_html_e( 'Responsive, high resolution', 'firefly' ); ?></h3>
-
-								<p>
-									<?php esc_html_e( 'Your website will look stunning on any screen and any device with this theme.', 'firefly' ); ?>
-								</p>
-
-								<p>
-									<?php esc_html_e( 'Mobile first approach assures your website visitors will have a great experience browsing your website on their phones too.', 'firefly' ); ?>
-								</p>
-
-							</div>
-
-							<div class="first-feature col">
+							<div class="col">
 
 								<img src="<?php echo esc_url( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/images/nested-pages-child-pages.gif' ) ); ?>" alt="<?php esc_html_e( 'Toggling child pages with Nested Pages plugin', 'firefly' ); ?>" title="<?php esc_html_e( 'Toggling child pages with Nested Pages plugin', 'firefly' ); ?>" />
 
@@ -209,7 +195,7 @@
 
 							</div>
 
-							<div class="feature col">
+							<div class="col">
 
 								<img src="<?php echo esc_url( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/images/page-options.jpg' ) ); ?>" alt="<?php esc_html_e( 'Page options metabox displayed by Advanced Custom Fields plugin', 'firefly' ); ?>" title="<?php esc_html_e( 'Page options metabox displayed by Advanced Custom Fields plugin', 'firefly' ); ?>" />
 
@@ -228,9 +214,25 @@
 
 						</div>
 
-						<div class="feature-section three-col">
+						<div class="feature-section two-col">
 
-							<div class="last-feature col">
+							<div class="col">
+
+								<img src="<?php echo esc_url( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/images/intro-widgets.jpg' ) ); ?>" alt="<?php esc_html_e( 'Page intro widgets area', 'firefly' ); ?>" title="<?php esc_html_e( 'Page intro widgets area', 'firefly' ); ?>" />
+
+								<h3><?php esc_html_e( 'Intro widgets', 'firefly' ); ?></h3>
+
+								<p>
+									<?php esc_html_e( 'In your page title area you can conveniently display a special Intro Widgets area when using a dedicated "With intro widgets" page template (or a special page option).', 'firefly' ); ?>
+								</p>
+
+								<p>
+									<?php printf( esc_html_x( 'For easy overriding of what should be displayed in this widgets try using the %s plugin.', '%s: plugin name with link to plugin page.', 'firefly' ), '<a href="https://wordpress.org/plugins/woosidebars/" target="_blank"><strong>' . esc_html_x( 'WooSidebars', 'Plugin name.', 'firefly' ) . '</strong></a>' ); ?>
+								</p>
+
+							</div>
+
+							<div class="col">
 
 								<img src="<?php echo esc_url( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/images/beaver-builder.jpg' ) ); ?>" alt="<?php esc_html_e( 'Using Beaver Builder page builder', 'firefly' ); ?>" title="<?php esc_html_e( 'Using Beaver Builder page builder', 'firefly' ); ?>" />
 
@@ -247,23 +249,25 @@
 
 							</div>
 
-							<div class="first-feature col">
+						</div>
 
-								<img src="<?php echo esc_url( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/images/intro-widgets.jpg' ) ); ?>" alt="<?php esc_html_e( 'Page intro widgets area', 'firefly' ); ?>" title="<?php esc_html_e( 'Page intro widgets area', 'firefly' ); ?>" />
+						<div class="feature-section two-col">
 
-								<h3><?php esc_html_e( 'Intro widgets', 'firefly' ); ?></h3>
+							<div class="col">
+
+								<h3><?php esc_html_e( 'Responsive, high resolution', 'firefly' ); ?></h3>
 
 								<p>
-									<?php esc_html_e( 'In your page title area you can conveniently display a special Intro Widgets area when using a dedicated "With intro widgets" page template (or a special page option).', 'firefly' ); ?>
+									<?php esc_html_e( 'Your website will look stunning on any screen and any device with this theme.', 'firefly' ); ?>
 								</p>
 
 								<p>
-									<?php printf( esc_html_x( 'For easy overriding of what should be displayed in this widgets try using the %s plugin.', '%s: plugin name with link to plugin page.', 'firefly' ), '<a href="https://wordpress.org/plugins/woosidebars/" target="_blank"><strong>' . esc_html_x( 'WooSidebars', 'Plugin name.', 'firefly' ) . '</strong></a>' ); ?>
+									<?php esc_html_e( 'Mobile first approach assures your website visitors will have a great experience browsing your website on their phones too.', 'firefly' ); ?>
 								</p>
 
 							</div>
 
-							<div class="feature col">
+							<div class="col">
 
 								<img src="<?php echo esc_url( Firefly_Theme_Framework::get_stylesheet_directory_uri( 'assets/images/customizer.jpg' ) ); ?>" alt="<?php esc_html_e( 'Using theme customizer', 'firefly' ); ?>" title="<?php esc_html_e( 'Using theme customizer', 'firefly' ); ?>" />
 
@@ -287,7 +291,7 @@
 							<h2 class="mt0"><strong><?php esc_html_e( 'Installing the theme demo content', 'firefly' ); ?></strong></h2>
 
 							<p>
-								<?php esc_html_e( '', 'firefly' ); ?>
+								<?php esc_html_e( 'You can obtain the most recent theme demo content file in the theme on-line user manual. Please click the button below to obtain the file and read the short instructions on how to install the demo content.', 'firefly' ); ?>
 							</p>
 
 							<p>
@@ -296,7 +300,7 @@
 								</em>
 							</p>
 
-							<a href="<?php echo esc_url( 'http://www.webmandesign.eu/manual/firefly/#demo-content' ); ?>" class="button button-hero"><strong><?php printf( esc_html_x( 'Install demo content &raquo;', '%s: plugin name.', 'firefly' ), '<strong>WebMan Amplifier</strong>' ); ?></strong></a>
+							<a href="<?php echo esc_url( 'http://www.webmandesign.eu/manual/firefly/#demo-content' ); ?>" class="button button-hero"><strong><?php printf( esc_html_x( 'Install Demo Content &raquo;', '%s: plugin name.', 'firefly' ), '<strong>WebMan Amplifier</strong>' ); ?></strong></a>
 
 						</div>
 
